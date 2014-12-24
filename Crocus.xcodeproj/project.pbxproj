@@ -7,6 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89DE9E571A4A558800654D3E /* CRAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E1E1A4A558800654D3E /* CRAPIRequest.m */; };
+		89DE9E581A4A558800654D3E /* CRFavoritesCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E201A4A558800654D3E /* CRFavoritesCreate.m */; };
+		89DE9E591A4A558800654D3E /* CRFollowersList.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E221A4A558800654D3E /* CRFollowersList.m */; };
+		89DE9E5A1A4A558800654D3E /* CRFriendShipsCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E241A4A558800654D3E /* CRFriendShipsCreate.m */; };
+		89DE9E5B1A4A558800654D3E /* CRFriendshipsDestroy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E261A4A558800654D3E /* CRFriendshipsDestroy.m */; };
+		89DE9E5C1A4A558800654D3E /* CRFriendsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E281A4A558800654D3E /* CRFriendsList.m */; };
+		89DE9E5D1A4A558800654D3E /* CRHomeTimeLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E2A1A4A558800654D3E /* CRHomeTimeLine.m */; };
+		89DE9E5E1A4A558800654D3E /* CRIdShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E2C1A4A558800654D3E /* CRIdShow.m */; };
+		89DE9E5F1A4A558800654D3E /* CRMentions.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E2E1A4A558800654D3E /* CRMentions.m */; };
+		89DE9E601A4A558800654D3E /* CRPublicTimeLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E301A4A558800654D3E /* CRPublicTimeLine.m */; };
+		89DE9E611A4A558800654D3E /* CRSearchVoices.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E321A4A558800654D3E /* CRSearchVoices.m */; };
+		89DE9E621A4A558800654D3E /* CRShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E341A4A558800654D3E /* CRShow.m */; };
+		89DE9E631A4A558800654D3E /* CRSpread.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E361A4A558800654D3E /* CRSpread.m */; };
+		89DE9E641A4A558800654D3E /* CRStatusesDestroy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E381A4A558800654D3E /* CRStatusesDestroy.m */; };
+		89DE9E651A4A558800654D3E /* CRTimeLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E3A1A4A558800654D3E /* CRTimeLine.m */; };
+		89DE9E661A4A558800654D3E /* CRUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E3C1A4A558800654D3E /* CRUpdate.m */; };
+		89DE9E671A4A558800654D3E /* CRUpdateProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E3E1A4A558800654D3E /* CRUpdateProfile.m */; };
+		89DE9E681A4A558800654D3E /* CRUpdateProfileImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E401A4A558800654D3E /* CRUpdateProfileImage.m */; };
+		89DE9E691A4A558800654D3E /* CRUpdateWithMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E421A4A558800654D3E /* CRUpdateWithMedia.m */; };
+		89DE9E6A1A4A558800654D3E /* CRUsersShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E441A4A558800654D3E /* CRUsersShow.m */; };
+		89DE9E6B1A4A558800654D3E /* CRUserTimeLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E461A4A558800654D3E /* CRUserTimeLine.m */; };
+		89DE9E6C1A4A558800654D3E /* CRVerifyCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E481A4A558800654D3E /* CRVerifyCredentials.m */; };
+		89DE9E6D1A4A558800654D3E /* CRMute.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E4A1A4A558800654D3E /* CRMute.m */; };
+		89DE9E6E1A4A558800654D3E /* CRHTTPLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E4D1A4A558800654D3E /* CRHTTPLoader.m */; };
+		89DE9E6F1A4A558800654D3E /* CRHTTPLoaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E4F1A4A558800654D3E /* CRHTTPLoaderOperation.m */; };
+		89DE9E701A4A558800654D3E /* NSDictionary+CRURLParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E511A4A558800654D3E /* NSDictionary+CRURLParams.m */; };
+		89DE9E711A4A558800654D3E /* CROAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E541A4A558800654D3E /* CROAuth.m */; };
+		89DE9E721A4A558800654D3E /* CROAuthParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E561A4A558800654D3E /* CROAuthParams.m */; };
 		89FA165D1A47B53B00271FBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FA165C1A47B53B00271FBB /* main.m */; };
 		89FA16601A47B53B00271FBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FA165F1A47B53B00271FBB /* AppDelegate.m */; };
 		89FA16631A47B53B00271FBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FA16621A47B53B00271FBB /* ViewController.m */; };
@@ -27,6 +55,63 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82CDD7D59DC6E35FAEBD99E3 /* Crocus-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Crocus-PrefixHeader.pch"; sourceTree = "<group>"; };
+		89DE9E1D1A4A558800654D3E /* CRAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAPIRequest.h; sourceTree = "<group>"; };
+		89DE9E1E1A4A558800654D3E /* CRAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRAPIRequest.m; sourceTree = "<group>"; };
+		89DE9E1F1A4A558800654D3E /* CRFavoritesCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFavoritesCreate.h; sourceTree = "<group>"; };
+		89DE9E201A4A558800654D3E /* CRFavoritesCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRFavoritesCreate.m; sourceTree = "<group>"; };
+		89DE9E211A4A558800654D3E /* CRFollowersList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFollowersList.h; sourceTree = "<group>"; };
+		89DE9E221A4A558800654D3E /* CRFollowersList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRFollowersList.m; sourceTree = "<group>"; };
+		89DE9E231A4A558800654D3E /* CRFriendShipsCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFriendShipsCreate.h; sourceTree = "<group>"; };
+		89DE9E241A4A558800654D3E /* CRFriendShipsCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRFriendShipsCreate.m; sourceTree = "<group>"; };
+		89DE9E251A4A558800654D3E /* CRFriendshipsDestroy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFriendshipsDestroy.h; sourceTree = "<group>"; };
+		89DE9E261A4A558800654D3E /* CRFriendshipsDestroy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRFriendshipsDestroy.m; sourceTree = "<group>"; };
+		89DE9E271A4A558800654D3E /* CRFriendsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFriendsList.h; sourceTree = "<group>"; };
+		89DE9E281A4A558800654D3E /* CRFriendsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRFriendsList.m; sourceTree = "<group>"; };
+		89DE9E291A4A558800654D3E /* CRHomeTimeLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRHomeTimeLine.h; sourceTree = "<group>"; };
+		89DE9E2A1A4A558800654D3E /* CRHomeTimeLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRHomeTimeLine.m; sourceTree = "<group>"; };
+		89DE9E2B1A4A558800654D3E /* CRIdShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRIdShow.h; sourceTree = "<group>"; };
+		89DE9E2C1A4A558800654D3E /* CRIdShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRIdShow.m; sourceTree = "<group>"; };
+		89DE9E2D1A4A558800654D3E /* CRMentions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMentions.h; sourceTree = "<group>"; };
+		89DE9E2E1A4A558800654D3E /* CRMentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMentions.m; sourceTree = "<group>"; };
+		89DE9E2F1A4A558800654D3E /* CRPublicTimeLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRPublicTimeLine.h; sourceTree = "<group>"; };
+		89DE9E301A4A558800654D3E /* CRPublicTimeLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRPublicTimeLine.m; sourceTree = "<group>"; };
+		89DE9E311A4A558800654D3E /* CRSearchVoices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRSearchVoices.h; sourceTree = "<group>"; };
+		89DE9E321A4A558800654D3E /* CRSearchVoices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRSearchVoices.m; sourceTree = "<group>"; };
+		89DE9E331A4A558800654D3E /* CRShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRShow.h; sourceTree = "<group>"; };
+		89DE9E341A4A558800654D3E /* CRShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRShow.m; sourceTree = "<group>"; };
+		89DE9E351A4A558800654D3E /* CRSpread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRSpread.h; sourceTree = "<group>"; };
+		89DE9E361A4A558800654D3E /* CRSpread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRSpread.m; sourceTree = "<group>"; };
+		89DE9E371A4A558800654D3E /* CRStatusesDestroy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRStatusesDestroy.h; sourceTree = "<group>"; };
+		89DE9E381A4A558800654D3E /* CRStatusesDestroy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatusesDestroy.m; sourceTree = "<group>"; };
+		89DE9E391A4A558800654D3E /* CRTimeLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLine.h; sourceTree = "<group>"; };
+		89DE9E3A1A4A558800654D3E /* CRTimeLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLine.m; sourceTree = "<group>"; };
+		89DE9E3B1A4A558800654D3E /* CRUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUpdate.h; sourceTree = "<group>"; };
+		89DE9E3C1A4A558800654D3E /* CRUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUpdate.m; sourceTree = "<group>"; };
+		89DE9E3D1A4A558800654D3E /* CRUpdateProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUpdateProfile.h; sourceTree = "<group>"; };
+		89DE9E3E1A4A558800654D3E /* CRUpdateProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUpdateProfile.m; sourceTree = "<group>"; };
+		89DE9E3F1A4A558800654D3E /* CRUpdateProfileImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUpdateProfileImage.h; sourceTree = "<group>"; };
+		89DE9E401A4A558800654D3E /* CRUpdateProfileImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUpdateProfileImage.m; sourceTree = "<group>"; };
+		89DE9E411A4A558800654D3E /* CRUpdateWithMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUpdateWithMedia.h; sourceTree = "<group>"; };
+		89DE9E421A4A558800654D3E /* CRUpdateWithMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUpdateWithMedia.m; sourceTree = "<group>"; };
+		89DE9E431A4A558800654D3E /* CRUsersShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUsersShow.h; sourceTree = "<group>"; };
+		89DE9E441A4A558800654D3E /* CRUsersShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUsersShow.m; sourceTree = "<group>"; };
+		89DE9E451A4A558800654D3E /* CRUserTimeLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUserTimeLine.h; sourceTree = "<group>"; };
+		89DE9E461A4A558800654D3E /* CRUserTimeLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUserTimeLine.m; sourceTree = "<group>"; };
+		89DE9E471A4A558800654D3E /* CRVerifyCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRVerifyCredentials.h; sourceTree = "<group>"; };
+		89DE9E481A4A558800654D3E /* CRVerifyCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRVerifyCredentials.m; sourceTree = "<group>"; };
+		89DE9E491A4A558800654D3E /* CRMute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMute.h; sourceTree = "<group>"; };
+		89DE9E4A1A4A558800654D3E /* CRMute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMute.m; sourceTree = "<group>"; };
+		89DE9E4C1A4A558800654D3E /* CRHTTPLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRHTTPLoader.h; sourceTree = "<group>"; };
+		89DE9E4D1A4A558800654D3E /* CRHTTPLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRHTTPLoader.m; sourceTree = "<group>"; };
+		89DE9E4E1A4A558800654D3E /* CRHTTPLoaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRHTTPLoaderOperation.h; sourceTree = "<group>"; };
+		89DE9E4F1A4A558800654D3E /* CRHTTPLoaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRHTTPLoaderOperation.m; sourceTree = "<group>"; };
+		89DE9E501A4A558800654D3E /* NSDictionary+CRURLParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CRURLParams.h"; sourceTree = "<group>"; };
+		89DE9E511A4A558800654D3E /* NSDictionary+CRURLParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CRURLParams.m"; sourceTree = "<group>"; };
+		89DE9E531A4A558800654D3E /* CROAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROAuth.h; sourceTree = "<group>"; };
+		89DE9E541A4A558800654D3E /* CROAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROAuth.m; sourceTree = "<group>"; };
+		89DE9E551A4A558800654D3E /* CROAuthParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROAuthParams.h; sourceTree = "<group>"; };
+		89DE9E561A4A558800654D3E /* CROAuthParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROAuthParams.m; sourceTree = "<group>"; };
 		89FA16571A47B53B00271FBB /* Crocus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crocus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FA165B1A47B53B00271FBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89FA165C1A47B53B00271FBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +145,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82CDD09D464D8BA6B57CC45C /* Croudia */ = {
+			isa = PBXGroup;
+			children = (
+				89DE9E1C1A4A558800654D3E /* API */,
+				89DE9E491A4A558800654D3E /* CRMute.h */,
+				89DE9E4A1A4A558800654D3E /* CRMute.m */,
+				89DE9E4B1A4A558800654D3E /* HTTP */,
+				89DE9E521A4A558800654D3E /* OAuth */,
+			);
+			path = Croudia;
+			sourceTree = "<group>";
+		};
+		89DE9E1C1A4A558800654D3E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				89DE9E1D1A4A558800654D3E /* CRAPIRequest.h */,
+				89DE9E1E1A4A558800654D3E /* CRAPIRequest.m */,
+				89DE9E1F1A4A558800654D3E /* CRFavoritesCreate.h */,
+				89DE9E201A4A558800654D3E /* CRFavoritesCreate.m */,
+				89DE9E211A4A558800654D3E /* CRFollowersList.h */,
+				89DE9E221A4A558800654D3E /* CRFollowersList.m */,
+				89DE9E231A4A558800654D3E /* CRFriendShipsCreate.h */,
+				89DE9E241A4A558800654D3E /* CRFriendShipsCreate.m */,
+				89DE9E251A4A558800654D3E /* CRFriendshipsDestroy.h */,
+				89DE9E261A4A558800654D3E /* CRFriendshipsDestroy.m */,
+				89DE9E271A4A558800654D3E /* CRFriendsList.h */,
+				89DE9E281A4A558800654D3E /* CRFriendsList.m */,
+				89DE9E291A4A558800654D3E /* CRHomeTimeLine.h */,
+				89DE9E2A1A4A558800654D3E /* CRHomeTimeLine.m */,
+				89DE9E2B1A4A558800654D3E /* CRIdShow.h */,
+				89DE9E2C1A4A558800654D3E /* CRIdShow.m */,
+				89DE9E2D1A4A558800654D3E /* CRMentions.h */,
+				89DE9E2E1A4A558800654D3E /* CRMentions.m */,
+				89DE9E2F1A4A558800654D3E /* CRPublicTimeLine.h */,
+				89DE9E301A4A558800654D3E /* CRPublicTimeLine.m */,
+				89DE9E311A4A558800654D3E /* CRSearchVoices.h */,
+				89DE9E321A4A558800654D3E /* CRSearchVoices.m */,
+				89DE9E331A4A558800654D3E /* CRShow.h */,
+				89DE9E341A4A558800654D3E /* CRShow.m */,
+				89DE9E351A4A558800654D3E /* CRSpread.h */,
+				89DE9E361A4A558800654D3E /* CRSpread.m */,
+				89DE9E371A4A558800654D3E /* CRStatusesDestroy.h */,
+				89DE9E381A4A558800654D3E /* CRStatusesDestroy.m */,
+				89DE9E391A4A558800654D3E /* CRTimeLine.h */,
+				89DE9E3A1A4A558800654D3E /* CRTimeLine.m */,
+				89DE9E3B1A4A558800654D3E /* CRUpdate.h */,
+				89DE9E3C1A4A558800654D3E /* CRUpdate.m */,
+				89DE9E3D1A4A558800654D3E /* CRUpdateProfile.h */,
+				89DE9E3E1A4A558800654D3E /* CRUpdateProfile.m */,
+				89DE9E3F1A4A558800654D3E /* CRUpdateProfileImage.h */,
+				89DE9E401A4A558800654D3E /* CRUpdateProfileImage.m */,
+				89DE9E411A4A558800654D3E /* CRUpdateWithMedia.h */,
+				89DE9E421A4A558800654D3E /* CRUpdateWithMedia.m */,
+				89DE9E431A4A558800654D3E /* CRUsersShow.h */,
+				89DE9E441A4A558800654D3E /* CRUsersShow.m */,
+				89DE9E451A4A558800654D3E /* CRUserTimeLine.h */,
+				89DE9E461A4A558800654D3E /* CRUserTimeLine.m */,
+				89DE9E471A4A558800654D3E /* CRVerifyCredentials.h */,
+				89DE9E481A4A558800654D3E /* CRVerifyCredentials.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		89DE9E4B1A4A558800654D3E /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				89DE9E4C1A4A558800654D3E /* CRHTTPLoader.h */,
+				89DE9E4D1A4A558800654D3E /* CRHTTPLoader.m */,
+				89DE9E4E1A4A558800654D3E /* CRHTTPLoaderOperation.h */,
+				89DE9E4F1A4A558800654D3E /* CRHTTPLoaderOperation.m */,
+				89DE9E501A4A558800654D3E /* NSDictionary+CRURLParams.h */,
+				89DE9E511A4A558800654D3E /* NSDictionary+CRURLParams.m */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		89DE9E521A4A558800654D3E /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				89DE9E531A4A558800654D3E /* CROAuth.h */,
+				89DE9E541A4A558800654D3E /* CROAuth.m */,
+				89DE9E551A4A558800654D3E /* CROAuthParams.h */,
+				89DE9E561A4A558800654D3E /* CROAuthParams.m */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
 		89FA164E1A47B53B00271FBB = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +261,7 @@
 				89FA16671A47B53B00271FBB /* Images.xcassets */,
 				89FA16691A47B53B00271FBB /* LaunchScreen.xib */,
 				89FA165A1A47B53B00271FBB /* Supporting Files */,
+				82CDD09D464D8BA6B57CC45C /* Croudia */,
 			);
 			path = Crocus;
 			sourceTree = "<group>";
@@ -98,6 +271,7 @@
 			children = (
 				89FA165B1A47B53B00271FBB /* Info.plist */,
 				89FA165C1A47B53B00271FBB /* main.m */,
+				82CDD7D59DC6E35FAEBD99E3 /* Crocus-PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -220,8 +394,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				89FA16631A47B53B00271FBB /* ViewController.m in Sources */,
+				89DE9E661A4A558800654D3E /* CRUpdate.m in Sources */,
+				89DE9E711A4A558800654D3E /* CROAuth.m in Sources */,
+				89DE9E571A4A558800654D3E /* CRAPIRequest.m in Sources */,
+				89DE9E6D1A4A558800654D3E /* CRMute.m in Sources */,
+				89DE9E5D1A4A558800654D3E /* CRHomeTimeLine.m in Sources */,
+				89DE9E5E1A4A558800654D3E /* CRIdShow.m in Sources */,
+				89DE9E6E1A4A558800654D3E /* CRHTTPLoader.m in Sources */,
+				89DE9E671A4A558800654D3E /* CRUpdateProfile.m in Sources */,
+				89DE9E6B1A4A558800654D3E /* CRUserTimeLine.m in Sources */,
+				89DE9E591A4A558800654D3E /* CRFollowersList.m in Sources */,
+				89DE9E641A4A558800654D3E /* CRStatusesDestroy.m in Sources */,
 				89FA16601A47B53B00271FBB /* AppDelegate.m in Sources */,
+				89DE9E6C1A4A558800654D3E /* CRVerifyCredentials.m in Sources */,
+				89DE9E5A1A4A558800654D3E /* CRFriendShipsCreate.m in Sources */,
+				89DE9E581A4A558800654D3E /* CRFavoritesCreate.m in Sources */,
+				89DE9E701A4A558800654D3E /* NSDictionary+CRURLParams.m in Sources */,
+				89DE9E5C1A4A558800654D3E /* CRFriendsList.m in Sources */,
+				89DE9E631A4A558800654D3E /* CRSpread.m in Sources */,
+				89DE9E621A4A558800654D3E /* CRShow.m in Sources */,
+				89DE9E691A4A558800654D3E /* CRUpdateWithMedia.m in Sources */,
+				89DE9E681A4A558800654D3E /* CRUpdateProfileImage.m in Sources */,
+				89DE9E5F1A4A558800654D3E /* CRMentions.m in Sources */,
+				89DE9E651A4A558800654D3E /* CRTimeLine.m in Sources */,
+				89DE9E6A1A4A558800654D3E /* CRUsersShow.m in Sources */,
+				89DE9E6F1A4A558800654D3E /* CRHTTPLoaderOperation.m in Sources */,
 				89FA165D1A47B53B00271FBB /* main.m in Sources */,
+				89DE9E611A4A558800654D3E /* CRSearchVoices.m in Sources */,
+				89DE9E721A4A558800654D3E /* CROAuthParams.m in Sources */,
+				89DE9E5B1A4A558800654D3E /* CRFriendshipsDestroy.m in Sources */,
+				89DE9E601A4A558800654D3E /* CRPublicTimeLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +545,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "Crocus/Crocus-PrefixHeader.pch";
 				INFOPLIST_FILE = Crocus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,7 +558,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "Crocus/Crocus-PrefixHeader.pch";
 				INFOPLIST_FILE = Crocus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +620,7 @@
 				89FA167C1A47B53B00271FBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89FA167D1A47B53B00271FBB /* Build configuration list for PBXNativeTarget "CrocusTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +629,7 @@
 				89FA167F1A47B53B00271FBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
