@@ -16,16 +16,30 @@
  */
 
 #import "ViewController.h"
+#import "CROAuth.h"
 
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    CROAuth *_auth;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    _auth = [[CROAuth alloc] init];
+}
+
+- (IBAction)login {
+    [_auth authorizeWebView:^(BOOL result) {
+        if (result) {
+            NSLog(@"success");
+        } else {
+            NSLog(@"fail");
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
