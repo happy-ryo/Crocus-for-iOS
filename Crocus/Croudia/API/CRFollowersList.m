@@ -51,7 +51,7 @@
     NSError *error1;
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error1];
     NSString *cursor = [dictionary valueForKey:@"next_cursor_str"];
-    if ([cursor isEqualToString:@"0"] == NO) {
+    if (![cursor isEqualToString:@"0"]) {
         _cursor = cursor;
         if (_stopLoading) {
             return;

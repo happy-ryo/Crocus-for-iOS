@@ -37,7 +37,11 @@
 }
 
 - (BOOL)authorized {
-    return [self.oAuthParams.refreshToken isEqualToString:@""] == NO && self.oAuthParams.refreshToken != nil;
+    if (![self.oAuthParams.refreshToken isEqualToString:@""]) {
+        return self.oAuthParams.refreshToken != nil;
+    } else {
+        return NO;
+    }
 }
 
 - (void)authorize:(void (^)(BOOL result))pFunction {
@@ -61,7 +65,7 @@
 }
 
 - (void)URLHandler:(NSURL *)url {
-    if ([url.scheme isEqualToString:CR_URL_SCHEME] == NO) {
+    if (![url.scheme isEqualToString:CR_URL_SCHEME]) {
         return;
     }
 
@@ -107,10 +111,10 @@
 
     for (NSString *pair in pairs) {
         NSArray *elements = [pair componentsSeparatedByString:@"="];
-        NSString *key = [[elements objectAtIndex:0] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSString *val = [[elements objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString *key = [elements[0] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString *val = [elements[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
-        [dict setObject:val forKey:key];
+        dict[key] = val;
     }
     return dict;
 }

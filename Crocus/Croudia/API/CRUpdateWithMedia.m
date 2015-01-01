@@ -55,18 +55,17 @@
         [result appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSASCIIStringEncoding]];
         [result appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"status\"\r\n\r\n"] dataUsingEncoding:NSASCIIStringEncoding]];
         [result appendData:[_status dataUsingEncoding:NSUTF8StringEncoding]];
-        [result appendData:[[NSString stringWithString:@"\r\n"] dataUsingEncoding:NSASCIIStringEncoding]];
+        [result appendData:[@"\r\n" dataUsingEncoding:NSASCIIStringEncoding]];
 
         [result appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSASCIIStringEncoding]];
         [result appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"media\"; filename=\"%@\"\r\n", @"hoge.png"] dataUsingEncoding:NSASCIIStringEncoding]];
-        [result appendData:[[NSString stringWithString:@"Content-Type: image/png\r\n\r\n"] dataUsingEncoding:NSASCIIStringEncoding]];
+        [result appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSASCIIStringEncoding]];
         [result appendData:pngData];
         [result appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n\r\n", boundary] dataUsingEncoding:NSASCIIStringEncoding]];
 
 
         [mutableURLRequest setHTTPMethod:@"POST"];
         [mutableURLRequest setValue:[NSString stringWithFormat:@"multipart/form-data;boundary=%@", boundary] forHTTPHeaderField:@"Content-Type"];
-        NSLog(@"%@", [[NSString alloc] initWithData:result encoding:NSASCIIStringEncoding]);
         [mutableURLRequest setHTTPBody:result];
     }
 

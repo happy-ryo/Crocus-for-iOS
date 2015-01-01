@@ -38,7 +38,7 @@
 
 - (NSDictionary *)requestParams {
     NSMutableDictionary *mutableDictionary = [NSMutableDictionary dictionary];
-    [mutableDictionary setObject:_userId forKey:@"user_id"];
+    mutableDictionary[@"user_id"] = _userId;
     return mutableDictionary;
 }
 
