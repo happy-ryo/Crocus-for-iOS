@@ -38,10 +38,10 @@
 
 
 - (void)registration:(NSString *)muteId screenName:(NSString *)screenName name:(NSString *)name {
-    if ([_muteIdArray containsObject:muteId] == NO) {
+    if (![_muteIdArray containsObject:muteId]) {
         [_muteIdArray addObject:muteId];
         NSDictionary *dictionary = @{CR_SCREEN_NAME : screenName, CR_USER_NAME : name};
-        [_muteUserDictionary setObject:dictionary forKey:muteId];
+        _muteUserDictionary[muteId] = dictionary;
         [self saveData];
     }
 }

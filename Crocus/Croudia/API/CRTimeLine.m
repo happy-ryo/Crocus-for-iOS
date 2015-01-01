@@ -15,10 +15,6 @@
 
 #import "CRTimeLine.h"
 #import "CRMute.h"
-#import "NSObject+Add.h"
-#import "CRConfig.h"
-#import "CRMentions.h"
-#import <AudioToolbox/AudioServices.h>
 
 @implementation CRTimeLine {
     NSString *_maxId;
@@ -124,66 +120,18 @@
         if ([obj isKindOfClass:[NSArray class]]) {
             NSArray *statusArray = obj;
             if (statusArray.count > 0) {
-                NSString *tmp = [NSString stringWithFormat:@"%@", [[statusArray objectAtIndex:statusArray.count - 1] valueForKey:@"id_str"]];
+                NSString *tmp = [NSString stringWithFormat:@"%@", [statusArray[statusArray.count - 1] valueForKey:@"id_str"]];
                 if ([tmp isEqualToString:_maxId]) {
-                    [self trackEventWithCategory:@"TimeLineRetriever" withAction:@"NoRefresh" withLabel:error.description];
                     _loadFinished(@[], NO, error);
                     return;
                 }
                 _maxId = tmp;
-                if (statusArray.count == 20) {
-                    [self trackEventWithCategory:@"TimeLineRetriever" withAction:@"Refresh" withLabel:@"20"];
-                    NSArray *array = [self checkMute:statusArray];
-                    [self mentionVibration:array];
-                    _loadFinished(array, YES, error);
-                } else {
-                    [self trackEventWithCategory:@"TimeLineRetriever" withAction:@"Refresh" withLabel:[NSString stringWithFormat:@"%u", statusArray.count]];
-                    NSArray *array = [self checkMute:statusArray];
-                    [self mentionVibration:array];
-                    _loadFinished(array, NO, error);
-                }
+                _loadFinished(statusArray, statusArray.count == 20, error);
                 return;
             }
         }
     }
-    [self trackEventWithCategory:@"TimeLineRetriever" withAction:@"NoData" withLabel:error.description];
     _loadFinished(@[], NO, error);
-}
-
-- (void)mentionVibration:(NSArray *)statusArray {
-    CRConfig *config = [CRConfig loadArchive];
-    if ([self isKindOfClass:[CRMentions class]] || config.kanaMode == NO) {
-        return;
-    }
-    void (^Vib)(NSArray *array) = ^(NSArray *array) {
-        CRConfig *crConfig = [CRConfig loadArchive];
-        BOOL vib = NO;
-        for (NSDictionary *dictionary in statusArray) {
-            if ([crConfig.userName isEqualToString:[dictionary valueForKey:@"in_reply_to_screen_name"]]) {
-                vib = YES;
-            }
-        }
-        if (vib) {
-            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-        }
-    };
-    Vib(statusArray);
-}
-
-- (NSArray *)checkMute:(NSArray *)statusArray {
-    NSMutableArray *removeObjectArray = [NSMutableArray array];
-    NSMutableArray *mutableArray = statusArray.mutableCopy;
-    for (int j = 0; j < statusArray.count; j++) {
-        NSDictionary *dictionary = [statusArray objectAtIndex:(NSUInteger) j];
-        if ([_mute check:[[dictionary valueForKey:@"user"] valueForKey:@"id_str"]]) {
-            [removeObjectArray addObject:dictionary];
-        }
-    }
-    
-    for (int k = 0; k < removeObjectArray.count; k++) {
-        [mutableArray removeObject:[removeObjectArray objectAtIndex:(NSUInteger) k]];
-    }
-    return mutableArray;
 }
 
 @end

@@ -37,7 +37,7 @@
 - (void)parseResponse:(NSData *)data error:(NSError *)error {
     [super parseResponse:data error:error];
     if (error) {
-        UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"クロイエント" message:[NSString stringWithFormat:@"%@\nerror code %i", @"投稿に失敗しました、時間をおいて再度お試し下さい。 ", error.code] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Crocus", @"Crocus") message:[NSString stringWithFormat:@"%@\nerror code %i", @"投稿に失敗しました、時間をおいて再度お試し下さい。 ", error.code] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [errorAlertView show];
     }
 }

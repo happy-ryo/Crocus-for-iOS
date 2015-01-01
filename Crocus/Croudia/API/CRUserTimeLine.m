@@ -33,7 +33,7 @@
 
 - (NSDictionary *)requestParams {
     [super requestParams];
-    [_requestParams setObject:_userId forKey:@"user_id"];
+    _requestParams[@"user_id"] = _userId;
     return _requestParams;
 }
 

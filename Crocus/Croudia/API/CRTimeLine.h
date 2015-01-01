@@ -41,8 +41,4 @@ typedef void (^LoadFinished)(NSArray *statusArray, BOOL reload, NSError *error);
 
 - (id)initWithLoadFinished:(LoadFinished)loadFinished;
 
-
-- (void)mentionVibration:(NSArray *)statusArray;
-
-- (NSArray *)checkMute:(NSArray *)statusArray;
 @end

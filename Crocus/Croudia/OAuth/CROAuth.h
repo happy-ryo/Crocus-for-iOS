@@ -15,20 +15,30 @@
 #import <Foundation/Foundation.h>
 
 @class CROAuthParams;
+@class CROAuth;
 
 
 static NSString *const kCROAuthTokenURL = @"https://api.croudia.com/oauth/token";
 
 static NSString *const kCRAuthorizeURLFormat = @"https://api.croudia.com/oauth/authorize?response_type=code&client_id=%@&state=%@";
 
+@interface CROAuthViewController : UIViewController <UIWebViewDelegate>
+@property(nonatomic, strong) CROAuth *auth;
+
++ (void)showWithCROAuth:(CROAuth *)auth;
+
++ (void)close;
+@end
+
 @interface CROAuth : NSObject <UIWebViewDelegate>
 @property(nonatomic, readonly) CROAuthParams *oAuthParams;
 
 - (BOOL)authorized;
 
-- (void)authorize:(void (^)(BOOL result))pFunction;
+- (void)authorize:(void (^)(BOOL result))didFinishedRequest;
 
-- (UIViewController *)authorizeWebView:(void (^)(BOOL result))pFunction;
+
+- (void)authorizeWebView:(void (^)(BOOL result))didFinishedRequest;
 
 - (NSURL *)authorizeURL;
 
@@ -38,3 +48,4 @@ static NSString *const kCRAuthorizeURLFormat = @"https://api.croudia.com/oauth/a
 
 - (void)logout;
 @end
+
