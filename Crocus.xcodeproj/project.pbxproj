@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82CDD32CE6B0B933816EA019 /* Localizable.strings */; };
+		8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8967A8F01A52F25000FDB716 /* OAuth.storyboard */; };
 		89DE9E571A4A558800654D3E /* CRAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E1E1A4A558800654D3E /* CRAPIRequest.m */; };
 		89DE9E581A4A558800654D3E /* CRFavoritesCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E201A4A558800654D3E /* CRFavoritesCreate.m */; };
 		89DE9E591A4A558800654D3E /* CRFollowersList.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E221A4A558800654D3E /* CRFollowersList.m */; };
@@ -55,7 +57,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82CDD32CE6B0B933816EA019 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Croudia/API/Localizable.strings; sourceTree = "<group>"; };
 		82CDD7D59DC6E35FAEBD99E3 /* Crocus-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Crocus-PrefixHeader.pch"; sourceTree = "<group>"; };
+		8967A8F01A52F25000FDB716 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
 		89DE9E1D1A4A558800654D3E /* CRAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAPIRequest.h; sourceTree = "<group>"; };
 		89DE9E1E1A4A558800654D3E /* CRAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRAPIRequest.m; sourceTree = "<group>"; };
 		89DE9E1F1A4A558800654D3E /* CRFavoritesCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFavoritesCreate.h; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 				89DE9E541A4A558800654D3E /* CROAuth.m */,
 				89DE9E551A4A558800654D3E /* CROAuthParams.h */,
 				89DE9E561A4A558800654D3E /* CROAuthParams.m */,
+				8967A8F01A52F25000FDB716 /* OAuth.storyboard */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 		89FA165A1A47B53B00271FBB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				82CDD32CE6B0B933816EA019 /* Localizable.strings */,
 				89FA165B1A47B53B00271FBB /* Info.plist */,
 				89FA165C1A47B53B00271FBB /* main.m */,
 				82CDD7D59DC6E35FAEBD99E3 /* Crocus-PrefixHeader.pch */,
@@ -375,7 +381,9 @@
 			files = (
 				89FA16661A47B53B00271FBB /* Main.storyboard in Resources */,
 				89FA166B1A47B53B00271FBB /* LaunchScreen.xib in Resources */,
+				8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */,
 				89FA16681A47B53B00271FBB /* Images.xcassets in Resources */,
+				82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

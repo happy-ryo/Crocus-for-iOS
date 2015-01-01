@@ -51,7 +51,7 @@
 
 - (void)parseResponse:(NSData *)data error:(NSError *)error {
     [super parseResponse:data error:error];
-    if (_updateFinished)_updateFinished(error ? NO : YES);
+    if (_updateFinished)_updateFinished(error == nil);
 }
 
 @end

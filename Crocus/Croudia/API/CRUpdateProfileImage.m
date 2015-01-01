@@ -55,7 +55,7 @@
     [result appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSASCIIStringEncoding]];
 
     [result appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"image\"; filename=\"%@\"\r\n", @"hoge.png"] dataUsingEncoding:NSASCIIStringEncoding]];
-    [result appendData:[[NSString stringWithString:@"Content-Type: image/png\r\n\r\n"] dataUsingEncoding:NSASCIIStringEncoding]];
+    [result appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSASCIIStringEncoding]];
     [result appendData:pngData];
     [result appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n\r\n", boundary] dataUsingEncoding:NSASCIIStringEncoding]];
 
@@ -80,7 +80,7 @@
 
 - (void)parseResponse:(NSData *)data error:(NSError *)error {
     [super parseResponse:data error:error];
-    if (_updateFinished)_updateFinished(error ? NO : YES);
+    if (_updateFinished)_updateFinished(error == nil);
 }
 
 

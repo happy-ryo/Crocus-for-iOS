@@ -52,21 +52,13 @@
         if ([tmpArray isKindOfClass:[NSArray class]]) {
             NSArray *statusArray = tmpArray;
             if (statusArray.count > 0) {
-                NSString *tmp = [NSString stringWithFormat:@"%@", [[statusArray objectAtIndex:statusArray.count - 1] valueForKey:@"id_str"]];
+                NSString *tmp = [NSString stringWithFormat:@"%@", [statusArray[statusArray.count - 1] valueForKey:@"id_str"]];
                 if ([tmp isEqualToString:self.maxId]) {
                     self.loadFinished(@[], NO, error);
                     return;
                 }
                 self.maxId = tmp;
-                if (statusArray.count == 20) {
-                    NSArray *array = [self checkMute:statusArray];
-                    [self mentionVibration:array];
-                    self.loadFinished(array, YES, error);
-                } else {
-                    NSArray *array = [self checkMute:statusArray];
-                    [self mentionVibration:array];
-                    self.loadFinished(array, NO, error);
-                }
+                self.loadFinished(statusArray, statusArray.count == 20, error);
                 return;
             }
         }

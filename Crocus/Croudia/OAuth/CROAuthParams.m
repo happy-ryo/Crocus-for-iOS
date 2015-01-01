@@ -15,7 +15,7 @@
 #import "CROAuthParams.h"
 
 
-#define CR_OAUTH_PARAMS @"croientoauthparams"
+#define CR_OAUTH_PARAMS @"crocusoauthparams"
 
 @implementation CROAuthParams {
     NSString *_code;
