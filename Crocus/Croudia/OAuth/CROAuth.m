@@ -16,6 +16,7 @@
 #import "CROAuthParams.h"
 #import "NSDictionary+CRURLParams.h"
 #import "CRHTTPLoader.h"
+#import <objc/runtime.h>
 
 #define CONSUMER_KEY @""
 #define CONSUMER_SECRET @""
@@ -24,7 +25,7 @@
 @implementation CROAuth {
     NSString *_uuid;
 
-    void (^didRequest)(BOOL result);
+    void (^DidFinishedRequest)(BOOL result);
 }
 
 - (id)init {
@@ -44,23 +45,28 @@
     }
 }
 
-- (void)authorize:(void (^)(BOOL result))pFunction {
-    didRequest = pFunction;
+- (void)setupUUID {
     NSUUID *uuid = [NSUUID UUID];
     _uuid = uuid.UUIDString;
+}
+
+- (void)authorize:(void (^)(BOOL result))didFinishedRequest {
+    DidFinishedRequest = didFinishedRequest;
     [[UIApplication sharedApplication] openURL:self.authorizeURL];
 }
 
-- (UIViewController *)authorizeWebView:(void (^)(BOOL result))pFunction {
-    didRequest = pFunction;
-    NSUUID *uuid = [NSUUID UUID];
-    _uuid = uuid.UUIDString;
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    UINavigationController *nc = [storyboard instantiateViewControllerWithIdentifier:@"Auth"];
-    return nc;
+- (void)authorizeWebView:(void (^)(BOOL result))didFinishedRequest {
+    DidFinishedRequest = ^(BOOL result) {
+        if (didFinishedRequest) {
+            [CROAuthViewController close];
+            didFinishedRequest(result);
+        }
+    };
+    [CROAuthViewController showWithCROAuth:self];
 }
 
 - (NSURL *)authorizeURL {
+    [self setupUUID];
     return [NSURL URLWithString:[NSString stringWithFormat:kCRAuthorizeURLFormat, CONSUMER_KEY, _uuid]];
 }
 
@@ -72,7 +78,7 @@
     NSDictionary *dictionary = [self dictionaryFromQueryString:url];
 
     if ([dictionary valueForKey:@"error"]) {
-        didRequest(NO);
+        DidFinishedRequest(NO);
         return;
     }
 
@@ -94,12 +100,12 @@
             self.oAuthParams.expiresIn = [response valueForKey:@"expires_in"];
             self.oAuthParams.tokenType = [response valueForKey:@"token_type"];
             [self.oAuthParams save];
-            if (didRequest) didRequest(YES);
+            if (DidFinishedRequest) DidFinishedRequest(YES);
         }                    fail:^(NSError *error) {
-            if (didRequest) didRequest(NO);
+            if (DidFinishedRequest) DidFinishedRequest(NO);
         }];
     } else {
-        if (didRequest) didRequest(NO);
+        if (DidFinishedRequest) DidFinishedRequest(NO);
     }
 
 }
@@ -149,4 +155,70 @@
     [self.oAuthParams delete];
 }
 
+@end
+
+
+static const char kOAuthWindow;
+
+@implementation CROAuthViewController {
+    IBOutlet UIWebView *_webView;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [_webView loadRequest:[NSURLRequest requestWithURL:self.auth.authorizeURL]];
+}
+
+
+- (IBAction)loadHome {
+    [_webView loadRequest:[NSURLRequest requestWithURL:self.auth.authorizeURL]];
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    [self.auth URLHandler:request.URL];
+    return YES;
+}
+
++ (void)showWithCROAuth:(CROAuth *)auth {
+    CGRect screenRect = [UIScreen mainScreen].bounds;
+    UIWindow *window = [[UIWindow alloc] initWithFrame:screenRect];
+    window.alpha = 0;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"OAuth" bundle:nil];
+    window.rootViewController = [storyboard instantiateInitialViewController];
+    window.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
+    window.transform = CGAffineTransformMakeTranslation(0, screenRect.size.height);
+    window.windowLevel = UIWindowLevelNormal + 5;
+    [window makeKeyAndVisible];
+
+    CROAuthViewController *authViewController = (CROAuthViewController *) window.rootViewController;
+    authViewController.auth = auth;
+
+    objc_setAssociatedObject([UIApplication sharedApplication], &kOAuthWindow, window, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+    [UIView transitionWithView:window duration:0.6 options:UIViewAnimationOptionTransitionNone animations:^{
+        window.alpha = 1.0;
+        window.transform = CGAffineTransformIdentity;
+    }               completion:nil];
+}
+
++ (void)close {
+    UIWindow *window = objc_getAssociatedObject([UIApplication sharedApplication], &kOAuthWindow);
+    CGRect screenRect = [UIScreen mainScreen].bounds;
+    [UIView transitionWithView:window
+                      duration:0.6
+                       options:UIViewAnimationOptionTransitionNone
+                    animations:^{
+                        window.transform = CGAffineTransformMakeTranslation(0, screenRect.size.height);
+                        window.alpha = 0;
+                    }
+                    completion:^(BOOL finished) {
+                        [window.rootViewController.view removeFromSuperview];
+                        window.rootViewController = nil;
+                        objc_setAssociatedObject([UIApplication sharedApplication], &kOAuthWindow, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                    }];
+}
 @end
