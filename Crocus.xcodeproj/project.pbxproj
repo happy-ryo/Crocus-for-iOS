@@ -161,6 +161,20 @@
 			path = Croudia;
 			sourceTree = "<group>";
 		};
+		82CDDC5A394FFE688BABB184 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		82CDDC92E80DC2D560CC241A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		89DE9E1C1A4A558800654D3E /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +281,8 @@
 				89FA16691A47B53B00271FBB /* LaunchScreen.xib */,
 				89FA165A1A47B53B00271FBB /* Supporting Files */,
 				82CDD09D464D8BA6B57CC45C /* Croudia */,
+				82CDDC92E80DC2D560CC241A /* Views */,
+				82CDDC5A394FFE688BABB184 /* Services */,
 			);
 			path = Crocus;
 			sourceTree = "<group>";
