@@ -34,7 +34,7 @@
         <!--Navigation Controller-->
         <scene sceneID="H3M-9u-VWq">
             <objects>
-                <navigationController id="uwM-7O-WXh" sceneMemberID="viewController">
+                <navigationController hidesBarsOnSwipe="YES" hidesBarsWhenVerticallyCompact="YES" id="uwM-7O-WXh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fCR-xD-y5V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

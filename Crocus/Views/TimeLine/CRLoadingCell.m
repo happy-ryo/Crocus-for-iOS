@@ -11,27 +11,14 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
-#import <Foundation/Foundation.h>
-
-@class CRStatus;
+#import "CRLoadingCell.h"
 
 
-@interface CRTimeLineService : NSObject
-- (instancetype)initWithObserver:(id)observer;
+@implementation CRLoadingCell {
+    IBOutlet UIActivityIndicatorView *_activityIndicatorView;
+}
 
-- (instancetype)initWithObserver:(id)observer loaded:(void (^)(NSArray *, BOOL))loaded;
-
-- (instancetype)initWithLoaded:(void (^)(NSArray *, BOOL))loaded;
-
-- (void)removeObserver:(id)observer;
-
-- (CRStatus *)status:(NSInteger)index;
-
-- (NSInteger)statusCount;
-
-- (void)update;
-
-- (void)historyLoad;
-
-- (void)load;
+- (void)startAnimating {
+    [_activityIndicatorView startAnimating];
+}
 @end

@@ -11,6 +11,7 @@
 		82CDD0483619FDB1FD7E2CBD /* CREntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDCF4EC24F0CEF41016ED /* CREntities.m */; };
 		82CDD12A370487EA463E0169 /* CRTimeLineSpreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD4BA60D8B7B26D04B4BF /* CRTimeLineSpreadCell.m */; };
 		82CDD195BBC65326778D0134 /* CRStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD1506298447CEBF2CD33 /* CRStatus.m */; };
+		82CDD321CA4F11515B5D7DF1 /* CRLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD816A1053D69C511AB64 /* CRLoadingCell.m */; };
 		82CDD3C40F45F20FE450929F /* CRTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD022DA7BDE6411E21E68 /* CRTimeLineViewController.m */; };
 		82CDD5429862FC1309951023 /* CRTimeLineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDF31E57138AAC5C0E7CE /* CRTimeLineService.m */; };
 		82CDD9AB91C06F79CC11CD24 /* CRTimeLineBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */; };
@@ -19,6 +20,7 @@
 		82CDDEEA5BC66F3E6D524E81 /* CRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */; };
 		8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8967A8F01A52F25000FDB716 /* OAuth.storyboard */; };
 		89A914981A5950A400353993 /* TimeLineSpreadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A914971A5950A400353993 /* TimeLineSpreadCell.xib */; };
+		89A9149A1A59BD8A00353993 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A914991A59BD8A00353993 /* LoadingCell.xib */; };
 		89DE9E571A4A558800654D3E /* CRAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E1E1A4A558800654D3E /* CRAPIRequest.m */; };
 		89DE9E581A4A558800654D3E /* CRFavoritesCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E201A4A558800654D3E /* CRFavoritesCreate.m */; };
 		89DE9E591A4A558800654D3E /* CRFollowersList.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E221A4A558800654D3E /* CRFollowersList.m */; };
@@ -72,11 +74,13 @@
 		82CDD022DA7BDE6411E21E68 /* CRTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineViewController.m; sourceTree = "<group>"; };
 		82CDD1506298447CEBF2CD33 /* CRStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatus.m; sourceTree = "<group>"; };
 		82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUser.m; sourceTree = "<group>"; };
+		82CDD2E5D4AA55BCD1C5E6F6 /* CRLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLoadingCell.h; sourceTree = "<group>"; };
 		82CDD32CE6B0B933816EA019 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Croudia/API/Localizable.strings; sourceTree = "<group>"; };
 		82CDD4BA60D8B7B26D04B4BF /* CRTimeLineSpreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineSpreadCell.m; sourceTree = "<group>"; };
 		82CDD4CD36FBE54AC0B74FC7 /* CRStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRStatus.h; sourceTree = "<group>"; };
 		82CDD79998B5BA4F1BA4DA11 /* CRTimeLineBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineBaseCell.h; sourceTree = "<group>"; };
 		82CDD7D59DC6E35FAEBD99E3 /* Crocus-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Crocus-PrefixHeader.pch"; sourceTree = "<group>"; };
+		82CDD816A1053D69C511AB64 /* CRLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLoadingCell.m; sourceTree = "<group>"; };
 		82CDD984FEC0366CD7C06BCF /* CREntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CREntities.h; sourceTree = "<group>"; };
 		82CDD99DB9FB2C2D249CBD57 /* CRTimeLineSpreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineSpreadCell.h; sourceTree = "<group>"; };
 		82CDD9E141C015FEAC25C43C /* CRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUser.h; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		82CDDF31E57138AAC5C0E7CE /* CRTimeLineService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineService.m; sourceTree = "<group>"; };
 		8967A8F01A52F25000FDB716 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
 		89A914971A5950A400353993 /* TimeLineSpreadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineSpreadCell.xib; sourceTree = "<group>"; };
+		89A914991A59BD8A00353993 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		89DE9E1D1A4A558800654D3E /* CRAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAPIRequest.h; sourceTree = "<group>"; };
 		89DE9E1E1A4A558800654D3E /* CRAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRAPIRequest.m; sourceTree = "<group>"; };
 		89DE9E1F1A4A558800654D3E /* CRFavoritesCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFavoritesCreate.h; sourceTree = "<group>"; };
@@ -236,6 +241,9 @@
 				89A914971A5950A400353993 /* TimeLineSpreadCell.xib */,
 				82CDD4BA60D8B7B26D04B4BF /* CRTimeLineSpreadCell.m */,
 				82CDD99DB9FB2C2D249CBD57 /* CRTimeLineSpreadCell.h */,
+				89A914991A59BD8A00353993 /* LoadingCell.xib */,
+				82CDD816A1053D69C511AB64 /* CRLoadingCell.m */,
+				82CDD2E5D4AA55BCD1C5E6F6 /* CRLoadingCell.h */,
 			);
 			path = TimeLine;
 			sourceTree = "<group>";
@@ -489,6 +497,7 @@
 				8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */,
 				89FA16681A47B53B00271FBB /* Images.xcassets in Resources */,
 				82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */,
+				89A9149A1A59BD8A00353993 /* LoadingCell.xib in Resources */,
 				89A914981A5950A400353993 /* TimeLineSpreadCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,6 +588,7 @@
 				82CDD0483619FDB1FD7E2CBD /* CREntities.m in Sources */,
 				82CDDEEA5BC66F3E6D524E81 /* CRUser.m in Sources */,
 				82CDD12A370487EA463E0169 /* CRTimeLineSpreadCell.m in Sources */,
+				82CDD321CA4F11515B5D7DF1 /* CRLoadingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

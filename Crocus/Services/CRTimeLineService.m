@@ -26,6 +26,28 @@
 
 @implementation CRTimeLineService {
     CRPublicTimeLine *_publicTimeLine;
+
+    void (^_loaded)(NSArray *array, BOOL reload);
+}
+
+- (instancetype)initWithObserver:(id)observer loaded:(void (^)(NSArray *array, BOOL reload))loaded {
+    self = [self init];
+    if (self) {
+        self.statuses = @[].mutableCopy;
+        _loaded = loaded;
+        [self addObserver:observer];
+    }
+    return self;
+}
+
+- (instancetype)initWithLoaded:(void (^)(NSArray *array, BOOL))loaded {
+    self = [self init];
+    if (self) {
+        _loaded = loaded;
+        self.statuses = @[].mutableCopy;
+    }
+
+    return self;
 }
 
 - (instancetype)initWithObserver:(id)observer {
@@ -46,7 +68,8 @@
                                                                    if (error == nil) {
                                                                        NSMutableArray *tmpStatusArray = @[].mutableCopy;
                                                                        for (NSDictionary *dictionary in statusArray) {
-                                                                           [tmpStatusArray addObject:[self parseStatus:dictionary]];
+                                                                           CRStatus *status = [self parseStatus:dictionary];
+                                                                           [tmpStatusArray addObject:status];
                                                                        }
                                                                        if (reload) {
                                                                            [weakSelf.statuses addObjectsFromArray:tmpStatusArray];
@@ -54,7 +77,8 @@
                                                                            for (NSUInteger i = 0; tmpStatusArray.count > i; i++) {
                                                                                [weakSelf.statuses insertObject:tmpStatusArray[i] atIndex:i];
                                                                            }
-                                                                       }
+                                                                   }
+                                                                       if (_loaded) _loaded(tmpStatusArray, reload);
                                                                        weakSelf.newerStatuses = statusArray;
                                                                    }
                                                                }];
@@ -138,6 +162,10 @@
     [self addObserver:observer forKeyPath:@"newerStatuses" options:NSKeyValueObservingOptionNew context:nil];
 }
 
+- (void)removeObserver:(id)observer {
+    [self removeObserver:observer forKeyPath:@"newerStatuses"];
+}
+
 - (CRStatus *)status:(NSInteger)index {
     return self.statuses[(NSUInteger) index];
 }
@@ -147,13 +175,20 @@
 }
 
 - (void)update {
+    _publicTimeLine.maxId = nil;
     CRStatus *lastStatus = [self status:0];
     _publicTimeLine.sinceId = lastStatus.idStr;
     [_publicTimeLine load];
 }
 
-- (void)load {
+- (void)historyLoad {
     _publicTimeLine.sinceId = nil;
+    CRStatus *maxStatus = [self status:self.statusCount - 1];
+    _publicTimeLine.maxId = maxStatus.idStr;
+    [_publicTimeLine load];
+}
+
+- (void)load {
     [_publicTimeLine load];
 }
 @end
