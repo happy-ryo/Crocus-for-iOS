@@ -13,25 +13,7 @@
 //  limitations under the License.
 #import <Foundation/Foundation.h>
 
-@class CRStatus;
 
-
-@interface CRTimeLineService : NSObject
-- (instancetype)initWithObserver:(id)observer;
-
-- (instancetype)initWithObserver:(id)observer loaded:(void (^)(NSArray *, BOOL))loaded;
-
-- (instancetype)initWithLoaded:(void (^)(NSArray *, BOOL))loaded;
-
-- (void)removeObserver:(id)observer;
-
-- (CRStatus *)status:(NSInteger)index;
-
-- (NSInteger)statusCount;
-
-- (void)update;
-
-- (void)historyLoad;
-
-- (void)load;
+@interface CRLoadingCell : UITableViewCell
+- (void)startAnimating;
 @end

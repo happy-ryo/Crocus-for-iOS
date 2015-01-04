@@ -81,7 +81,6 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _requestParams = [NSMutableDictionary dictionary];
         _mute = [[CRMute alloc] init];
     }
 
@@ -93,6 +92,7 @@
 }
 
 - (NSDictionary *)requestParams {
+    _requestParams = [NSMutableDictionary dictionary];
     if (_maxId != nil) {
         [_requestParams setValue:_maxId forKey:@"max_id"];
     }

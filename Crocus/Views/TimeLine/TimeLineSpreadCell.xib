@@ -84,7 +84,6 @@
                     <constraint firstItem="POI-HY-4kW" firstAttribute="leading" secondItem="MSr-3H-bjU" secondAttribute="leadingMargin" id="BIx-sL-E3I"/>
                     <constraint firstItem="0Ny-OR-Gpa" firstAttribute="top" secondItem="MSr-3H-bjU" secondAttribute="topMargin" id="Brm-LE-wTU"/>
                     <constraint firstItem="POI-HY-4kW" firstAttribute="bottom" secondItem="MSr-3H-bjU" secondAttribute="bottomMargin" id="Buo-Es-7ZK"/>
-                    <constraint firstItem="cRd-x3-Idh" firstAttribute="top" secondItem="MSr-3H-bjU" secondAttribute="topMargin" constant="2" id="KLM-1g-ltv"/>
                     <constraint firstItem="dmf-xW-vYH" firstAttribute="top" secondItem="MSr-3H-bjU" secondAttribute="topMargin" id="LNX-7B-nxG"/>
                     <constraint firstItem="cRd-x3-Idh" firstAttribute="leading" secondItem="dmf-xW-vYH" secondAttribute="trailing" constant="8" id="SsU-Qc-peA"/>
                     <constraint firstItem="POI-HY-4kW" firstAttribute="top" secondItem="dmf-xW-vYH" secondAttribute="bottom" constant="27" id="X0c-NF-1cs"/>
@@ -94,11 +93,6 @@
                     <constraint firstItem="cRd-x3-Idh" firstAttribute="top" secondItem="MSr-3H-bjU" secondAttribute="topMargin" constant="2" id="quh-gx-LDv"/>
                     <constraint firstItem="0Ny-OR-Gpa" firstAttribute="leading" secondItem="MSr-3H-bjU" secondAttribute="leadingMargin" id="sCY-Q4-tIm"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="KLM-1g-ltv"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="_iconImageView" destination="0Ny-OR-Gpa" id="mX0-CN-GXX"/>
