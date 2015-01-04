@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13AECF7624D6E759944FB383 /* libPods-Crocus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9E387D4E48B7A8C8EC21A6 /* libPods-Crocus.a */; };
+		82CDD0483619FDB1FD7E2CBD /* CREntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDCF4EC24F0CEF41016ED /* CREntities.m */; };
+		82CDD12A370487EA463E0169 /* CRTimeLineSpreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD4BA60D8B7B26D04B4BF /* CRTimeLineSpreadCell.m */; };
+		82CDD195BBC65326778D0134 /* CRStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD1506298447CEBF2CD33 /* CRStatus.m */; };
+		82CDD3C40F45F20FE450929F /* CRTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD022DA7BDE6411E21E68 /* CRTimeLineViewController.m */; };
+		82CDD5429862FC1309951023 /* CRTimeLineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDF31E57138AAC5C0E7CE /* CRTimeLineService.m */; };
+		82CDD9AB91C06F79CC11CD24 /* CRTimeLineBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */; };
+		82CDDB04ABB352A406FA7510 /* CRSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDDF90F60958629323DE3 /* CRSource.m */; };
 		82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82CDD32CE6B0B933816EA019 /* Localizable.strings */; };
+		82CDDEEA5BC66F3E6D524E81 /* CRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */; };
 		8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8967A8F01A52F25000FDB716 /* OAuth.storyboard */; };
+		89A914981A5950A400353993 /* TimeLineSpreadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A914971A5950A400353993 /* TimeLineSpreadCell.xib */; };
 		89DE9E571A4A558800654D3E /* CRAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E1E1A4A558800654D3E /* CRAPIRequest.m */; };
 		89DE9E581A4A558800654D3E /* CRFavoritesCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E201A4A558800654D3E /* CRFavoritesCreate.m */; };
 		89DE9E591A4A558800654D3E /* CRFollowersList.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E221A4A558800654D3E /* CRFollowersList.m */; };
@@ -37,6 +47,7 @@
 		89DE9E701A4A558800654D3E /* NSDictionary+CRURLParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E511A4A558800654D3E /* NSDictionary+CRURLParams.m */; };
 		89DE9E711A4A558800654D3E /* CROAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E541A4A558800654D3E /* CROAuth.m */; };
 		89DE9E721A4A558800654D3E /* CROAuthParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E561A4A558800654D3E /* CROAuthParams.m */; };
+		89F931B31A56CF8E009CD6E9 /* TimeLineBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89F931B21A56CF8E009CD6E9 /* TimeLineBaseCell.xib */; };
 		89FA165D1A47B53B00271FBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FA165C1A47B53B00271FBB /* main.m */; };
 		89FA16601A47B53B00271FBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FA165F1A47B53B00271FBB /* AppDelegate.m */; };
 		89FA16631A47B53B00271FBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FA16621A47B53B00271FBB /* ViewController.m */; };
@@ -57,9 +68,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		139D21D2F31D4DE4E7D7E029 /* Pods-Crocus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crocus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crocus/Pods-Crocus.debug.xcconfig"; sourceTree = "<group>"; };
+		82CDD022DA7BDE6411E21E68 /* CRTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineViewController.m; sourceTree = "<group>"; };
+		82CDD1506298447CEBF2CD33 /* CRStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatus.m; sourceTree = "<group>"; };
+		82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUser.m; sourceTree = "<group>"; };
 		82CDD32CE6B0B933816EA019 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Croudia/API/Localizable.strings; sourceTree = "<group>"; };
+		82CDD4BA60D8B7B26D04B4BF /* CRTimeLineSpreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineSpreadCell.m; sourceTree = "<group>"; };
+		82CDD4CD36FBE54AC0B74FC7 /* CRStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRStatus.h; sourceTree = "<group>"; };
+		82CDD79998B5BA4F1BA4DA11 /* CRTimeLineBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineBaseCell.h; sourceTree = "<group>"; };
 		82CDD7D59DC6E35FAEBD99E3 /* Crocus-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Crocus-PrefixHeader.pch"; sourceTree = "<group>"; };
+		82CDD984FEC0366CD7C06BCF /* CREntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CREntities.h; sourceTree = "<group>"; };
+		82CDD99DB9FB2C2D249CBD57 /* CRTimeLineSpreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineSpreadCell.h; sourceTree = "<group>"; };
+		82CDD9E141C015FEAC25C43C /* CRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUser.h; sourceTree = "<group>"; };
+		82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineBaseCell.m; sourceTree = "<group>"; };
+		82CDDC6A060AC629D1C92F43 /* CRSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRSource.h; sourceTree = "<group>"; };
+		82CDDCF4EC24F0CEF41016ED /* CREntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CREntities.m; sourceTree = "<group>"; };
+		82CDDDF90F60958629323DE3 /* CRSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRSource.m; sourceTree = "<group>"; };
+		82CDDE93A9E23681D030A97C /* CRTimeLineService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineService.h; sourceTree = "<group>"; };
+		82CDDEFA3CA0C5330CB827CD /* CRTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineViewController.h; sourceTree = "<group>"; };
+		82CDDF31E57138AAC5C0E7CE /* CRTimeLineService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineService.m; sourceTree = "<group>"; };
 		8967A8F01A52F25000FDB716 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
+		89A914971A5950A400353993 /* TimeLineSpreadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineSpreadCell.xib; sourceTree = "<group>"; };
 		89DE9E1D1A4A558800654D3E /* CRAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAPIRequest.h; sourceTree = "<group>"; };
 		89DE9E1E1A4A558800654D3E /* CRAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRAPIRequest.m; sourceTree = "<group>"; };
 		89DE9E1F1A4A558800654D3E /* CRFavoritesCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFavoritesCreate.h; sourceTree = "<group>"; };
@@ -116,6 +145,7 @@
 		89DE9E541A4A558800654D3E /* CROAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROAuth.m; sourceTree = "<group>"; };
 		89DE9E551A4A558800654D3E /* CROAuthParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROAuthParams.h; sourceTree = "<group>"; };
 		89DE9E561A4A558800654D3E /* CROAuthParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROAuthParams.m; sourceTree = "<group>"; };
+		89F931B21A56CF8E009CD6E9 /* TimeLineBaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineBaseCell.xib; sourceTree = "<group>"; };
 		89FA16571A47B53B00271FBB /* Crocus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crocus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FA165B1A47B53B00271FBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89FA165C1A47B53B00271FBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -129,6 +159,8 @@
 		89FA16701A47B53B00271FBB /* CrocusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrocusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FA16751A47B53B00271FBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89FA16761A47B53B00271FBB /* CrocusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrocusTests.m; sourceTree = "<group>"; };
+		CE9E387D4E48B7A8C8EC21A6 /* libPods-Crocus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crocus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90AD25C1A39F097F3BAED9B /* Pods-Crocus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crocus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crocus/Pods-Crocus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13AECF7624D6E759944FB383 /* libPods-Crocus.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +182,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		659AA79F3FEDD277C3EF1DFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E387D4E48B7A8C8EC21A6 /* libPods-Crocus.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		82CDD09D464D8BA6B57CC45C /* Croudia */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,18 +202,51 @@
 			path = Croudia;
 			sourceTree = "<group>";
 		};
+		82CDD251F4B4B6ED1F08FC9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				82CDD3D349045ADE8D982A86 /* TimeLine */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		82CDD39D7411AE1533AA29DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82CDD1506298447CEBF2CD33 /* CRStatus.m */,
+				82CDD4CD36FBE54AC0B74FC7 /* CRStatus.h */,
+				82CDDDF90F60958629323DE3 /* CRSource.m */,
+				82CDDC6A060AC629D1C92F43 /* CRSource.h */,
+				82CDDCF4EC24F0CEF41016ED /* CREntities.m */,
+				82CDD984FEC0366CD7C06BCF /* CREntities.h */,
+				82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */,
+				82CDD9E141C015FEAC25C43C /* CRUser.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		82CDD3D349045ADE8D982A86 /* TimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				82CDD022DA7BDE6411E21E68 /* CRTimeLineViewController.m */,
+				82CDDEFA3CA0C5330CB827CD /* CRTimeLineViewController.h */,
+				89F931B21A56CF8E009CD6E9 /* TimeLineBaseCell.xib */,
+				82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */,
+				82CDD79998B5BA4F1BA4DA11 /* CRTimeLineBaseCell.h */,
+				89A914971A5950A400353993 /* TimeLineSpreadCell.xib */,
+				82CDD4BA60D8B7B26D04B4BF /* CRTimeLineSpreadCell.m */,
+				82CDD99DB9FB2C2D249CBD57 /* CRTimeLineSpreadCell.h */,
+			);
+			path = TimeLine;
+			sourceTree = "<group>";
+		};
 		82CDDC5A394FFE688BABB184 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				82CDDF31E57138AAC5C0E7CE /* CRTimeLineService.m */,
+				82CDDE93A9E23681D030A97C /* CRTimeLineService.h */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		82CDDC92E80DC2D560CC241A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		89DE9E1C1A4A558800654D3E /* API */ = {
@@ -257,6 +331,8 @@
 				89FA16591A47B53B00271FBB /* Crocus */,
 				89FA16731A47B53B00271FBB /* CrocusTests */,
 				89FA16581A47B53B00271FBB /* Products */,
+				8D3CDE7E3E2E8C8BC7F1B974 /* Pods */,
+				659AA79F3FEDD277C3EF1DFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -281,8 +357,9 @@
 				89FA16691A47B53B00271FBB /* LaunchScreen.xib */,
 				89FA165A1A47B53B00271FBB /* Supporting Files */,
 				82CDD09D464D8BA6B57CC45C /* Croudia */,
-				82CDDC92E80DC2D560CC241A /* Views */,
 				82CDDC5A394FFE688BABB184 /* Services */,
+				82CDD251F4B4B6ED1F08FC9D /* Views */,
+				82CDD39D7411AE1533AA29DC /* Models */,
 			);
 			path = Crocus;
 			sourceTree = "<group>";
@@ -315,6 +392,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8D3CDE7E3E2E8C8BC7F1B974 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				139D21D2F31D4DE4E7D7E029 /* Pods-Crocus.debug.xcconfig */,
+				D90AD25C1A39F097F3BAED9B /* Pods-Crocus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,9 +408,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89FA167A1A47B53B00271FBB /* Build configuration list for PBXNativeTarget "Crocus" */;
 			buildPhases = (
+				991F12BBDC95DCBC5713D860 /* Check Pods Manifest.lock */,
 				89FA16531A47B53B00271FBB /* Sources */,
 				89FA16541A47B53B00271FBB /* Frameworks */,
 				89FA16551A47B53B00271FBB /* Resources */,
+				5CA6B31F609257D4CB3946EB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -396,10 +484,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				89FA16661A47B53B00271FBB /* Main.storyboard in Resources */,
+				89F931B31A56CF8E009CD6E9 /* TimeLineBaseCell.xib in Resources */,
 				89FA166B1A47B53B00271FBB /* LaunchScreen.xib in Resources */,
 				8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */,
 				89FA16681A47B53B00271FBB /* Images.xcassets in Resources */,
 				82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */,
+				89A914981A5950A400353993 /* TimeLineSpreadCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +501,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5CA6B31F609257D4CB3946EB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crocus/Pods-Crocus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		991F12BBDC95DCBC5713D860 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		89FA16531A47B53B00271FBB /* Sources */ = {
@@ -448,6 +571,14 @@
 				89DE9E721A4A558800654D3E /* CROAuthParams.m in Sources */,
 				89DE9E5B1A4A558800654D3E /* CRFriendshipsDestroy.m in Sources */,
 				89DE9E601A4A558800654D3E /* CRPublicTimeLine.m in Sources */,
+				82CDD3C40F45F20FE450929F /* CRTimeLineViewController.m in Sources */,
+				82CDD9AB91C06F79CC11CD24 /* CRTimeLineBaseCell.m in Sources */,
+				82CDD5429862FC1309951023 /* CRTimeLineService.m in Sources */,
+				82CDD195BBC65326778D0134 /* CRStatus.m in Sources */,
+				82CDDB04ABB352A406FA7510 /* CRSource.m in Sources */,
+				82CDD0483619FDB1FD7E2CBD /* CREntities.m in Sources */,
+				82CDDEEA5BC66F3E6D524E81 /* CRUser.m in Sources */,
+				82CDD12A370487EA463E0169 /* CRTimeLineSpreadCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +698,7 @@
 		};
 		89FA167B1A47B53B00271FBB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 139D21D2F31D4DE4E7D7E029 /* Pods-Crocus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -575,11 +707,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Debug;
 		};
 		89FA167C1A47B53B00271FBB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D90AD25C1A39F097F3BAED9B /* Pods-Crocus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -588,6 +722,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Release;
 		};
