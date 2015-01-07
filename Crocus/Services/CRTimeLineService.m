@@ -22,10 +22,10 @@
 @interface CRTimeLineService ()
 @property(nonatomic, strong) NSMutableArray *statuses;
 @property(nonatomic, strong) NSArray *newerStatuses;
+@property(nonatomic, strong) CRPublicTimeLine *publicTimeLine;
 @end
 
 @implementation CRTimeLineService {
-    CRPublicTimeLine *_publicTimeLine;
 
     void (^_loaded)(NSArray *array, BOOL reload);
 }
@@ -68,17 +68,22 @@
                                                                    if (error == nil) {
                                                                        NSMutableArray *tmpStatusArray = @[].mutableCopy;
                                                                        for (NSDictionary *dictionary in statusArray) {
-                                                                           CRStatus *status = [self parseStatus:dictionary];
+                                                                           CRStatus *status = [weakSelf parseStatus:dictionary];
                                                                            [tmpStatusArray addObject:status];
                                                                        }
-                                                                       if (reload) {
+                                                                       BOOL reloadFlg = weakSelf.publicTimeLine.sinceId == nil || weakSelf.statuses.count == 0;
+                                                                       if (reloadFlg) {
                                                                            [weakSelf.statuses addObjectsFromArray:tmpStatusArray];
                                                                        } else {
-                                                                           for (NSUInteger i = 0; tmpStatusArray.count > i; i++) {
-                                                                               [weakSelf.statuses insertObject:tmpStatusArray[i] atIndex:i];
+                                                                           if (tmpStatusArray.count == 20) {
+                                                                               weakSelf.statuses = tmpStatusArray.mutableCopy;
+                                                                           } else {
+                                                                               for (NSUInteger i = 0; tmpStatusArray.count > i; i++) {
+                                                                                   [weakSelf.statuses insertObject:tmpStatusArray[i] atIndex:i];
+                                                                               }
                                                                            }
-                                                                   }
-                                                                       if (_loaded) _loaded(tmpStatusArray, reload);
+                                                                       }
+                                                                       if (_loaded) _loaded(tmpStatusArray, reloadFlg);
                                                                        weakSelf.newerStatuses = statusArray;
                                                                    }
                                                                }];
@@ -175,20 +180,20 @@
 }
 
 - (void)update {
-    _publicTimeLine.maxId = nil;
+    self.publicTimeLine.maxId = nil;
     CRStatus *lastStatus = [self status:0];
-    _publicTimeLine.sinceId = lastStatus.idStr;
-    [_publicTimeLine load];
+    self.publicTimeLine.sinceId = lastStatus.idStr;
+    [self.publicTimeLine load];
 }
 
 - (void)historyLoad {
-    _publicTimeLine.sinceId = nil;
+    self.publicTimeLine.sinceId = nil;
     CRStatus *maxStatus = [self status:self.statusCount - 1];
-    _publicTimeLine.maxId = maxStatus.idStr;
-    [_publicTimeLine load];
+    self.publicTimeLine.maxId = maxStatus.idStr;
+    [self.publicTimeLine load];
 }
 
 - (void)load {
-    [_publicTimeLine load];
+    [self.publicTimeLine load];
 }
 @end

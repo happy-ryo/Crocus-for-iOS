@@ -18,17 +18,6 @@
 #import "CRLoadingCell.h"
 #import "CROAuth.h"
 
-@implementation UITableView (UITableViewAddition)
-
-- (void)reloadDataAndWait:(void (^)(void))waitBlock {
-    [self reloadData];
-    if (waitBlock) {
-        waitBlock();
-    }
-}
-
-@end
-
 @implementation CRTimeLineViewController {
     CRTimeLineService *_timeLineService;
 }
@@ -42,37 +31,28 @@
             [weakSelf.refreshControl endRefreshing];
             if (b) {
                 if (_timeLineService.statusCount == 20) {
-//                    NSLog(@"fuga");
                     [weakSelf.tableView reloadData];
                 } else {
                     NSMutableArray *indexPaths = @[].mutableCopy;
-                    for (NSUInteger i = 0; array.count > i; i++) {
+                    for (NSUInteger i = (_timeLineService.statusCount - array.count); _timeLineService.statusCount > i; i++) {
                         [indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
                     }
-                    NSArray *visibleRows = weakSelf.tableView.indexPathsForVisibleRows;
-                    NSIndexPath *visibleRowIndexPath = visibleRows[visibleRows.count - 2];
-                    NSLog(@"%i", visibleRowIndexPath.row);
-                    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:visibleRowIndexPath.row + indexPaths.count inSection:0];
-                    NSLog(@"%i", scrollIndexPath.row);
-                    [weakSelf.tableView reloadDataAndWait:^{
-                        if (visibleRowIndexPath.row) {
-                            dispatch_after((dispatch_time_t) 0.3, dispatch_get_main_queue(), ^{
-                                [weakSelf.tableView scrollToRowAtIndexPath:visibleRowIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-
-                            });
-                        }
-                    }];
-
+                    [weakSelf.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
                 }
             } else {
                 [weakSelf.tableView reloadData];
             }
         });
     }];
+
+    self.tableView.estimatedRowHeight = 60;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineBaseCell" bundle:nil] forCellReuseIdentifier:@"baseCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineImageCell" bundle:nil] forCellReuseIdentifier:@"imageCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineSpreadCell" bundle:nil] forCellReuseIdentifier:@"spreadCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineImageSpreadCell" bundle:nil] forCellReuseIdentifier:@"spreadImageCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"LoadingCell" bundle:nil] forCellReuseIdentifier:@"loadingCell"];
+
     CROAuth *auth = [[CROAuth alloc] init];
     if (auth.authorized) {
         [_timeLineService load];
@@ -109,10 +89,18 @@
     }
     CRTimeLineBaseCell *cell;
     CRStatus *status = [_timeLineService status:indexPath.row];
-    if (status.spreadStatus != nil) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"spreadCell"];
+    if (status.isSpreadStatus) {
+        if (status.isExistImageSpread) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"spreadImageCell"];
+        } else {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"spreadCell"];
+        }
     } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"baseCell"];
+        if (status.isExistImage) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
+        } else {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"baseCell"];
+        }
     }
     [cell loadCRStatus:status];
     return cell;
@@ -127,6 +115,29 @@
         [self.refreshControl endRefreshing];
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat cellHeight;
+    if (indexPath.row == _timeLineService.statusCount) {
+        return 60.f;
+    }
+    CRStatus *status = [_timeLineService status:indexPath.row];
+    if (status.isSpreadStatus) {
+        if (status.isExistImageSpread) {
+            cellHeight = 230;
+        } else {
+            cellHeight = 140;
+        }
+    } else {
+        if (status.isExistImage) {
+            cellHeight = 180;
+        } else {
+            cellHeight = 60;
+        }
+    }
+    return cellHeight;
+}
+
 
 - (void)dealloc {
     [_timeLineService removeObserver:self];
