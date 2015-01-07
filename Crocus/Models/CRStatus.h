@@ -37,4 +37,10 @@
 @property(nonatomic, strong) CRUser *user;
 @property(nonatomic) BOOL spread;
 @property(nonatomic, strong) CREntities *entities;
+
+- (BOOL)isExistImageSpread;
+
+- (BOOL)isSpreadStatus;
+
+- (BOOL)isExistImage;
 @end

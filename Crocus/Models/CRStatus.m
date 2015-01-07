@@ -37,4 +37,16 @@
     CRUser *_user;
     CREntities *_entities;
 }
+
+- (BOOL)isExistImageSpread {
+    return _spreadStatus.entities.mediaURL != nil ?: NO;
+}
+
+- (BOOL)isSpreadStatus {
+    return _spreadStatus != nil ?: NO;
+}
+
+- (BOOL)isExistImage {
+    return _entities.mediaURL != nil ?: NO;
+}
 @end

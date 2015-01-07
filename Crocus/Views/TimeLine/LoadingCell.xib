@@ -12,11 +12,15 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AyL-ab-0qm" id="ztE-54-6KV">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jyT-0V-14r">
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jyT-0V-14r">
                         <rect key="frame" x="142" y="3" width="37" height="37"/>
                         <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </activityIndicatorView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerX" secondItem="jyT-0V-14r" secondAttribute="centerX" id="45g-6R-EQM"/>
+                    <constraint firstAttribute="centerY" secondItem="jyT-0V-14r" secondAttribute="centerY" id="ZSG-SS-QR7"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="_activityIndicatorView" destination="jyT-0V-14r" id="2l7-Dm-ONt"/>
