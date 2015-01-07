@@ -32,6 +32,8 @@
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     [_spreadBackgroundView.layer setCornerRadius:4];
+    [_spreadBackgroundView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [_spreadBackgroundView.layer setBorderWidth:0.2f];
 }
 
 

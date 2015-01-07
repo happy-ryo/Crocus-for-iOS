@@ -14,7 +14,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface CRUser : NSObject
+@interface CRUser : NSObject <NSCoding>
 @property(nonatomic, copy) NSString *createdAt;
 @property(nonatomic, copy) NSString *userDescription;
 @property(nonatomic, strong) NSNumber *favoritesCount;
@@ -32,4 +32,8 @@
 @property(nonatomic, copy) NSString *screenName;
 @property(nonatomic, strong) NSNumber *statusesCount;
 @property(nonatomic, copy) NSString *url;
+
+- (id)initWithCoder:(NSCoder *)coder;
+
+- (void)encodeWithCoder:(NSCoder *)coder;
 @end
