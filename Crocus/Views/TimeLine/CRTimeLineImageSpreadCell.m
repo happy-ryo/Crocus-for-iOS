@@ -21,6 +21,12 @@
     IBOutlet UIImageView *_statusImageView;
 }
 
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    [_statusImageView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [_statusImageView.layer setBorderWidth:0.2f];
+}
+
 - (void)loadCRStatus:(CRStatus *)status {
     [super loadCRStatus:status];
     CRStatus *spreadStatus = status.spreadStatus;

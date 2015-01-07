@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <color key="textColor" red="1" green="0.51761386605111448" blue="0.21273243739019942" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>

@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hah-0L-Lyx">
-                                <rect key="frame" x="56" y="30" width="240" height="18"/>
+                                <rect key="frame" x="56" y="30" width="240" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tdq-pv-glH">
-                                <rect key="frame" x="56" y="55" width="240" height="120"/>
+                                <rect key="frame" x="56" y="53" width="240" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="126" id="gc4-pU-Cfc"/>
                                     <constraint firstAttribute="height" constant="120" id="rCo-9d-oeP"/>
@@ -89,7 +89,7 @@
                             <constraint firstItem="Rn0-ca-Er7" firstAttribute="top" secondItem="tl5-6p-ahF" secondAttribute="top" constant="8" id="Lg2-GL-ztm"/>
                             <constraint firstItem="TtB-Ql-zmf" firstAttribute="leading" secondItem="UPD-oU-oEp" secondAttribute="trailing" constant="8" id="PBJ-Nx-RcW"/>
                             <constraint firstAttribute="trailing" secondItem="hah-0L-Lyx" secondAttribute="trailing" constant="8" id="Vbb-CR-VKq"/>
-                            <constraint firstAttribute="bottom" secondItem="tdq-pv-glH" secondAttribute="bottom" constant="4" id="ihy-w7-OVh"/>
+                            <constraint firstAttribute="bottom" secondItem="tdq-pv-glH" secondAttribute="bottom" constant="6" id="ihy-w7-OVh"/>
                             <constraint firstItem="tdq-pv-glH" firstAttribute="top" secondItem="hah-0L-Lyx" secondAttribute="bottom" constant="7" id="oon-q8-zyq"/>
                             <constraint firstItem="hah-0L-Lyx" firstAttribute="leading" secondItem="Rn0-ca-Er7" secondAttribute="trailing" constant="8" id="qXP-tJ-VcZ"/>
                         </constraints>
