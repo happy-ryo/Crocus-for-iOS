@@ -40,7 +40,22 @@
                     [weakSelf.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
                 }
             } else {
-                [weakSelf.tableView reloadData];
+                if (array.count == 20) {
+                    [weakSelf.tableView reloadData];
+                } else {
+                    NSMutableArray *indexPaths = @[].mutableCopy;
+                    for (NSUInteger i = 0; array.count > i; i++) {
+                        [indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+                    }
+                    [UIView setAnimationsEnabled:NO];
+                    [weakSelf.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+                    [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:indexPaths.count inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+                    [UIView setAnimationsEnabled:YES];
+                    dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (NSEC_PER_SEC*1.5));
+                    dispatch_after(start, dispatch_get_main_queue(), ^{
+                        [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+                    });
+                }
             }
         });
     }];
