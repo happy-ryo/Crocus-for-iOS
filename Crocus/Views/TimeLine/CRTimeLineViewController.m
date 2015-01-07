@@ -18,23 +18,25 @@
 #import "CRLoadingCell.h"
 #import "CROAuth.h"
 
-@implementation CRTimeLineViewController {
-    CRTimeLineService *_timeLineService;
-}
+@interface CRTimeLineViewController ()
+@property(nonatomic, strong) CRTimeLineService *timeLineService;
+@end
+
+@implementation CRTimeLineViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     __weak CRTimeLineViewController *weakSelf = self;
 
-    _timeLineService = [[CRTimeLineService alloc] initWithLoaded:^(NSArray *array, BOOL b) {
+    self.timeLineService = [[CRTimeLineService alloc] initWithLoaded:^(NSArray *array, BOOL b) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.refreshControl endRefreshing];
             if (b) {
-                if (_timeLineService.statusCount == 20) {
+                if (weakSelf.timeLineService.statusCount == 20) {
                     [weakSelf.tableView reloadData];
                 } else {
                     NSMutableArray *indexPaths = @[].mutableCopy;
-                    for (NSUInteger i = (_timeLineService.statusCount - array.count); _timeLineService.statusCount > i; i++) {
+                    for (NSUInteger i = (weakSelf.timeLineService.statusCount - array.count); weakSelf.timeLineService.statusCount > i; i++) {
                         [indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
                     }
                     [weakSelf.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
@@ -70,11 +72,11 @@
 
     CROAuth *auth = [[CROAuth alloc] init];
     if (auth.authorized) {
-        [_timeLineService load];
+        [self.timeLineService load];
     } else {
         [auth authorizeWebView:^(BOOL result) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [_timeLineService load];
+                [self.timeLineService load];
             });
         }];
     }
@@ -84,26 +86,26 @@
 }
 
 - (void)refreshTimeLine {
-    [_timeLineService update];
+    [self.timeLineService update];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_timeLineService.statusCount > 0) {
-        return _timeLineService.statusCount + 1;
+    if (self.timeLineService.statusCount > 0) {
+        return self.timeLineService.statusCount + 1;
     } else {
-        return _timeLineService.statusCount;
+        return self.timeLineService.statusCount;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (_timeLineService.statusCount == indexPath.row) {
-        [_timeLineService performSelector:@selector(historyLoad) withObject:nil afterDelay:0.5];
+    if (self.timeLineService.statusCount == indexPath.row) {
+        [self.timeLineService performSelector:@selector(historyLoad) withObject:nil afterDelay:0.5];
         CRLoadingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"loadingCell"];
         [cell startAnimating];
         return cell;
     }
     CRTimeLineBaseCell *cell;
-    CRStatus *status = [_timeLineService status:indexPath.row];
+    CRStatus *status = [self.timeLineService status:indexPath.row];
     if (status.isSpreadStatus) {
         if (status.isExistImageSpread) {
             cell = [tableView dequeueReusableCellWithIdentifier:@"spreadImageCell"];
@@ -133,10 +135,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat cellHeight;
-    if (indexPath.row == _timeLineService.statusCount) {
+    if (indexPath.row == self.timeLineService.statusCount) {
         return 60.f;
     }
-    CRStatus *status = [_timeLineService status:indexPath.row];
+    CRStatus *status = [self.timeLineService status:indexPath.row];
     if (status.isSpreadStatus) {
         if (status.isExistImageSpread) {
             cellHeight = 230;
@@ -155,7 +157,7 @@
 
 
 - (void)dealloc {
-    [_timeLineService removeObserver:self];
+    [self.timeLineService removeObserver:self];
 }
 
 @end
