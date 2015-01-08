@@ -25,15 +25,13 @@
 @property(nonatomic, strong) CRUserInfoService *userInfoService;
 @end
 
-@implementation CRTimeLineViewController{
+@implementation CRTimeLineViewController {
     CRTimeLineController *_timeLineController;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     __weak CRTimeLineViewController *weakSelf = self;
-
-
 
 
     self.tableView.estimatedRowHeight = 60;
@@ -125,7 +123,10 @@
 }
 
 - (void)refreshTimeLine {
-    [self.timeLineService update];
+    NSIndexPath *indexPath = self.tableView.indexPathsForVisibleRows[0];
+    if (indexPath.row == 0) {
+        [self.timeLineService update];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
