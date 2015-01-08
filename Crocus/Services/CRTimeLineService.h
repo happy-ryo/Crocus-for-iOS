@@ -12,11 +12,12 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 #import <Foundation/Foundation.h>
+#import "CRService.h"
 
 @class CRStatus;
 
 
-@interface CRTimeLineService : NSObject
+@interface CRTimeLineService : CRService
 - (instancetype)initWithObserver:(id)observer;
 
 - (instancetype)initWithObserver:(id)observer loaded:(void (^)(NSArray *, BOOL))loaded;
