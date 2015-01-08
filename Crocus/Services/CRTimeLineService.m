@@ -23,6 +23,7 @@
 @end
 
 @implementation CRTimeLineService {
+    dispatch_semaphore_t _semaphore;
 
     void (^_loaded)(NSArray *array, BOOL reload);
 }
@@ -58,6 +59,7 @@
 
 - (instancetype)init {
     self = [super init];
+    _semaphore = dispatch_semaphore_create(1);
     if (self) {
         __weak CRTimeLineService *weakSelf = self;
         _publicTimeLine = [[CRPublicTimeLine alloc] initWithIncludeEntities:YES
@@ -82,6 +84,7 @@
                                                                        }
                                                                        if (_loaded) _loaded(tmpStatusArray, reloadFlg);
                                                                        weakSelf.newerStatuses = statusArray;
+                                                                       dispatch_semaphore_signal(_semaphore);
                                                                    }
                                                                }];
     }
@@ -106,20 +109,32 @@
 }
 
 - (void)update {
-    self.publicTimeLine.maxId = nil;
-    CRStatus *lastStatus = [self status:0];
-    self.publicTimeLine.sinceId = lastStatus.idStr;
-    [self.publicTimeLine load];
+    dispatch_queue_t queueT = dispatch_queue_create("update", NULL);
+    dispatch_async(queueT, ^{
+        dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
+        self.publicTimeLine.maxId = nil;
+        CRStatus *lastStatus = [self status:0];
+        self.publicTimeLine.sinceId = lastStatus.idStr;
+        [self.publicTimeLine load];
+    });
 }
 
 - (void)historyLoad {
-    self.publicTimeLine.sinceId = nil;
-    CRStatus *maxStatus = [self status:self.statusCount - 1];
-    self.publicTimeLine.maxId = maxStatus.idStr;
-    [self.publicTimeLine load];
+    dispatch_queue_t queueT = dispatch_queue_create("historyLoad", NULL);
+    dispatch_async(queueT, ^{
+        dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC));
+        self.publicTimeLine.sinceId = nil;
+        CRStatus *maxStatus = [self status:self.statusCount - 1];
+        self.publicTimeLine.maxId = maxStatus.idStr;
+        [self.publicTimeLine load];
+    });
 }
 
 - (void)load {
-    [self.publicTimeLine load];
+    dispatch_queue_t queueT = dispatch_queue_create("load", NULL);
+    dispatch_async(queueT, ^{
+        dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
+        [self.publicTimeLine load];
+    });
 }
 @end

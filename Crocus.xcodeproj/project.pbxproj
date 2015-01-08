@@ -21,6 +21,7 @@
 		82CDD9AB91C06F79CC11CD24 /* CRTimeLineBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */; };
 		82CDDAC914DF8CA690F8DFF2 /* CRTimeLineImageSpreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD3CC95EFD4E0283CE034 /* CRTimeLineImageSpreadCell.m */; };
 		82CDDB04ABB352A406FA7510 /* CRSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDDF90F60958629323DE3 /* CRSource.m */; };
+		82CDDBCA9B2EC60F6A04C12F /* CRStatusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD3C95B9C9E22F930A06C /* CRStatusService.m */; };
 		82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82CDD32CE6B0B933816EA019 /* Localizable.strings */; };
 		82CDDEB88DD66EED4FCD3DAA /* CRTimeLineImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDDD7C345CBE3A79CE2A8 /* CRTimeLineImageCell.m */; };
 		82CDDEEA5BC66F3E6D524E81 /* CRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */; };
@@ -91,6 +92,7 @@
 		82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUser.m; sourceTree = "<group>"; };
 		82CDD2E5D4AA55BCD1C5E6F6 /* CRLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLoadingCell.h; sourceTree = "<group>"; };
 		82CDD32CE6B0B933816EA019 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Croudia/API/Localizable.strings; sourceTree = "<group>"; };
+		82CDD3C95B9C9E22F930A06C /* CRStatusService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatusService.m; sourceTree = "<group>"; };
 		82CDD3CC95EFD4E0283CE034 /* CRTimeLineImageSpreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineImageSpreadCell.m; sourceTree = "<group>"; };
 		82CDD454E9D2A5A041AC7D23 /* CRTimeLineImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineImageCell.h; sourceTree = "<group>"; };
 		82CDD4BA60D8B7B26D04B4BF /* CRTimeLineSpreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineSpreadCell.m; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		82CDDDD7C345CBE3A79CE2A8 /* CRTimeLineImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineImageCell.m; sourceTree = "<group>"; };
 		82CDDDF90F60958629323DE3 /* CRSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRSource.m; sourceTree = "<group>"; };
 		82CDDE93A9E23681D030A97C /* CRTimeLineService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineService.h; sourceTree = "<group>"; };
+		82CDDEE3198A8FEBE5832891 /* CRStatusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRStatusService.h; sourceTree = "<group>"; };
 		82CDDEFA3CA0C5330CB827CD /* CRTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineViewController.h; sourceTree = "<group>"; };
 		82CDDF0B4983CAD0E016EFD9 /* CRUserInfoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUserInfoService.m; sourceTree = "<group>"; };
 		82CDDF31E57138AAC5C0E7CE /* CRTimeLineService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineService.m; sourceTree = "<group>"; };
@@ -298,6 +301,8 @@
 				82CDD1957C496D9F167794BA /* CRUserInfoService.h */,
 				82CDD700E7B1287349779C91 /* CRService.m */,
 				82CDD1B7E4B051D66EA2B358 /* CRService.h */,
+				82CDD3C95B9C9E22F930A06C /* CRStatusService.m */,
+				82CDDEE3198A8FEBE5832891 /* CRStatusService.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -645,6 +650,7 @@
 				82CDD5CFF2DF56EAB66D9626 /* CRService.m in Sources */,
 				82CDD37B0E0B17915E8D6710 /* CRTimeLineController.m in Sources */,
 				82CDD579251223889B8212E4 /* CRTimeLineBaseViewController.m in Sources */,
+				82CDDBCA9B2EC60F6A04C12F /* CRStatusService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
