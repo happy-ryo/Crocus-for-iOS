@@ -17,21 +17,79 @@
 #import "CRStatus.h"
 #import "CRLoadingCell.h"
 #import "CROAuth.h"
+#import "CRUserInfoService.h"
+#import "CRTimeLineController.h"
 
 @interface CRTimeLineViewController ()
 @property(nonatomic, strong) CRTimeLineService *timeLineService;
+@property(nonatomic, strong) CRUserInfoService *userInfoService;
 @end
 
-@implementation CRTimeLineViewController
+@implementation CRTimeLineViewController{
+    CRTimeLineController *_timeLineController;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     __weak CRTimeLineViewController *weakSelf = self;
 
+
+
+
+    self.tableView.estimatedRowHeight = 60;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineBaseCell" bundle:nil] forCellReuseIdentifier:@"baseCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineImageCell" bundle:nil] forCellReuseIdentifier:@"imageCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineReplyBaseCell" bundle:nil] forCellReuseIdentifier:@"replyBaseCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineReplyImageCell" bundle:nil] forCellReuseIdentifier:@"replyImageCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineSpreadCell" bundle:nil] forCellReuseIdentifier:@"spreadCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineImageSpreadCell" bundle:nil] forCellReuseIdentifier:@"spreadImageCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"LoadingCell" bundle:nil] forCellReuseIdentifier:@"loadingCell"];
+
+    CROAuth *auth = [[CROAuth alloc] init];
+    if (auth.authorized) {
+        [self createTimeLineService];
+        [self.timeLineService load];
+    } else {
+        [auth authorizeWebView:^(BOOL result) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf createTimeLineService];
+                [weakSelf.timeLineService load];
+            });
+        }];
+    }
+
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshTimeLine) forControlEvents:UIControlEventValueChanged];
+    [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(refreshTimeLine) userInfo:nil repeats:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.userInfoService = [[CRUserInfoService alloc] init];
+    [self.userInfoService loadUserInfo];
+
+    _timeLineController = [CRTimeLineController view];
+
+    _timeLineController.tableView = self.tableView;
+
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    UIView *baseView = _timeLineController.baseView;
+    baseView.frame = CGRectMake(rect.size.width - 70, rect.size.height - 70, 60, 60);
+
+
+    [self.navigationController.view addSubview:baseView];
+}
+
+
+- (void)createTimeLineService {
+    __weak CRTimeLineViewController *weakSelf = self;
     self.timeLineService = [[CRTimeLineService alloc] initWithLoaded:^(NSArray *array, BOOL b) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.refreshControl endRefreshing];
-            if (b) {
+            if (array.count == 0) {
+                return;
+            } else if (b) {
                 if (weakSelf.timeLineService.statusCount == 20) {
                     [weakSelf.tableView reloadData];
                 } else {
@@ -51,38 +109,19 @@
                     }
                     [UIView setAnimationsEnabled:NO];
                     [weakSelf.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
-                    [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:indexPaths.count inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-                    [UIView setAnimationsEnabled:YES];
-                    dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (NSEC_PER_SEC*1.5));
-                    dispatch_after(start, dispatch_get_main_queue(), ^{
-                        [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
-                    });
+                    NSIndexPath *indexPath = weakSelf.tableView.indexPathsForVisibleRows[0];
+                    if (indexPath.row < array.count + 3) {
+                        [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:indexPaths.count inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+                        [UIView setAnimationsEnabled:YES];
+                        dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (NSEC_PER_SEC * 1.7));
+                        dispatch_after(start, dispatch_get_main_queue(), ^{
+                            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+                        });
+                    }
                 }
             }
         });
     }];
-
-    self.tableView.estimatedRowHeight = 60;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineBaseCell" bundle:nil] forCellReuseIdentifier:@"baseCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineImageCell" bundle:nil] forCellReuseIdentifier:@"imageCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineSpreadCell" bundle:nil] forCellReuseIdentifier:@"spreadCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineImageSpreadCell" bundle:nil] forCellReuseIdentifier:@"spreadImageCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"LoadingCell" bundle:nil] forCellReuseIdentifier:@"loadingCell"];
-
-    CROAuth *auth = [[CROAuth alloc] init];
-    if (auth.authorized) {
-        [self.timeLineService load];
-    } else {
-        [auth authorizeWebView:^(BOOL result) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.timeLineService load];
-            });
-        }];
-    }
-
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(refreshTimeLine) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)refreshTimeLine {
@@ -111,6 +150,12 @@
             cell = [tableView dequeueReusableCellWithIdentifier:@"spreadImageCell"];
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:@"spreadCell"];
+        }
+    } else if ([self.userInfoService replyCheck:status]) {
+        if (status.isExistImage) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"replyImageCell"];
+        } else {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"replyBaseCell"];
         }
     } else {
         if (status.isExistImage) {

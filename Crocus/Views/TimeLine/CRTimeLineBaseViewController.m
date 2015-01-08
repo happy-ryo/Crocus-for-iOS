@@ -1,0 +1,43 @@
+/*
+ * Copyright (C) 2015 happy_ryo
+ *      https://twitter.com/happy_ryo
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#import "CRTimeLineBaseViewController.h"
+#import "CRTimeLineController.h"
+#import "CRTimeLineViewController.h"
+
+
+@implementation CRTimeLineBaseViewController {
+    CRTimeLineController *_timeLineController;
+    IBOutlet UIView *_backgroundView;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    _timeLineController = [CRTimeLineController view];
+
+    CRTimeLineViewController *timeLineViewController = self.childViewControllers[0];
+    _timeLineController.tableView = timeLineViewController.tableView;
+
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    UIView *baseView = _timeLineController.baseView;
+    baseView.frame = CGRectMake(100, 100, 44, 44);
+
+//    [self.view insertSubview:baseView aboveSubview:timeLineViewController.view];
+    [_backgroundView addSubview:baseView];
+}
+
+@end
