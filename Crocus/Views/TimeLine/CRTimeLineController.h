@@ -25,6 +25,8 @@
 
 - (instancetype)initWithTableView:(UITableView *)tableView;
 
+- (void)install:(UIView *)baseView targetTableView:(UITableView *)uiTableView;
+
 + (instancetype)controllerWithTableView:(UITableView *)tableView;
 
 + (instancetype)view;
