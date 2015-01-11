@@ -16,6 +16,7 @@
  */
 
 #import "CRTimeLineController.h"
+#import "CRStatusUpdateViewController.h"
 
 @implementation UITableView (ScrollableToBottom)
 
@@ -70,7 +71,20 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    NSArray *array = @[_postButton, _rewindButton, _fastForwardButton, _controllerButton];
+    for (UIButton *button in array) {
+        [button.layer setCornerRadius:button.frame.size.width / 2];
+    }
+}
 
+- (void)install:(UIView *)baseView targetTableView:(UITableView *)uiTableView {
+    self.tableView = uiTableView;
+    NSArray *array = @[_postButton, _rewindButton, _fastForwardButton, _controllerButton];
+    CGPoint installPoint = CGPointMake(baseView.frame.size.width - 80, baseView.frame.size.height - 80);
+    for (UIButton *button in array) {
+        button.frame = CGRectMake(installPoint.x, installPoint.y, button.frame.size.width, button.frame.size.height);
+        [baseView addSubview:button];
+    }
 }
 
 + (instancetype)view {
@@ -80,16 +94,10 @@
 - (IBAction)modeChange {
     if (_isOpened) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [UIView animateWithDuration:0.5 animations:^{
-                _baseView.frame = CGRectMake(_baseView.frame.origin.x, _baseView.frame.origin.y + 200, 60, 60);
-                CGRect baseRect = CGRectMake(0, 0, 60, 60);
-                _controllerButton.frame = baseRect;
-                _postButton.frame = baseRect;
-                _fastForwardButton.frame = baseRect;
-                _rewindButton.frame = baseRect;
-//                _postButton.transform = CGAffineTransformIdentity;
-//                _rewindButton.transform = CGAffineTransformIdentity;
-//                _fastForwardButton.transform = CGAffineTransformIdentity;
+            [UIView animateWithDuration:0.3 animations:^{
+                _postButton.transform = CGAffineTransformIdentity;
+                _rewindButton.transform = CGAffineTransformIdentity;
+                _fastForwardButton.transform = CGAffineTransformIdentity;
             }                completion:^(BOOL finished) {
                 if (finished) {
                     _isOpened = NO;
@@ -98,16 +106,11 @@
         });
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{
-            CGFloat baseHeight = -50;
-            [UIView animateWithDuration:0.5 animations:^{
-                _baseView.frame = CGRectMake(_baseView.frame.origin.x, _baseView.frame.origin.y - 200, 60, 260);
-                _controllerButton.frame = CGRectMake(0, 265-60, 60, 60);
-                _postButton.frame = CGRectMake(0, 265 - 125, 60, 60);
-                _rewindButton.frame = CGRectMake(0, 265 - 190, 60, 60);
-                _fastForwardButton.frame = CGRectMake(0, 265 - 255, 60, 60);
-//                _postButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 3);
-//                _rewindButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 2);
-//                _fastForwardButton.transform = CGAffineTransformMakeTranslation(0, baseHeight);
+            CGFloat baseHeight = -65;
+            [UIView animateWithDuration:0.3 animations:^{
+                _postButton.transform = CGAffineTransformMakeTranslation(0, baseHeight);
+                _rewindButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 2);
+                _fastForwardButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 3);
             }                completion:^(BOOL finished) {
                 if (finished) {
                     _isOpened = YES;
@@ -118,7 +121,20 @@
 }
 
 - (IBAction)statusUpdate {
-
+    __weak CRTimeLineController *weakSelf = self;
+    if (_isOpened) {
+        [self modeChange];
+    }
+    [CRStatusUpdateViewController show:^(BOOL reload) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (reload) {
+                [weakSelf.tableView reloadData];
+            }
+            if (!_isOpened) {
+                [weakSelf modeChange];
+            }
+        });
+    }];
 }
 
 - (IBAction)fastForward {

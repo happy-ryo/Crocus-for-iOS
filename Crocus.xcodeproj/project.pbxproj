@@ -21,6 +21,7 @@
 		82CDD9AB91C06F79CC11CD24 /* CRTimeLineBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */; };
 		82CDDAC914DF8CA690F8DFF2 /* CRTimeLineImageSpreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD3CC95EFD4E0283CE034 /* CRTimeLineImageSpreadCell.m */; };
 		82CDDB04ABB352A406FA7510 /* CRSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDDF90F60958629323DE3 /* CRSource.m */; };
+		82CDDB152A0F74F093191B07 /* CRStatusUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD6DAA6BD17FB6E03E254 /* CRStatusUpdateViewController.m */; };
 		82CDDBCA9B2EC60F6A04C12F /* CRStatusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD3C95B9C9E22F930A06C /* CRStatusService.m */; };
 		82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82CDD32CE6B0B933816EA019 /* Localizable.strings */; };
 		82CDDEB88DD66EED4FCD3DAA /* CRTimeLineImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDDD7C345CBE3A79CE2A8 /* CRTimeLineImageCell.m */; };
@@ -30,6 +31,7 @@
 		89A9149A1A59BD8A00353993 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A914991A59BD8A00353993 /* LoadingCell.xib */; };
 		89A9149C1A5D792600353993 /* TimeLineImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A9149B1A5D792600353993 /* TimeLineImageCell.xib */; };
 		89A9149E1A5D825F00353993 /* TimeLineImageSpreadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A9149D1A5D825F00353993 /* TimeLineImageSpreadCell.xib */; };
+		89A914A01A62B90400353993 /* StatusUpdateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A9149F1A62B90400353993 /* StatusUpdateView.xib */; };
 		89CC2AD31A5E50C900D1B266 /* TimeLineReplyBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CC2AD21A5E50C900D1B266 /* TimeLineReplyBaseCell.xib */; };
 		89CC2AD51A5E520E00D1B266 /* TimeLineReplyImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CC2AD41A5E520E00D1B266 /* TimeLineReplyImageCell.xib */; };
 		89CC2AD71A5E767C00D1B266 /* TimeLineController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CC2AD61A5E767C00D1B266 /* TimeLineController.xib */; };
@@ -86,6 +88,7 @@
 		82CDD022DA7BDE6411E21E68 /* CRTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineViewController.m; sourceTree = "<group>"; };
 		82CDD05A7E671C8269F7DACD /* CRTimeLineBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineBaseViewController.m; sourceTree = "<group>"; };
 		82CDD1161E0D2573A6C031DF /* CRTimeLineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineController.h; sourceTree = "<group>"; };
+		82CDD12EC63D99BBE169885B /* CRStatusUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRStatusUpdateViewController.h; sourceTree = "<group>"; };
 		82CDD1506298447CEBF2CD33 /* CRStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatus.m; sourceTree = "<group>"; };
 		82CDD1957C496D9F167794BA /* CRUserInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUserInfoService.h; sourceTree = "<group>"; };
 		82CDD1B7E4B051D66EA2B358 /* CRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRService.h; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 		82CDD4BA60D8B7B26D04B4BF /* CRTimeLineSpreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineSpreadCell.m; sourceTree = "<group>"; };
 		82CDD4CD36FBE54AC0B74FC7 /* CRStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRStatus.h; sourceTree = "<group>"; };
 		82CDD65CBC3D0FA65FD7FB23 /* CRTimeLineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineController.m; sourceTree = "<group>"; };
+		82CDD6DAA6BD17FB6E03E254 /* CRStatusUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatusUpdateViewController.m; sourceTree = "<group>"; };
 		82CDD700E7B1287349779C91 /* CRService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRService.m; sourceTree = "<group>"; };
 		82CDD79998B5BA4F1BA4DA11 /* CRTimeLineBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineBaseCell.h; sourceTree = "<group>"; };
 		82CDD7D59DC6E35FAEBD99E3 /* Crocus-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Crocus-PrefixHeader.pch"; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		89A914991A59BD8A00353993 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		89A9149B1A5D792600353993 /* TimeLineImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineImageCell.xib; sourceTree = "<group>"; };
 		89A9149D1A5D825F00353993 /* TimeLineImageSpreadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineImageSpreadCell.xib; sourceTree = "<group>"; };
+		89A9149F1A62B90400353993 /* StatusUpdateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusUpdateView.xib; sourceTree = "<group>"; };
 		89CC2AD21A5E50C900D1B266 /* TimeLineReplyBaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineReplyBaseCell.xib; sourceTree = "<group>"; };
 		89CC2AD41A5E520E00D1B266 /* TimeLineReplyImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineReplyImageCell.xib; sourceTree = "<group>"; };
 		89CC2AD61A5E767C00D1B266 /* TimeLineController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineController.xib; sourceTree = "<group>"; };
@@ -288,6 +293,9 @@
 				89CC2AD61A5E767C00D1B266 /* TimeLineController.xib */,
 				82CDD05A7E671C8269F7DACD /* CRTimeLineBaseViewController.m */,
 				82CDDFAA2AC71717678A7AEF /* CRTimeLineBaseViewController.h */,
+				89A9149F1A62B90400353993 /* StatusUpdateView.xib */,
+				82CDD6DAA6BD17FB6E03E254 /* CRStatusUpdateViewController.m */,
+				82CDD12EC63D99BBE169885B /* CRStatusUpdateViewController.h */,
 			);
 			path = TimeLine;
 			sourceTree = "<group>";
@@ -552,6 +560,7 @@
 				89FA16681A47B53B00271FBB /* Images.xcassets in Resources */,
 				82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */,
 				89CC2AD51A5E520E00D1B266 /* TimeLineReplyImageCell.xib in Resources */,
+				89A914A01A62B90400353993 /* StatusUpdateView.xib in Resources */,
 				89A9149A1A59BD8A00353993 /* LoadingCell.xib in Resources */,
 				89A914981A5950A400353993 /* TimeLineSpreadCell.xib in Resources */,
 			);
@@ -651,6 +660,7 @@
 				82CDD37B0E0B17915E8D6710 /* CRTimeLineController.m in Sources */,
 				82CDD579251223889B8212E4 /* CRTimeLineBaseViewController.m in Sources */,
 				82CDDBCA9B2EC60F6A04C12F /* CRStatusService.m in Sources */,
+				82CDDB152A0F74F093191B07 /* CRStatusUpdateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

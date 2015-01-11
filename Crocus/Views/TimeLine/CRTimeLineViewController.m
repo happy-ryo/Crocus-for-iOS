@@ -68,15 +68,7 @@
     [self.userInfoService loadUserInfo];
 
     _timeLineController = [CRTimeLineController view];
-
-    _timeLineController.tableView = self.tableView;
-
-    CGRect rect = [[UIScreen mainScreen] bounds];
-    UIView *baseView = _timeLineController.baseView;
-    baseView.frame = CGRectMake(rect.size.width - 70, rect.size.height - 70, 60, 60);
-
-
-    [self.navigationController.view addSubview:baseView];
+    [_timeLineController install:self.navigationController.view targetTableView:self.tableView];
 }
 
 

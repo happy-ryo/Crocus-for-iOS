@@ -14,10 +14,12 @@
 #import "CRStatusService.h"
 #import "CRStatus.h"
 #import "CRSpread.h"
+#import "CRUpdate.h"
 
 
 @implementation CRStatusService {
     CRStatus *_status;
+
 }
 
 - (instancetype)initWithStatus:(CRStatus *)status {
@@ -29,9 +31,32 @@
     return self;
 }
 
+- (void)post:(NSString *)message callback:(void (^)(BOOL status, NSError *error))callBack {
+    if (message.length == 0) {
+        callBack(NO, [NSError errorWithDomain:@"crocus" code:500 userInfo:@{@"message" : @"投稿文が空です"}]);
+    } else {
+        CRUpdate *update = [[CRUpdate alloc] initWithStatus:message updateFinished:^(NSDictionary *dictionary, NSError *error) {
+            if (error == nil) {
+                callBack(YES, nil);
+            } else {
+                callBack(NO, error);
+            }
+        }];
+        [update load];
+    }
+}
+
 - (void)spread {
-    [[CRSpread alloc] initWithShowId:_status.idStr loadFinished:^(NSDictionary *statusDic, NSError *error) {
-        
+    CRSpread *spread = [[CRSpread alloc] initWithShowId:_status.idStr loadFinished:^(NSDictionary *statusDic, NSError *error) {
+
     }];
+    [spread load];
+}
+
+- (void)reply {
+    CRUpdate *crUpdate = [[CRUpdate alloc] initWithStatus:@"hoge" updateFinished:^(NSDictionary *dictionary, NSError *error) {
+
+    }];
+    [crUpdate load];
 }
 @end

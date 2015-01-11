@@ -12,15 +12,15 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 #import <Foundation/Foundation.h>
-#import "CRService.h"
-
-@class CRStatus;
 
 
-@interface CRStatusService : CRService
-- (instancetype)initWithStatus:(CRStatus *)status;
+@interface CRStatusUpdateViewController : UIViewController <UITextViewDelegate>
+@property(nonatomic, strong) UITextView *textView;
+@property(nonatomic, copy) void (^callBack)(BOOL);
 
-- (void)post:(NSString *)message callback:(void (^)(BOOL status, NSError *error))callBack;
+@property(nonatomic, strong) UIBarButtonItem *statusCountBarButtonItem;
 
-- (void)reply;
++ (void)show:(void (^)(BOOL reload))callBack;
+
+- (void)close:(BOOL)reload;
 @end
