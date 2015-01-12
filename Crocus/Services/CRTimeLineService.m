@@ -108,8 +108,13 @@
     return self.statuses.count;
 }
 
+- (char const *)queueName:(NSString *)message {
+    NSString *name = [NSString stringWithFormat:@"%@%@", self.class, message];
+    return name.UTF8String;
+}
+
 - (void)update {
-    dispatch_queue_t queueT = dispatch_queue_create("update", NULL);
+    dispatch_queue_t queueT = dispatch_queue_create([self queueName:@"update"], NULL);
     dispatch_async(queueT, ^{
         dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
         self.publicTimeLine.maxId = nil;

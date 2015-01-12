@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CRStatusUpdateViewController">
+            <connections>
+                <outlet property="_inputAccessory" destination="y2N-bb-kGs" id="AHF-Te-cST"/>
+                <outlet property="_postImageView" destination="I4V-VK-GDq" id="EHA-hU-VLC"/>
+                <outlet property="_statusCountBarButtonItem" destination="3BZ-2h-9t0" id="kli-ka-vKn"/>
+                <outlet property="_textBackGroundView" destination="a2k-ex-SBt" id="fHQ-RY-w78"/>
+                <outlet property="_textView" destination="sJn-Ah-q6O" id="Gaf-hX-Hno"/>
+                <outlet property="view" destination="4YT-ek-cPW" id="Ukg-7b-GeJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="OOg-wL-yJJ">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y2N-bb-kGs">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <items>
+                        <barButtonItem image="cancel" id="dDL-DG-Mwh">
+                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="close" destination="-1" id="KAm-2t-UmZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Ul6-4D-BKF"/>
+                        <barButtonItem image="camera" id="gc5-lP-2kp">
+                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cameraOpen" destination="-1" id="ORx-tQ-FOx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="56F-xJ-rVh"/>
+                        <barButtonItem image="library" id="q8q-8b-To7">
+                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="libraryOpen" destination="-1" id="ZBg-4S-1zO"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Vs1-pd-Htl"/>
+                        <barButtonItem image="post" id="Ngr-B9-teV">
+                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="post" destination="-1" id="n2z-GG-7q6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="NNU-0J-9hG"/>
+                        <barButtonItem title="372" id="3BZ-2h-9t0">
+                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </items>
+                    <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="1019" y="604"/>
+        </view>
+        <view contentMode="scaleToFill" id="4YT-ek-cPW">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2k-ex-SBt">
+                    <rect key="frame" x="15" y="45" width="570" height="140"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJn-Ah-q6O">
+                            <rect key="frame" x="10" y="10" width="550" height="120"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="Ah4-qH-cBj"/>
+                            </constraints>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="sJn-Ah-q6O" secondAttribute="trailing" constant="10" id="HPg-7q-Cw8"/>
+                        <constraint firstAttribute="height" constant="140" id="OJh-ZR-wnj"/>
+                        <constraint firstItem="sJn-Ah-q6O" firstAttribute="top" secondItem="a2k-ex-SBt" secondAttribute="top" constant="10" id="SWC-b9-yUZ"/>
+                        <constraint firstAttribute="bottom" secondItem="sJn-Ah-q6O" secondAttribute="bottom" constant="10" id="gVW-lL-YyQ"/>
+                        <constraint firstItem="sJn-Ah-q6O" firstAttribute="leading" secondItem="a2k-ex-SBt" secondAttribute="leading" constant="10" id="iXG-XH-N8f"/>
+                    </constraints>
+                </view>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I4V-VK-GDq">
+                    <rect key="frame" x="475" y="75" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="3n9-Xb-A97"/>
+                        <constraint firstAttribute="width" constant="100" id="d5r-Yj-k0k"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="I4V-VK-GDq" firstAttribute="top" secondItem="4YT-ek-cPW" secondAttribute="top" constant="75" id="4tV-07-3ry"/>
+                <constraint firstAttribute="trailing" secondItem="I4V-VK-GDq" secondAttribute="trailing" constant="25" id="KEE-rs-vYR"/>
+                <constraint firstItem="a2k-ex-SBt" firstAttribute="leading" secondItem="4YT-ek-cPW" secondAttribute="leading" constant="15" id="Q4s-cX-0Hb"/>
+                <constraint firstItem="a2k-ex-SBt" firstAttribute="top" secondItem="4YT-ek-cPW" secondAttribute="top" constant="45" id="ikH-1K-8nI"/>
+                <constraint firstAttribute="trailing" secondItem="a2k-ex-SBt" secondAttribute="trailing" constant="15" id="yaD-8Z-7lt"/>
+            </constraints>
+            <point key="canvasLocation" x="360" y="604"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="camera" width="29" height="28"/>
+        <image name="cancel" width="28" height="28"/>
+        <image name="library" width="27" height="27"/>
+        <image name="post" width="28" height="28"/>
+    </resources>
+</document>

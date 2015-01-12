@@ -14,11 +14,13 @@
 #import <Foundation/Foundation.h>
 
 
-@interface CRStatusUpdateViewController : UIViewController <UITextViewDelegate>
+@interface CRStatusUpdateViewController : UIViewController <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property(nonatomic, strong) UITextView *textView;
 @property(nonatomic, copy) void (^callBack)(BOOL);
 
 @property(nonatomic, strong) UIBarButtonItem *statusCountBarButtonItem;
+
+@property(nonatomic, strong) UIImageView *postImageView;
 
 + (void)show:(void (^)(BOOL reload))callBack;
 
