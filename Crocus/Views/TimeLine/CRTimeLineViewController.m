@@ -64,6 +64,8 @@
 
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshTimeLine) forControlEvents:UIControlEventValueChanged];
+    _timeLineController = [CRTimeLineController view];
+    [_timeLineController install:self.navigationController.view targetTableView:self.tableView];
 }
 
 - (void)timerFire {
@@ -93,8 +95,6 @@
     self.userInfoService = [[CRUserInfoService alloc] init];
     [self.userInfoService loadUserInfo];
 
-    _timeLineController = [CRTimeLineController view];
-    [_timeLineController install:self.navigationController.view targetTableView:self.tableView];
 }
 
 
