@@ -13,7 +13,7 @@
 //  limitations under the License.
 
 
-#import "UIImage+rotation.h"
+#import "CRUIImage+rotation.h"
 
 
 @implementation UIImage (rotation)

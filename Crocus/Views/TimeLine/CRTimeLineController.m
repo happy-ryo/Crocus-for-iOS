@@ -121,7 +121,7 @@
     if (_isOpened) {
         [self modeChange];
     }
-    [CRStatusUpdateViewController show:^(BOOL reload) {
+    [CRStatusUpdateViewController showStatus:nil callBack:^(BOOL reload) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (reload) {
                 [weakSelf.tableView reloadData];

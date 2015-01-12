@@ -14,7 +14,9 @@
 #import <objc/runtime.h>
 #import "CRStatusUpdateViewController.h"
 #import "CRStatusService.h"
-#import "UIImage+rotation.h"
+#import "CRUIImage+rotation.h"
+#import "CRStatus.h"
+#import "CRUser.h"
 
 static const char kStatusUpdateWindow;
 
@@ -25,6 +27,7 @@ static const char kStatusUpdateWindow;
     IBOutlet UIView *_inputAccessory;
     IBOutlet UIBarButtonItem *_statusCountBarButtonItem;
     CRStatusService *_statusService;
+    CRStatus *_status;
 
     void (^_callBack)(BOOL reload);
 }
@@ -33,7 +36,7 @@ static const char kStatusUpdateWindow;
     [super viewDidLoad];
     _textView.inputAccessoryView = _inputAccessory;
     _textView.delegate = self;
-    _statusService = [[CRStatusService alloc] init];
+    _statusService = [[CRStatusService alloc] initWithStatus:_status callback:nil];
     [_textBackGroundView.layer setCornerRadius:5];
 }
 
@@ -42,16 +45,26 @@ static const char kStatusUpdateWindow;
     _textView.becomeFirstResponder;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self textCounter:_textView];
+}
+
+
 - (IBAction)post {
     __weak CRStatusUpdateViewController *weakSelf = self;
+    NSString *attach = _status == nil ? @"" : [NSString stringWithFormat:@"@%@ ", _status.user.screenName];
 
-    [_statusService postWithMedia:_textView.text image:_postImageView.image callback:^(BOOL status, NSError *error) {
+    [_statusService postWithMedia:[NSString stringWithFormat:@"%@%@", attach, _textView.text] image:_postImageView.image callback:^(BOOL status, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error == nil) {
                 weakSelf.textView.text = @"";
-                weakSelf.statusCountBarButtonItem.title = @"372";
+                [weakSelf textCounter:weakSelf.textView];
                 weakSelf.postImageView.image = nil;
                 weakSelf.postImageView.hidden = YES;
+                if (weakSelf.status != nil) {
+                    [weakSelf close];
+                }
             } else {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Crocus"
                                                                     message:@"投稿に失敗しました"
@@ -70,11 +83,16 @@ static const char kStatusUpdateWindow;
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
+    [self textCounter:textView];
+}
+
+- (void)textCounter:(UITextView *)textView {
     NSInteger messageLength = textView.text.length;
+    NSInteger screenNameLength = _status == nil ? 0 : _status.user.screenName.length;
     if (messageLength != 0) {
-        _statusCountBarButtonItem.title = @(372 - messageLength).stringValue;
+        _statusCountBarButtonItem.title = @(372 - messageLength - screenNameLength).stringValue;
     } else {
-        _statusCountBarButtonItem.title = @"372";
+        _statusCountBarButtonItem.title = @(372 - screenNameLength).stringValue;
     }
 }
 
@@ -96,7 +114,7 @@ static const char kStatusUpdateWindow;
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
-+ (void)show:(void (^)(BOOL reload))callBack {
++ (void)showStatus:(CRStatus *)status callBack:(void (^)(BOOL reload))callBack {
     CGRect rect = [UIScreen mainScreen].bounds;
     UIWindow *window = [[UIWindow alloc] initWithFrame:rect];
     window.alpha = 0;
@@ -114,6 +132,7 @@ static const char kStatusUpdateWindow;
 
     CRStatusUpdateViewController *statusUpdateViewController = (CRStatusUpdateViewController *) window.rootViewController;
     statusUpdateViewController.callBack = callBack;
+    statusUpdateViewController.status = status;
 
     objc_setAssociatedObject([UIApplication sharedApplication], &kStatusUpdateWindow, window, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 

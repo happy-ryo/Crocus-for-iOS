@@ -11,22 +11,21 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
-#import <Foundation/Foundation.h>
+#import "CRMentionTimeLineViewController.h"
+#import "CRMentionTimeLineService.h"
 
-@class CRStatus;
 
+@implementation CRMentionTimeLineViewController {
 
-@interface CRStatusUpdateViewController : UIViewController <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-@property(nonatomic, strong) UITextView *textView;
-@property(nonatomic, copy) void (^callBack)(BOOL);
+}
 
-@property(nonatomic, strong) UIBarButtonItem *statusCountBarButtonItem;
+- (void)createTimeLineService {
+    __weak CRTimeLineViewController *weakSelf = self;
 
-@property(nonatomic, strong) UIImageView *postImageView;
-
-@property(nonatomic, strong) CRStatus *status;
-
-+ (void)showStatus:(CRStatus *)status callBack:(void (^)(BOOL reload))callBack;
-
-- (void)close:(BOOL)reload;
+    self.timeLineService = [[CRMentionTimeLineService alloc] initWithLoaded:^(NSArray *array, BOOL b) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf reloadSection:array history:b];
+        });
+    }];
+}
 @end

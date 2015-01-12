@@ -138,7 +138,7 @@
                         [weakSelf load];
                         return;
                     }
-                    [_oAuth authorize:^(BOOL authResult) {
+                    [_oAuth authorizeWebView:^(BOOL authResult) {
                         if (authResult) {
                             [weakSelf load];
                         } else {

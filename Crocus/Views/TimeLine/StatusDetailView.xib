@@ -12,6 +12,7 @@
                 <outlet property="_mediaImageView" destination="Hv4-2D-DkH" id="2jr-vY-gUZ"/>
                 <outlet property="_postDateLabel" destination="GZ2-k6-L1X" id="Ba1-WW-RH8"/>
                 <outlet property="_scrollView" destination="XDX-Id-tyf" id="7eJ-5w-RCe"/>
+                <outlet property="_spreadIconImageView" destination="yti-lV-Mus" id="ybI-ak-E18"/>
                 <outlet property="_textView" destination="n5t-eb-AFj" id="7Ap-UO-XHE"/>
                 <outlet property="_userNameLabel" destination="vK6-ge-opw" id="DkW-CZ-4jO"/>
                 <outlet property="_userScreenNameLabel" destination="FbD-66-1xu" id="PDx-kI-csd"/>
@@ -129,6 +130,13 @@ Label</string>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yti-lV-Mus">
+                            <rect key="frame" x="35" y="35" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="WOG-cW-5d2"/>
+                                <constraint firstAttribute="height" constant="20" id="mGS-74-2FT"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -138,8 +146,10 @@ Label</string>
                         <constraint firstAttribute="trailing" secondItem="vK6-ge-opw" secondAttribute="trailing" constant="8" id="Ay0-En-gub"/>
                         <constraint firstAttribute="trailing" secondItem="n5t-eb-AFj" secondAttribute="trailing" constant="8" id="Eji-F9-2Zf"/>
                         <constraint firstItem="vK6-ge-opw" firstAttribute="top" secondItem="120-bk-Zcu" secondAttribute="top" constant="15" id="FIT-Mq-5Sq"/>
+                        <constraint firstItem="yti-lV-Mus" firstAttribute="top" secondItem="120-bk-Zcu" secondAttribute="top" constant="35" id="HVi-VP-qkB"/>
                         <constraint firstAttribute="trailing" secondItem="arb-PA-29T" secondAttribute="trailing" id="Jof-Zi-A5e"/>
                         <constraint firstItem="arb-PA-29T" firstAttribute="top" secondItem="XDX-Id-tyf" secondAttribute="bottom" constant="8" id="KRK-CX-5No"/>
+                        <constraint firstItem="yti-lV-Mus" firstAttribute="leading" secondItem="120-bk-Zcu" secondAttribute="leading" constant="35" id="KgP-hE-bjh"/>
                         <constraint firstItem="LDf-YD-E7g" firstAttribute="leading" secondItem="120-bk-Zcu" secondAttribute="leading" constant="63" id="Lcq-Tj-dBB"/>
                         <constraint firstItem="XDX-Id-tyf" firstAttribute="leading" secondItem="120-bk-Zcu" secondAttribute="leading" constant="63" id="N0s-Ki-5om"/>
                         <constraint firstItem="vK6-ge-opw" firstAttribute="leading" secondItem="RtI-VS-LSi" secondAttribute="trailing" constant="8" id="O94-Qf-ERv"/>

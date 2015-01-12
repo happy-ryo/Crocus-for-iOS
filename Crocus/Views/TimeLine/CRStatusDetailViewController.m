@@ -24,6 +24,7 @@ static const char kStatusDetailWindow;
 
 @implementation CRStatusDetailViewController {
     IBOutlet UIImageView *_iconImageView;
+    IBOutlet UIImageView *_spreadIconImageView;
     IBOutlet UILabel *_userNameLabel;
     IBOutlet UILabel *_userScreenNameLabel;
     IBOutlet UILabel *_postDateLabel;
@@ -53,17 +54,24 @@ static const char kStatusDetailWindow;
         });
     }];
 
-    [_iconImageView sd_setImageWithURL:[[NSURL alloc] initWithString:_status.user.profileImageUrlHttps] placeholderImage:nil];
-    _userNameLabel.text = _status.user.name;
-    _userScreenNameLabel.text = [NSString stringWithFormat:@"@%@", _status.user.screenName];
-    _postDateLabel.text = _status.createdAt;
-    _viaLabel.text = [NSString stringWithFormat:@"via %@", _status.source.name];
-    _textView.text = _status.text;
-    if (_status.isExistImage) {
+    CRStatus *loadStatus;
+    if (_status.isSpreadStatus) {
+        loadStatus = _status.spreadStatus;
+        [_spreadIconImageView sd_setImageWithURL:[[NSURL alloc] initWithString:_status.user.profileImageUrlHttps]];
+    } else {
+        loadStatus = _status;
+    }
+    [_iconImageView sd_setImageWithURL:[[NSURL alloc] initWithString:loadStatus.user.profileImageUrlHttps] placeholderImage:nil];
+    _userNameLabel.text = loadStatus.user.name;
+    _userScreenNameLabel.text = [NSString stringWithFormat:@"@%@", loadStatus.user.screenName];
+    _postDateLabel.text = loadStatus.createdAt;
+    _viaLabel.text = [NSString stringWithFormat:@"via %@", loadStatus.source.name];
+    _textView.text = loadStatus.text;
+    if (loadStatus.isExistImage) {
         [UIView animateWithDuration:0 animations:^{
             _mediaImageView.frame = CGRectMake(0, 0, _scrollView.frame.size.width, _scrollView.frame.size.height);
         }];
-        [_mediaImageView sd_setImageWithURL:[[NSURL alloc] initWithString:_status.entities.mediaURL]];
+        [_mediaImageView sd_setImageWithURL:[[NSURL alloc] initWithString:loadStatus.entities.mediaURL]];
         _scrollView.delegate = self;
         _scrollView.minimumZoomScale = 0.5;
         _scrollView.maximumZoomScale = 3.0;

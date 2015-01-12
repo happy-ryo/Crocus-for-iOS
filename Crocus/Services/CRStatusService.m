@@ -17,6 +17,7 @@
 #import "CRUpdate.h"
 #import "CRUpdateWithMedia.h"
 #import "CRFavoritesCreate.h"
+#import "CRStatusUpdateViewController.h"
 
 
 @implementation CRStatusService {
@@ -46,6 +47,9 @@
                 callBack(NO, error);
             }
         }];
+        if (_status != nil) {
+            update.inReplyToStatusId = _status.idStr;
+        }
         [update load];
     }
 }
@@ -63,6 +67,9 @@
                                                                                 callback(NO, error);
                                                                             }
                                                                         }];
+        if (_status != nil) {
+            updateWithMedia.inReplyToStatusId = _status.idStr;
+        }
         [updateWithMedia load];
     }
 }
@@ -82,7 +89,8 @@
 }
 
 - (void)reply {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Crocus" message:@"まだ作ってない" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alertView show];
+    [CRStatusUpdateViewController showStatus:_status callBack:^(BOOL reload) {
+
+    }];
 }
 @end

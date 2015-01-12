@@ -19,12 +19,9 @@
 @interface CRTimeLineService ()
 @property(nonatomic, strong) NSMutableArray *statuses;
 @property(nonatomic, strong) NSArray *newerStatuses;
-@property(nonatomic, strong) CRPublicTimeLine *publicTimeLine;
 @end
 
 @implementation CRTimeLineService {
-    dispatch_semaphore_t _semaphore;
-
     void (^_loaded)(NSArray *array, BOOL reload);
 }
 
@@ -65,31 +62,37 @@
         _publicTimeLine = [[CRPublicTimeLine alloc] initWithIncludeEntities:YES
                                                                loadFinished:^(NSArray *statusArray, BOOL reload, NSError *error) {
                                                                    if (error == nil) {
-                                                                       NSMutableArray *tmpStatusArray = @[].mutableCopy;
-                                                                       for (NSDictionary *dictionary in statusArray) {
-                                                                           CRStatus *status = [weakSelf parseStatus:dictionary];
-                                                                           [tmpStatusArray addObject:status];
-                                                                       }
-                                                                       BOOL reloadFlg = weakSelf.publicTimeLine.sinceId == nil || weakSelf.statuses.count == 0;
-                                                                       if (reloadFlg) {
-                                                                           [weakSelf.statuses addObjectsFromArray:tmpStatusArray];
-                                                                       } else {
-                                                                           if (tmpStatusArray.count == 20) {
-                                                                               weakSelf.statuses = tmpStatusArray.mutableCopy;
-                                                                           } else {
-                                                                               for (NSUInteger i = 0; tmpStatusArray.count > i; i++) {
-                                                                                   [weakSelf.statuses insertObject:tmpStatusArray[i] atIndex:i];
-                                                                               }
-                                                                           }
-                                                                       }
-                                                                       if (_loaded) _loaded(tmpStatusArray, reloadFlg);
-                                                                       weakSelf.newerStatuses = statusArray;
-                                                                       dispatch_semaphore_signal(_semaphore);
+                                                                       [weakSelf refreshSection:statusArray];
                                                                    }
                                                                }];
     }
 
     return self;
+}
+
+- (void)refreshSection:(NSArray *)statusArray {
+    __weak CRTimeLineService *weakSelf = self;
+
+    NSMutableArray *tmpStatusArray = @[].mutableCopy;
+    for (NSDictionary *dictionary in statusArray) {
+        CRStatus *status = [weakSelf parseStatus:dictionary];
+        [tmpStatusArray addObject:status];
+    }
+    BOOL reloadFlg = weakSelf.publicTimeLine.sinceId == nil || weakSelf.statuses.count == 0;
+    if (reloadFlg) {
+        [weakSelf.statuses addObjectsFromArray:tmpStatusArray];
+    } else {
+        if (tmpStatusArray.count == 20) {
+            weakSelf.statuses = tmpStatusArray.mutableCopy;
+        } else {
+            for (NSUInteger i = 0; tmpStatusArray.count > i; i++) {
+                [weakSelf.statuses insertObject:tmpStatusArray[i] atIndex:i];
+            }
+        }
+    }
+    if (_loaded) _loaded(tmpStatusArray, reloadFlg);
+    weakSelf.newerStatuses = statusArray;
+    dispatch_semaphore_signal(_semaphore);
 }
 
 - (void)addObserver:(id)observer {
@@ -125,7 +128,7 @@
 }
 
 - (void)historyLoad {
-    dispatch_queue_t queueT = dispatch_queue_create("historyLoad", NULL);
+    dispatch_queue_t queueT = dispatch_queue_create([self queueName:@"historyLoad"], NULL);
     dispatch_async(queueT, ^{
         dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC));
         self.publicTimeLine.sinceId = nil;
@@ -136,7 +139,7 @@
 }
 
 - (void)load {
-    dispatch_queue_t queueT = dispatch_queue_create("load", NULL);
+    dispatch_queue_t queueT = dispatch_queue_create([self queueName:@"load"], NULL);
     dispatch_async(queueT, ^{
         dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
         [self.publicTimeLine load];
