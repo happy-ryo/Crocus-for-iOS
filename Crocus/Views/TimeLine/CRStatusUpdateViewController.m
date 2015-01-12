@@ -14,6 +14,7 @@
 #import <objc/runtime.h>
 #import "CRStatusUpdateViewController.h"
 #import "CRStatusService.h"
+#import "UIImage+rotation.h"
 
 static const char kStatusUpdateWindow;
 
@@ -36,51 +37,21 @@ static const char kStatusUpdateWindow;
     [_textBackGroundView.layer setCornerRadius:5];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardWillShowNotification
-                                                  object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardDidShowNotification
-                                                  object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardWillHideNotification
-                                                  object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardDidHideNotification
-                                                  object:nil];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardDidShow:)
-                                                 name:UIKeyboardDidShowNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardDidHide:)
-                                                 name:UIKeyboardDidHideNotification
-                                               object:nil];
     _textView.becomeFirstResponder;
 }
 
 - (IBAction)post {
     __weak CRStatusUpdateViewController *weakSelf = self;
 
-    [_statusService post:_textView.text callback:^(BOOL status, NSError *error) {
+    [_statusService postWithMedia:_textView.text image:_postImageView.image callback:^(BOOL status, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error == nil) {
                 weakSelf.textView.text = @"";
                 weakSelf.statusCountBarButtonItem.title = @"372";
+                weakSelf.postImageView.image = nil;
+                weakSelf.postImageView.hidden = YES;
             } else {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Crocus"
                                                                     message:@"投稿に失敗しました"
@@ -107,10 +78,33 @@ static const char kStatusUpdateWindow;
     }
 }
 
+- (IBAction)cameraOpen {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        [imagePicker setDelegate:self];
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    } else {
+        [self libraryOpen];
+    }
+}
+
+- (IBAction)libraryOpen {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    [imagePicker setDelegate:self];
+    [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
 + (void)show:(void (^)(BOOL reload))callBack {
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    CGRect rect = [UIScreen mainScreen].bounds;
+    UIWindow *window = [[UIWindow alloc] initWithFrame:rect];
     window.alpha = 0;
-    window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView" bundle:nil];
+    if (rect.size.height > 568) {
+        window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView" bundle:nil];
+    } else {
+        window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView4s" bundle:nil];
+    }
     window.backgroundColor = [UIColor colorWithWhite:0 alpha:.3];
     window.transform = CGAffineTransformMakeScale(1.3, 1.3);
     window.transform = CGAffineTransformMakeTranslation(0, 0);
@@ -151,30 +145,20 @@ static const char kStatusUpdateWindow;
 
                         UIWindow *nextWindow = [[UIApplication sharedApplication].delegate window];
                         [nextWindow makeKeyAndVisible];
+                        [UIView setAnimationsEnabled:YES];
                         weakSelf.callBack(reload);
                     }];
 
 }
 
-
-static BOOL needRevert;
-
-- (void)keyboardWillShow:(NSNotification *)notification {
-    needRevert = [UIView areAnimationsEnabled];
-    [UIView setAnimationsEnabled:NO];
+- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
+    _postImageView.image = [UIImage rotateImage:image];
+    _postImageView.hidden = NO;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)keyboardDidShow:(NSNotification *)notification {
-    if (needRevert) [UIView setAnimationsEnabled:YES];
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-- (void)keyboardWillHide:(NSNotification *)notification {
-    needRevert = [UIView areAnimationsEnabled];
-    [UIView setAnimationsEnabled:NO];
-}
-
-- (void)keyboardDidHide:(NSNotification *)notification {
-    if (needRevert) [UIView setAnimationsEnabled:YES];
-}
-
 @end

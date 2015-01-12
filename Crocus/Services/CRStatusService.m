@@ -15,17 +15,21 @@
 #import "CRStatus.h"
 #import "CRSpread.h"
 #import "CRUpdate.h"
+#import "CRUpdateWithMedia.h"
+#import "CRFavoritesCreate.h"
 
 
 @implementation CRStatusService {
     CRStatus *_status;
 
+    void(^_callback)(BOOL requestStatus);
 }
 
-- (instancetype)initWithStatus:(CRStatus *)status {
+- (instancetype)initWithStatus:(CRStatus *)status callback:(void (^)(BOOL status))callback {
     self = [super init];
     if (self) {
         _status = status;
+        _callback = callback;
     }
 
     return self;
@@ -46,17 +50,39 @@
     }
 }
 
+- (void)postWithMedia:(NSString *)message image:(UIImage *)image callback:(void (^)(BOOL status, NSError *error))callback {
+    if (image == nil) {
+        [self post:message callback:callback];
+    } else {
+        CRUpdateWithMedia *updateWithMedia = [[CRUpdateWithMedia alloc] initWithStatus:message
+                                                                                 media:image
+                                                                        updateFinished:^(NSDictionary *dictionary, NSError *error) {
+                                                                            if (error == nil) {
+                                                                                callback(YES, nil);
+                                                                            } else {
+                                                                                callback(NO, error);
+                                                                            }
+                                                                        }];
+        [updateWithMedia load];
+    }
+}
+
 - (void)spread {
     CRSpread *spread = [[CRSpread alloc] initWithShowId:_status.idStr loadFinished:^(NSDictionary *statusDic, NSError *error) {
-
+        _callback(error == nil);
     }];
     [spread load];
 }
 
-- (void)reply {
-    CRUpdate *crUpdate = [[CRUpdate alloc] initWithStatus:@"hoge" updateFinished:^(NSDictionary *dictionary, NSError *error) {
-
+- (void)favourite {
+    CRFavoritesCreate *favoritesCreate = [[CRFavoritesCreate alloc] initWithShowId:_status.idStr loadFinished:^(NSDictionary *statusDic, NSError *error) {
+        _callback(error == nil);
     }];
-    [crUpdate load];
+    [favoritesCreate load];
+}
+
+- (void)reply {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Crocus" message:@"まだ作ってない" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
 }
 @end

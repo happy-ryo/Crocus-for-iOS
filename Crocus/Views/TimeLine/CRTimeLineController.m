@@ -93,30 +93,26 @@
 
 - (IBAction)modeChange {
     if (_isOpened) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [UIView animateWithDuration:0.3 animations:^{
-                _postButton.transform = CGAffineTransformIdentity;
-                _rewindButton.transform = CGAffineTransformIdentity;
-                _fastForwardButton.transform = CGAffineTransformIdentity;
-            }                completion:^(BOOL finished) {
-                if (finished) {
-                    _isOpened = NO;
-                }
-            }];
-        });
+        [UIView animateWithDuration:0.3 animations:^{
+            _postButton.transform = CGAffineTransformIdentity;
+            _rewindButton.transform = CGAffineTransformIdentity;
+            _fastForwardButton.transform = CGAffineTransformIdentity;
+        }                completion:^(BOOL finished) {
+            if (finished) {
+                _isOpened = NO;
+            }
+        }];
     } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            CGFloat baseHeight = -65;
-            [UIView animateWithDuration:0.3 animations:^{
-                _postButton.transform = CGAffineTransformMakeTranslation(0, baseHeight);
-                _rewindButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 2);
-                _fastForwardButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 3);
-            }                completion:^(BOOL finished) {
-                if (finished) {
-                    _isOpened = YES;
-                }
-            }];
-        });
+        CGFloat baseHeight = -65;
+        [UIView animateWithDuration:0.3 animations:^{
+            _postButton.transform = CGAffineTransformMakeTranslation(0, baseHeight);
+            _rewindButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 2);
+            _fastForwardButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 3);
+        }                completion:^(BOOL finished) {
+            if (finished) {
+                _isOpened = YES;
+            }
+        }];
     }
 }
 

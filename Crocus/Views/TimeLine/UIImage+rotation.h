@@ -11,22 +11,10 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
+
 #import <Foundation/Foundation.h>
-#import "CRService.h"
 
-@class CRStatus;
+@interface UIImage (rotation)
 
-
-@interface CRStatusService : CRService
-- (instancetype)initWithStatus:(CRStatus *)status callback:(void (^)(BOOL requestStatus))callback;
-
-- (void)post:(NSString *)message callback:(void (^)(BOOL status, NSError *error))callBack;
-
-- (void)postWithMedia:(NSString *)message image:(UIImage *)image callback:(void (^)(BOOL status, NSError *error))callback;
-
-- (void)spread;
-
-- (void)favourite;
-
-- (void)reply;
++ (UIImage *)rotateImage:(UIImage *)img;
 @end

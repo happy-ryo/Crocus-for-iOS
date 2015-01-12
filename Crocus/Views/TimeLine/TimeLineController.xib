@@ -17,7 +17,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gWw-n1-Scz">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                             <state key="normal" title="↑">
                                 <color key="titleColor" red="1" green="0.41944858429999998" blue="0.040382377660000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -30,7 +30,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i4a-gI-kpV">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                             <state key="normal" title="↓">
                                 <color key="titleColor" red="1" green="0.41944858429999998" blue="0.040382377660000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,7 +43,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RmJ-Wm-Pc9">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                             <state key="normal" title="P">
                                 <color key="titleColor" red="1" green="0.41944858429999998" blue="0.040382377660000003" alpha="1" colorSpace="calibratedRGB"/>

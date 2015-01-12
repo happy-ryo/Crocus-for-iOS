@@ -12,21 +12,12 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 #import <Foundation/Foundation.h>
-#import "CRService.h"
 
 @class CRStatus;
 
 
-@interface CRStatusService : CRService
-- (instancetype)initWithStatus:(CRStatus *)status callback:(void (^)(BOOL requestStatus))callback;
+@interface CRStatusDetailViewController : UIViewController <UIScrollViewDelegate>
+@property(nonatomic, strong) CRStatus *status;
 
-- (void)post:(NSString *)message callback:(void (^)(BOOL status, NSError *error))callBack;
-
-- (void)postWithMedia:(NSString *)message image:(UIImage *)image callback:(void (^)(BOOL status, NSError *error))callback;
-
-- (void)spread;
-
-- (void)favourite;
-
-- (void)reply;
++ (void)show:(CRStatus *)status;
 @end

@@ -29,7 +29,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bI-Wn-KjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-209" y="1041"/>
+            <point key="canvasLocation" x="-9" y="224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H3M-9u-VWq">
@@ -50,25 +50,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9X2-G9-Vkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-209" y="218"/>
+            <point key="canvasLocation" x="-857" y="224"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="z2V-si-C9G">
+        <!--Page View Controller-->
+        <scene sceneID="fDc-Xl-5am">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rtC-Yp-R6o" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oN1-V6-Mrn"/>
-                        <viewControllerLayoutGuide type="bottom" id="Sdh-cI-hvM"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5qq-LS-IUZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XhW-Zk-CC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="hWk-Y3-tgP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bph-Bo-rWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-796" y="917"/>
         </scene>
     </scenes>
 </document>
