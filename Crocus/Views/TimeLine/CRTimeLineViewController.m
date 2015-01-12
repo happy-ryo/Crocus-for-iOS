@@ -22,11 +22,8 @@
 #import "CRStatusDetailViewController.h"
 
 @interface CRTimeLineViewController ()
-@property(nonatomic, strong) CRTimeLineService *timeLineService;
 @property(nonatomic, strong) CRUserInfoService *userInfoService;
 @property(nonatomic, strong) NSTimer *repeats;
-
-- (void)createTimeLineService;
 @end
 
 @implementation CRTimeLineViewController {

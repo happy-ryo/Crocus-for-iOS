@@ -13,6 +13,12 @@
 //  limitations under the License.
 #import <Foundation/Foundation.h>
 
+@class CRTimeLineService;
+
 
 @interface CRTimeLineViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@property(nonatomic, strong) CRTimeLineService *timeLineService;
+- (void)createTimeLineService;
+
+- (void)reloadSection:(NSArray *)array history:(BOOL)flag;
 @end

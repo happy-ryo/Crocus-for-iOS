@@ -12,34 +12,8 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 #import <Foundation/Foundation.h>
-#import "CRService.h"
-
-@class CRStatus;
-@class CRPublicTimeLine;
-@class CRTimeLine;
 
 
-@interface CRTimeLineService : CRService{
-    dispatch_semaphore_t _semaphore;
-}
-@property(nonatomic, strong) CRTimeLine *publicTimeLine;
-- (instancetype)initWithObserver:(id)observer;
-
-- (void)refreshSection:(NSArray *)statusArray;
-
-- (instancetype)initWithObserver:(id)observer loaded:(void (^)(NSArray *, BOOL))loaded;
-
-- (instancetype)initWithLoaded:(void (^)(NSArray *, BOOL))loaded;
-
-- (void)removeObserver:(id)observer;
-
-- (CRStatus *)status:(NSInteger)index;
-
-- (NSInteger)statusCount;
-
-- (void)update;
-
-- (void)historyLoad;
-
-- (void)load;
+@interface CRPageViewController : UIViewController <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@property(nonatomic, strong) UIPageViewController *pageViewController;
 @end

@@ -17,12 +17,17 @@
 		82CDD5429862FC1309951023 /* CRTimeLineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDF31E57138AAC5C0E7CE /* CRTimeLineService.m */; };
 		82CDD579251223889B8212E4 /* CRTimeLineBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD05A7E671C8269F7DACD /* CRTimeLineBaseViewController.m */; };
 		82CDD5CFF2DF56EAB66D9626 /* CRService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD700E7B1287349779C91 /* CRService.m */; };
+		82CDD6963059C0F60EAE163D /* CRHomeTimeLineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDE0F897B87A3725EBA43 /* CRHomeTimeLineService.m */; };
 		82CDD6A53650F89BF2291FCF /* CRUserInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDF0B4983CAD0E016EFD9 /* CRUserInfoService.m */; };
+		82CDD85843720012B95D6400 /* CRMentionTimeLineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDC6CB2EF35D142CCF081 /* CRMentionTimeLineService.m */; };
+		82CDD9439CCC56568C46CED5 /* CRMentionTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD218D98E2FE19FBA28F0 /* CRMentionTimeLineViewController.m */; };
 		82CDD9699A84F1687F9A4A4B /* CRStatusDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDECC9BC401CB4AE96494 /* CRStatusDetailViewController.m */; };
 		82CDD9AB91C06F79CC11CD24 /* CRTimeLineBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */; };
 		82CDDAC914DF8CA690F8DFF2 /* CRTimeLineImageSpreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD3CC95EFD4E0283CE034 /* CRTimeLineImageSpreadCell.m */; };
+		82CDDAEE61972C362A0A7855 /* CRPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD00BEE0A2A0D7A5701FC /* CRPageViewController.m */; };
 		82CDDB04ABB352A406FA7510 /* CRSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDDF90F60958629323DE3 /* CRSource.m */; };
 		82CDDB152A0F74F093191B07 /* CRStatusUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD6DAA6BD17FB6E03E254 /* CRStatusUpdateViewController.m */; };
+		82CDDB467A52C713B35F337C /* CRHomeTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD3AD81E4EB6C24E5E6D4 /* CRHomeTimeLineViewController.m */; };
 		82CDDBCA9B2EC60F6A04C12F /* CRStatusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD3C95B9C9E22F930A06C /* CRStatusService.m */; };
 		82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82CDD32CE6B0B933816EA019 /* Localizable.strings */; };
 		82CDDEB88DD66EED4FCD3DAA /* CRTimeLineImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDDD7C345CBE3A79CE2A8 /* CRTimeLineImageCell.m */; };
@@ -34,7 +39,7 @@
 		89A9149E1A5D825F00353993 /* TimeLineImageSpreadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A9149D1A5D825F00353993 /* TimeLineImageSpreadCell.xib */; };
 		89A914A01A62B90400353993 /* StatusUpdateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A9149F1A62B90400353993 /* StatusUpdateView.xib */; };
 		89A914A21A63CDC900353993 /* StatusUpdateView4s.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A914A11A63CDC800353993 /* StatusUpdateView4s.xib */; };
-		89A914A51A63ECD900353993 /* UIImage+rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A914A31A63ECD900353993 /* UIImage+rotation.m */; };
+		89A914A51A63ECD900353993 /* CRUIImage+rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A914A31A63ECD900353993 /* CRUIImage+rotation.m */; };
 		89CB2FBA1A63F35E0066F0CF /* StatusDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CB2FB91A63F35E0066F0CF /* StatusDetailView.xib */; };
 		89CC2AD31A5E50C900D1B266 /* TimeLineReplyBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CC2AD21A5E50C900D1B266 /* TimeLineReplyBaseCell.xib */; };
 		89CC2AD51A5E520E00D1B266 /* TimeLineReplyImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CC2AD41A5E520E00D1B266 /* TimeLineReplyImageCell.xib */; };
@@ -89,6 +94,7 @@
 
 /* Begin PBXFileReference section */
 		139D21D2F31D4DE4E7D7E029 /* Pods-Crocus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crocus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crocus/Pods-Crocus.debug.xcconfig"; sourceTree = "<group>"; };
+		82CDD00BEE0A2A0D7A5701FC /* CRPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRPageViewController.m; sourceTree = "<group>"; };
 		82CDD022DA7BDE6411E21E68 /* CRTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineViewController.m; sourceTree = "<group>"; };
 		82CDD05A7E671C8269F7DACD /* CRTimeLineBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineBaseViewController.m; sourceTree = "<group>"; };
 		82CDD1161E0D2573A6C031DF /* CRTimeLineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineController.h; sourceTree = "<group>"; };
@@ -97,14 +103,17 @@
 		82CDD1957C496D9F167794BA /* CRUserInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUserInfoService.h; sourceTree = "<group>"; };
 		82CDD1B7E4B051D66EA2B358 /* CRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRService.h; sourceTree = "<group>"; };
 		82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUser.m; sourceTree = "<group>"; };
+		82CDD218D98E2FE19FBA28F0 /* CRMentionTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMentionTimeLineViewController.m; sourceTree = "<group>"; };
 		82CDD2E5D4AA55BCD1C5E6F6 /* CRLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLoadingCell.h; sourceTree = "<group>"; };
 		82CDD32CE6B0B933816EA019 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Croudia/API/Localizable.strings; sourceTree = "<group>"; };
+		82CDD3AD81E4EB6C24E5E6D4 /* CRHomeTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRHomeTimeLineViewController.m; sourceTree = "<group>"; };
 		82CDD3C95B9C9E22F930A06C /* CRStatusService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatusService.m; sourceTree = "<group>"; };
 		82CDD3CC95EFD4E0283CE034 /* CRTimeLineImageSpreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineImageSpreadCell.m; sourceTree = "<group>"; };
 		82CDD454E9D2A5A041AC7D23 /* CRTimeLineImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineImageCell.h; sourceTree = "<group>"; };
 		82CDD4BA60D8B7B26D04B4BF /* CRTimeLineSpreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineSpreadCell.m; sourceTree = "<group>"; };
 		82CDD4CD36FBE54AC0B74FC7 /* CRStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRStatus.h; sourceTree = "<group>"; };
 		82CDD65CBC3D0FA65FD7FB23 /* CRTimeLineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineController.m; sourceTree = "<group>"; };
+		82CDD6BE66AABBB434042E67 /* CRPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRPageViewController.h; sourceTree = "<group>"; };
 		82CDD6DAA6BD17FB6E03E254 /* CRStatusUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatusUpdateViewController.m; sourceTree = "<group>"; };
 		82CDD700E7B1287349779C91 /* CRService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRService.m; sourceTree = "<group>"; };
 		82CDD79998B5BA4F1BA4DA11 /* CRTimeLineBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineBaseCell.h; sourceTree = "<group>"; };
@@ -113,12 +122,18 @@
 		82CDD984FEC0366CD7C06BCF /* CREntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CREntities.h; sourceTree = "<group>"; };
 		82CDD99DB9FB2C2D249CBD57 /* CRTimeLineSpreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineSpreadCell.h; sourceTree = "<group>"; };
 		82CDD99EAAEAF7D82B70899B /* CRTimeLineImageSpreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineImageSpreadCell.h; sourceTree = "<group>"; };
+		82CDD9D3D7AEA0087C85BA18 /* CRMentionTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMentionTimeLineViewController.h; sourceTree = "<group>"; };
 		82CDD9E141C015FEAC25C43C /* CRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUser.h; sourceTree = "<group>"; };
 		82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineBaseCell.m; sourceTree = "<group>"; };
+		82CDDB29C09EC38BB26DB46C /* CRMentionTimeLineService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMentionTimeLineService.h; sourceTree = "<group>"; };
 		82CDDC6A060AC629D1C92F43 /* CRSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRSource.h; sourceTree = "<group>"; };
+		82CDDC6CB2EF35D142CCF081 /* CRMentionTimeLineService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMentionTimeLineService.m; sourceTree = "<group>"; };
+		82CDDC6FDF675DAEC8EF5965 /* CRHomeTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRHomeTimeLineViewController.h; sourceTree = "<group>"; };
+		82CDDCB32558E2F3F6F667A1 /* CRHomeTimeLineService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRHomeTimeLineService.h; sourceTree = "<group>"; };
 		82CDDCF4EC24F0CEF41016ED /* CREntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CREntities.m; sourceTree = "<group>"; };
 		82CDDDD7C345CBE3A79CE2A8 /* CRTimeLineImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineImageCell.m; sourceTree = "<group>"; };
 		82CDDDF90F60958629323DE3 /* CRSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRSource.m; sourceTree = "<group>"; };
+		82CDDE0F897B87A3725EBA43 /* CRHomeTimeLineService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRHomeTimeLineService.m; sourceTree = "<group>"; };
 		82CDDE93A9E23681D030A97C /* CRTimeLineService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineService.h; sourceTree = "<group>"; };
 		82CDDECC9BC401CB4AE96494 /* CRStatusDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatusDetailViewController.m; sourceTree = "<group>"; };
 		82CDDEE3198A8FEBE5832891 /* CRStatusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRStatusService.h; sourceTree = "<group>"; };
@@ -134,8 +149,8 @@
 		89A9149D1A5D825F00353993 /* TimeLineImageSpreadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineImageSpreadCell.xib; sourceTree = "<group>"; };
 		89A9149F1A62B90400353993 /* StatusUpdateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusUpdateView.xib; sourceTree = "<group>"; };
 		89A914A11A63CDC800353993 /* StatusUpdateView4s.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusUpdateView4s.xib; sourceTree = "<group>"; };
-		89A914A31A63ECD900353993 /* UIImage+rotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+rotation.m"; sourceTree = "<group>"; };
-		89A914A41A63ECD900353993 /* UIImage+rotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+rotation.h"; sourceTree = "<group>"; };
+		89A914A31A63ECD900353993 /* CRUIImage+rotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CRUIImage+rotation.m"; sourceTree = "<group>"; };
+		89A914A41A63ECD900353993 /* CRUIImage+rotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CRUIImage+rotation.h"; sourceTree = "<group>"; };
 		89CB2FB91A63F35E0066F0CF /* StatusDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusDetailView.xib; sourceTree = "<group>"; };
 		89CC2AD21A5E50C900D1B266 /* TimeLineReplyBaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineReplyBaseCell.xib; sourceTree = "<group>"; };
 		89CC2AD41A5E520E00D1B266 /* TimeLineReplyImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineReplyImageCell.xib; sourceTree = "<group>"; };
@@ -279,8 +294,8 @@
 		82CDD3D349045ADE8D982A86 /* TimeLine */ = {
 			isa = PBXGroup;
 			children = (
-				89A914A31A63ECD900353993 /* UIImage+rotation.m */,
-				89A914A41A63ECD900353993 /* UIImage+rotation.h */,
+				89A914A31A63ECD900353993 /* CRUIImage+rotation.m */,
+				89A914A41A63ECD900353993 /* CRUIImage+rotation.h */,
 				82CDD022DA7BDE6411E21E68 /* CRTimeLineViewController.m */,
 				82CDDEFA3CA0C5330CB827CD /* CRTimeLineViewController.h */,
 				89F931B21A56CF8E009CD6E9 /* TimeLineBaseCell.xib */,
@@ -312,6 +327,12 @@
 				89CB2FB91A63F35E0066F0CF /* StatusDetailView.xib */,
 				82CDDECC9BC401CB4AE96494 /* CRStatusDetailViewController.m */,
 				82CDDF0348C83A1D8BF55AC8 /* CRStatusDetailViewController.h */,
+				82CDD3AD81E4EB6C24E5E6D4 /* CRHomeTimeLineViewController.m */,
+				82CDDC6FDF675DAEC8EF5965 /* CRHomeTimeLineViewController.h */,
+				82CDD218D98E2FE19FBA28F0 /* CRMentionTimeLineViewController.m */,
+				82CDD9D3D7AEA0087C85BA18 /* CRMentionTimeLineViewController.h */,
+				82CDD00BEE0A2A0D7A5701FC /* CRPageViewController.m */,
+				82CDD6BE66AABBB434042E67 /* CRPageViewController.h */,
 			);
 			path = TimeLine;
 			sourceTree = "<group>";
@@ -327,6 +348,10 @@
 				82CDD1B7E4B051D66EA2B358 /* CRService.h */,
 				82CDD3C95B9C9E22F930A06C /* CRStatusService.m */,
 				82CDDEE3198A8FEBE5832891 /* CRStatusService.h */,
+				82CDDE0F897B87A3725EBA43 /* CRHomeTimeLineService.m */,
+				82CDDCB32558E2F3F6F667A1 /* CRHomeTimeLineService.h */,
+				82CDDC6CB2EF35D142CCF081 /* CRMentionTimeLineService.m */,
+				82CDDB29C09EC38BB26DB46C /* CRMentionTimeLineService.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -638,7 +663,7 @@
 				89DE9E6D1A4A558800654D3E /* CRMute.m in Sources */,
 				89DE9E5D1A4A558800654D3E /* CRHomeTimeLine.m in Sources */,
 				89DE9E5E1A4A558800654D3E /* CRIdShow.m in Sources */,
-				89A914A51A63ECD900353993 /* UIImage+rotation.m in Sources */,
+				89A914A51A63ECD900353993 /* CRUIImage+rotation.m in Sources */,
 				89DE9E6E1A4A558800654D3E /* CRHTTPLoader.m in Sources */,
 				89DE9E671A4A558800654D3E /* CRUpdateProfile.m in Sources */,
 				89DE9E6B1A4A558800654D3E /* CRUserTimeLine.m in Sources */,
@@ -681,6 +706,11 @@
 				82CDDBCA9B2EC60F6A04C12F /* CRStatusService.m in Sources */,
 				82CDDB152A0F74F093191B07 /* CRStatusUpdateViewController.m in Sources */,
 				82CDD9699A84F1687F9A4A4B /* CRStatusDetailViewController.m in Sources */,
+				82CDD6963059C0F60EAE163D /* CRHomeTimeLineService.m in Sources */,
+				82CDD85843720012B95D6400 /* CRMentionTimeLineService.m in Sources */,
+				82CDDB467A52C713B35F337C /* CRHomeTimeLineViewController.m in Sources */,
+				82CDD9439CCC56568C46CED5 /* CRMentionTimeLineViewController.m in Sources */,
+				82CDDAEE61972C362A0A7855 /* CRPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
