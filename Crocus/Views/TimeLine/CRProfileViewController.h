@@ -13,11 +13,11 @@
 //  limitations under the License.
 #import <Foundation/Foundation.h>
 
-@class CRStatus;
+@class CRUser;
 
 
-@interface CRTimeLineBaseCell : UITableViewCell
-@property(nonatomic, strong) UIButton *iconButton;
+@interface CRProfileViewController : UIViewController
+@property(nonatomic, strong) CRUser *user;
 
-- (void)loadCRStatus:(CRStatus *)status;
++ (void)show:(CRUser *)user;
 @end
