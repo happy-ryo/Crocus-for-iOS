@@ -31,6 +31,7 @@ static const char kStatusUpdateWindow;
     IBOutlet UIBarButtonItem *_deleteBarButtonItem;
     IBOutlet UIBarButtonItem *_favBarButtonItem;
     IBOutlet UIBarButtonItem *_spreadButtonItem;
+    IBOutlet UIBarButtonItem *_toUserNameBarButtonItem;
     CRStatusService *_statusService;
     CRStatus *_status;
 
@@ -56,6 +57,7 @@ static const char kStatusUpdateWindow;
     } else {
         _textView.inputAccessoryView = _advanceInputAccessory;
         CRUserInfoService *userInfoService = [[CRUserInfoService alloc] init];
+        _toUserNameBarButtonItem.title = [NSString stringWithFormat:@"@%@", _status.user.screenName];
         if (![userInfoService checkMineStatus:_status]) {
             _deleteBarButtonItem.enabled = NO;
         }
