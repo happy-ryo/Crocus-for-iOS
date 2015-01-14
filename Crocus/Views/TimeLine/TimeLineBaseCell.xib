@@ -42,15 +42,27 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOd-b0-hgp">
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="UC8-QX-RE0"/>
+                            <constraint firstAttribute="height" constant="40" id="qFm-33-ggj"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="WJ3-wu-Jsh" firstAttribute="leading" secondItem="sYz-iz-AvN" secondAttribute="leadingMargin" id="0c9-Gu-ovF"/>
                     <constraint firstItem="WJ3-wu-Jsh" firstAttribute="top" secondItem="sYz-iz-AvN" secondAttribute="topMargin" id="8Jc-3e-UdQ"/>
+                    <constraint firstItem="MOd-b0-hgp" firstAttribute="leading" secondItem="sYz-iz-AvN" secondAttribute="leadingMargin" id="9CH-3r-3pZ"/>
                     <constraint firstItem="PZz-LE-eZb" firstAttribute="top" secondItem="sYz-iz-AvN" secondAttribute="topMargin" constant="1" id="Md7-L2-omx"/>
                     <constraint firstItem="rlC-DL-f2g" firstAttribute="leading" secondItem="WJ3-wu-Jsh" secondAttribute="trailing" constant="8" id="Naw-lL-fEn"/>
                     <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="WJ3-wu-Jsh" secondAttribute="bottom" id="O3g-iq-TKV"/>
                     <constraint firstItem="BFS-Ms-u5g" firstAttribute="top" secondItem="PZz-LE-eZb" secondAttribute="bottom" constant="2" id="PdX-nu-HG6"/>
                     <constraint firstItem="BFS-Ms-u5g" firstAttribute="leading" secondItem="WJ3-wu-Jsh" secondAttribute="trailing" constant="8" id="Pht-OO-qzQ"/>
+                    <constraint firstItem="MOd-b0-hgp" firstAttribute="top" secondItem="sYz-iz-AvN" secondAttribute="topMargin" id="Z1H-B0-bf8"/>
                     <constraint firstItem="PZz-LE-eZb" firstAttribute="leading" secondItem="rlC-DL-f2g" secondAttribute="trailing" constant="8" id="d2J-Ua-i7g"/>
                     <constraint firstItem="BFS-Ms-u5g" firstAttribute="trailing" secondItem="sYz-iz-AvN" secondAttribute="trailingMargin" id="gDr-Zy-kZV"/>
                     <constraint firstItem="PZz-LE-eZb" firstAttribute="leading" secondItem="rlC-DL-f2g" secondAttribute="trailing" constant="8" id="gTl-bm-63n"/>

@@ -33,6 +33,7 @@
 		82CDDEB88DD66EED4FCD3DAA /* CRTimeLineImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDDD7C345CBE3A79CE2A8 /* CRTimeLineImageCell.m */; };
 		82CDDEEA5BC66F3E6D524E81 /* CRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */; };
 		8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8967A8F01A52F25000FDB716 /* OAuth.storyboard */; };
+		8983A4691A655DEE00607BEC /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8983A4681A655DEE00607BEC /* ProfileView.xib */; };
 		89A914981A5950A400353993 /* TimeLineSpreadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A914971A5950A400353993 /* TimeLineSpreadCell.xib */; };
 		89A9149A1A59BD8A00353993 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A914991A59BD8A00353993 /* LoadingCell.xib */; };
 		89A9149C1A5D792600353993 /* TimeLineImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A9149B1A5D792600353993 /* TimeLineImageCell.xib */; };
@@ -143,6 +144,7 @@
 		82CDDF31E57138AAC5C0E7CE /* CRTimeLineService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineService.m; sourceTree = "<group>"; };
 		82CDDFAA2AC71717678A7AEF /* CRTimeLineBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineBaseViewController.h; sourceTree = "<group>"; };
 		8967A8F01A52F25000FDB716 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
+		8983A4681A655DEE00607BEC /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		89A914971A5950A400353993 /* TimeLineSpreadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineSpreadCell.xib; sourceTree = "<group>"; };
 		89A914991A59BD8A00353993 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		89A9149B1A5D792600353993 /* TimeLineImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineImageCell.xib; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				82CDD9D3D7AEA0087C85BA18 /* CRMentionTimeLineViewController.h */,
 				82CDD00BEE0A2A0D7A5701FC /* CRPageViewController.m */,
 				82CDD6BE66AABBB434042E67 /* CRPageViewController.h */,
+				8983A4681A655DEE00607BEC /* ProfileView.xib */,
 			);
 			path = TimeLine;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				89CC2AD51A5E520E00D1B266 /* TimeLineReplyImageCell.xib in Resources */,
 				89A914A01A62B90400353993 /* StatusUpdateView.xib in Resources */,
 				89A9149A1A59BD8A00353993 /* LoadingCell.xib in Resources */,
+				8983A4691A655DEE00607BEC /* ProfileView.xib in Resources */,
 				89A914981A5950A400353993 /* TimeLineSpreadCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -834,12 +838,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ryo Iwama (Z99BC37WX8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ryo Iwama (Z99BC37WX8)";
 				GCC_PREFIX_HEADER = "Crocus/Crocus-PrefixHeader.pch";
 				INFOPLIST_FILE = Crocus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2c33b621-bd7f-442c-bc7d-16ab5a85c5a5";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Debug;

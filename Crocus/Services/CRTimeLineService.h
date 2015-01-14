@@ -23,6 +23,8 @@
     dispatch_semaphore_t _semaphore;
 }
 @property(nonatomic, strong) CRTimeLine *publicTimeLine;
+@property(nonatomic, copy) void (^loaded)(NSArray *, BOOL);
+
 - (instancetype)initWithObserver:(id)observer;
 
 - (void)refreshSection:(NSArray *)statusArray;

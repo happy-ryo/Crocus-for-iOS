@@ -61,12 +61,13 @@
         <!--Navigation Controller-->
         <scene sceneID="vPF-Vs-lca">
             <objects>
-                <navigationController storyboardIdentifier="mention" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D1d-EU-cW2" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mention" useStoryboardIdentifierAsRestorationIdentifier="YES" hidesBarsOnSwipe="YES" hidesBarsWhenVerticallyCompact="YES" id="D1d-EU-cW2" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JKe-Za-Q9Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <color key="textColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -126,12 +127,13 @@
         <!--Navigation Controller-->
         <scene sceneID="AlQ-lO-xum">
             <objects>
-                <navigationController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="78K-Pk-sM4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" hidesBarsOnSwipe="YES" hidesBarsWhenVerticallyCompact="YES" id="78K-Pk-sM4" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="U30-vw-zR9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <color key="textColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>

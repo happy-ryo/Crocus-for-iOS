@@ -31,4 +31,6 @@ static NSString *const USER_INFO_KEY = @"crocusUserInfo";
 - (BOOL)isExistUserIcon;
 
 - (BOOL)replyCheck:(CRStatus *)status;
+
+- (BOOL)checkMineStatus:(CRStatus *)status;
 @end
