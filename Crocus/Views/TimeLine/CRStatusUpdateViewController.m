@@ -17,6 +17,7 @@
 #import "CRUIImage+rotation.h"
 #import "CRStatus.h"
 #import "CRUser.h"
+#import "CRUserInfoService.h"
 
 static const char kStatusUpdateWindow;
 
@@ -25,7 +26,11 @@ static const char kStatusUpdateWindow;
     IBOutlet UIView *_textBackGroundView;
     IBOutlet UIImageView *_postImageView;
     IBOutlet UIView *_inputAccessory;
+    IBOutlet UIView *_advanceInputAccessory;
     IBOutlet UIBarButtonItem *_statusCountBarButtonItem;
+    IBOutlet UIBarButtonItem *_deleteBarButtonItem;
+    IBOutlet UIBarButtonItem *_favBarButtonItem;
+    IBOutlet UIBarButtonItem *_spreadButtonItem;
     CRStatusService *_statusService;
     CRStatus *_status;
 
@@ -34,20 +39,40 @@ static const char kStatusUpdateWindow;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _textView.inputAccessoryView = _inputAccessory;
     _textView.delegate = self;
-    _statusService = [[CRStatusService alloc] initWithStatus:_status callback:nil];
     [_textBackGroundView.layer setCornerRadius:5];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    _textView.becomeFirstResponder;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    __weak CRStatusUpdateViewController *weakSelf = self;
+    if (_status == nil || [UIScreen mainScreen].bounds.size.height < 568) {
+        _textView.inputAccessoryView = _inputAccessory;
+        _statusService = [[CRStatusService alloc] init];
+    } else {
+        _textView.inputAccessoryView = _advanceInputAccessory;
+        CRUserInfoService *userInfoService = [[CRUserInfoService alloc] init];
+        if (![userInfoService checkMineStatus:_status]) {
+            _deleteBarButtonItem.enabled = NO;
+        }
+        if (_status.favorited || [userInfoService checkMineStatus:_status]) {
+            _favBarButtonItem.enabled = NO;
+        }
+        if (_status.spread || [userInfoService checkMineStatus:_status]) {
+            _spreadButtonItem.enabled = NO;
+        }
+        _statusService = [[CRStatusService alloc] initWithStatus:_status callback:^(BOOL requestStatus) {
+            if (requestStatus) {
+                [weakSelf close];
+            }
+        }];
+    }
     [self textCounter:_textView];
+    _textView.becomeFirstResponder;
 }
 
 
@@ -96,6 +121,18 @@ static const char kStatusUpdateWindow;
     }
 }
 
+- (IBAction)delete {
+    [_statusService delete];
+}
+
+- (IBAction)spread {
+    [_statusService spread];
+}
+
+- (IBAction)favourite {
+    [_statusService favourite];
+}
+
 - (IBAction)cameraOpen {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -114,7 +151,14 @@ static const char kStatusUpdateWindow;
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
+static BOOL showStatusUpdateFlg;
+
 + (void)showStatus:(CRStatus *)status callBack:(void (^)(BOOL reload))callBack {
+    if (showStatusUpdateFlg) {
+        return;
+    } else {
+        showStatusUpdateFlg = YES;
+    }
     CGRect rect = [UIScreen mainScreen].bounds;
     UIWindow *window = [[UIWindow alloc] initWithFrame:rect];
     window.alpha = 0;
@@ -145,6 +189,10 @@ static const char kStatusUpdateWindow;
 }
 
 - (void)close:(BOOL)reload {
+    if (showStatusUpdateFlg) {
+        showStatusUpdateFlg = NO;
+    }
+
     UIWindow *window = objc_getAssociatedObject([UIApplication sharedApplication], &kStatusUpdateWindow);
     __weak CRStatusUpdateViewController *weakSelf = self;
 
@@ -165,7 +213,7 @@ static const char kStatusUpdateWindow;
                         UIWindow *nextWindow = [[UIApplication sharedApplication].delegate window];
                         [nextWindow makeKeyAndVisible];
                         [UIView setAnimationsEnabled:YES];
-                        weakSelf.callBack(reload);
+                        if (weakSelf.callBack)weakSelf.callBack(reload);
                     }];
 
 }
