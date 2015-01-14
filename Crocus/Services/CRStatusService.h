@@ -24,6 +24,8 @@
 
 - (void)postWithMedia:(NSString *)message image:(UIImage *)image callback:(void (^)(BOOL status, NSError *error))callback;
 
+- (void)delete;
+
 - (void)spread;
 
 - (void)favourite;

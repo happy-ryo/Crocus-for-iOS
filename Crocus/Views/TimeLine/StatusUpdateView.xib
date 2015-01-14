@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CRStatusUpdateViewController">
             <connections>
+                <outlet property="_advanceInputAccessory" destination="iIO-p3-mg0" id="L73-r2-Tsb"/>
+                <outlet property="_deleteBarButtonItem" destination="q8b-JP-yvi" id="ALG-4z-ZEW"/>
+                <outlet property="_favBarButtonItem" destination="BvD-QH-HCH" id="jsd-F3-wjD"/>
                 <outlet property="_inputAccessory" destination="vGf-3Y-L2x" id="QtO-qQ-CAu"/>
                 <outlet property="_postImageView" destination="sSs-Wb-BMm" id="1O8-Cw-LHp"/>
+                <outlet property="_spreadButtonItem" destination="q1J-fK-XfB" id="T7Q-Mp-Fzh"/>
                 <outlet property="_statusCountBarButtonItem" destination="fxa-bo-5jX" id="vQZ-Jh-aOH"/>
                 <outlet property="_textBackGroundView" destination="OYp-gd-egt" id="ygW-4q-bXq"/>
                 <outlet property="_textView" destination="0TY-5I-LeA" id="W53-Va-oZJ"/>
@@ -19,68 +23,102 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGf-3Y-L2x">
-                    <rect key="frame" x="0.0" y="512" width="600" height="44"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    <items>
-                        <barButtonItem image="cancel" id="rbJ-w8-bWa">
-                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="close" destination="-1" id="pCK-Gh-dR3"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="V55-Lf-HgQ"/>
-                        <barButtonItem image="camera" id="V8i-1s-TTY">
-                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="cameraOpen" destination="-1" id="iUF-XK-deV"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="l5T-7Q-orh"/>
-                        <barButtonItem image="library" id="Xhg-QZ-HGA">
-                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="libraryOpen" destination="-1" id="o1c-mi-IgA"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="o50-HK-2Fo"/>
-                        <barButtonItem image="post" id="oHI-rc-Ctt">
-                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="post" destination="-1" id="1eO-TI-Z5V"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="eAb-PV-y3K"/>
-                        <barButtonItem title="372" id="fxa-bo-5jX">
-                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </items>
-                    <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                </toolbar>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTZ-ZG-npX">
-                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIO-p3-mg0">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
+                    <subviews>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGf-3Y-L2x">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="SfL-31-Nzo"/>
+                            </constraints>
+                            <items>
+                                <barButtonItem image="cancel" id="rbJ-w8-bWa">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="close" destination="-1" id="pCK-Gh-dR3"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="V55-Lf-HgQ"/>
+                                <barButtonItem image="camera" id="V8i-1s-TTY">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="cameraOpen" destination="-1" id="iUF-XK-deV"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="l5T-7Q-orh"/>
+                                <barButtonItem image="library" id="Xhg-QZ-HGA">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="libraryOpen" destination="-1" id="o1c-mi-IgA"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="o50-HK-2Fo"/>
+                                <barButtonItem image="post" id="oHI-rc-Ctt">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="post" destination="-1" id="1eO-TI-Z5V"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="eAb-PV-y3K"/>
+                                <barButtonItem title="372" id="fxa-bo-5jX">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                            </items>
+                            <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </toolbar>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTZ-ZG-npX">
+                            <rect key="frame" x="0.0" y="44" width="600" height="44"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="EHC-oE-o5E"/>
+                                <constraint firstAttribute="height" constant="44" id="v7b-su-EE2"/>
+                            </constraints>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="cWW-QI-EeN"/>
+                                <barButtonItem image="dust" id="q8b-JP-yvi">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="delete" destination="-1" id="nm9-Gi-iEB"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="1Mo-ax-1x1"/>
+                                <barButtonItem image="fav" id="BvD-QH-HCH">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="favourite" destination="-1" id="WuV-w8-CSG"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="0Y4-80-NNA"/>
+                                <barButtonItem image="share" id="q1J-fK-XfB">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="spread" destination="-1" id="G0G-yW-bms"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="4cG-cE-jEh"/>
+                            </items>
+                            <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </toolbar>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="v7b-su-EE2"/>
+                        <constraint firstItem="MTZ-ZG-npX" firstAttribute="top" secondItem="vGf-3Y-L2x" secondAttribute="bottom" id="JRF-f7-MDi"/>
+                        <constraint firstItem="vGf-3Y-L2x" firstAttribute="leading" secondItem="iIO-p3-mg0" secondAttribute="leading" id="LoD-WJ-uJr"/>
+                        <constraint firstAttribute="height" constant="88" id="bI4-km-GrT"/>
+                        <constraint firstAttribute="trailing" secondItem="MTZ-ZG-npX" secondAttribute="trailing" id="gfO-oc-QDN"/>
+                        <constraint firstAttribute="trailing" secondItem="vGf-3Y-L2x" secondAttribute="trailing" id="jjr-FW-vUb"/>
+                        <constraint firstAttribute="bottom" secondItem="MTZ-ZG-npX" secondAttribute="bottom" id="nc5-eL-cAX"/>
+                        <constraint firstItem="MTZ-ZG-npX" firstAttribute="leading" secondItem="iIO-p3-mg0" secondAttribute="leading" id="q55-n6-3A6"/>
                     </constraints>
-                    <items>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="cWW-QI-EeN"/>
-                        <barButtonItem image="dust" id="q8b-JP-yvi">
-                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1Mo-ax-1x1"/>
-                        <barButtonItem image="fav" id="BvD-QH-HCH">
-                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="0Y4-80-NNA"/>
-                        <barButtonItem image="share" id="q1J-fK-XfB">
-                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="4cG-cE-jEh"/>
-                    </items>
-                    <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                </toolbar>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="iIO-p3-mg0" secondAttribute="trailing" id="H5x-jj-RhI"/>
+                <constraint firstItem="iIO-p3-mg0" firstAttribute="top" secondItem="MEt-Pt-SXX" secondAttribute="top" id="Mcg-SM-6wY"/>
+                <constraint firstItem="iIO-p3-mg0" firstAttribute="leading" secondItem="MEt-Pt-SXX" secondAttribute="leading" id="igL-vI-fKI"/>
+            </constraints>
             <point key="canvasLocation" x="1271" y="380"/>
         </view>
         <view contentMode="scaleToFill" id="0fO-zV-1hh">

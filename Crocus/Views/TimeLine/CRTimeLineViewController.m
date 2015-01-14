@@ -20,6 +20,7 @@
 #import "CRUserInfoService.h"
 #import "CRTimeLineController.h"
 #import "CRStatusDetailViewController.h"
+#import "CRStatusUpdateViewController.h"
 
 @interface CRTimeLineViewController ()
 @property(nonatomic, strong) CRUserInfoService *userInfoService;
@@ -66,6 +67,15 @@
     [self.refreshControl addTarget:self action:@selector(refreshTimeLine) forControlEvents:UIControlEventValueChanged];
     _timeLineController = [CRTimeLineController view];
     [_timeLineController install:self.navigationController.view targetTableView:self.tableView];
+
+    UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(selected:)];
+    [self.tableView addGestureRecognizer:longPressGestureRecognizer];
+}
+
+- (void)selected:(UILongPressGestureRecognizer *)selected {
+    CGPoint p = [selected locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+    [CRStatusUpdateViewController showStatus:[self.timeLineService status:indexPath.row] callBack:nil];
 }
 
 - (void)timerFire {
