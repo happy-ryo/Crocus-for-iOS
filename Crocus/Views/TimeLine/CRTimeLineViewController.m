@@ -21,6 +21,8 @@
 #import "CRTimeLineController.h"
 #import "CRStatusDetailViewController.h"
 #import "CRStatusUpdateViewController.h"
+#import "CRUser.h"
+#import "CRProfileViewController.h"
 
 @interface CRTimeLineViewController ()
 @property(nonatomic, strong) CRUserInfoService *userInfoService;
@@ -215,6 +217,7 @@
         }
     }
     [cell loadCRStatus:status];
+    [cell.iconButton addTarget:self action:@selector(handleTouchButton:event:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
@@ -255,6 +258,19 @@
 
 - (void)dealloc {
     [self.timeLineService removeObserver:self];
+}
+
+- (void)handleTouchButton:(UIButton *)sender event:(UIEvent *)event {
+    NSIndexPath *indexPath = [self indexPathForControlEvent:event];
+    CRStatus *status = [_timeLineService status:indexPath.row];
+    [CRProfileViewController show:status.user];
+}
+
+- (NSIndexPath *)indexPathForControlEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint p = [touch locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+    return indexPath;
 }
 
 @end

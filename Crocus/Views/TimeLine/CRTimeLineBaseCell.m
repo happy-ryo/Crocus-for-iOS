@@ -22,6 +22,7 @@
     IBOutlet UILabel *_statusLabel;
     IBOutlet UILabel *_userNameLabel;
     IBOutlet UILabel *_screenNameLabel;
+    IBOutlet UIButton *_iconButton;
 }
 
 - (void)loadCRStatus:(CRStatus *)status {
