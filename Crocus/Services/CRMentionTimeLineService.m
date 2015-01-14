@@ -28,7 +28,10 @@
                                                              loadFinished:^(NSArray *statusArray, BOOL reload, NSError *error) {
                                                                  if (error == nil) {
                                                                      [weakSelf refreshSection:statusArray];
+                                                                 } else {
+                                                                     if (weakSelf.loaded) weakSelf.loaded(@[], YES);
                                                                  }
+                                                                 dispatch_semaphore_signal(_semaphore);
                                                              }];
     }
 

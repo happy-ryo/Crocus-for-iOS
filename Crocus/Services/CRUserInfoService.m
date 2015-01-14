@@ -63,6 +63,17 @@
     return result;
 }
 
+- (BOOL)checkMineStatus:(CRStatus *)status {
+    CRUser *user = [self getUser];
+    BOOL result;
+    if (user != nil) {
+        result = [user.idNum isEqualToNumber:status.user.idNum];
+    } else {
+        result = NO;
+    }
+    return result;
+}
+
 - (CRUser *)getUser {
     if (_user != nil) {
         return _user;

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
@@ -20,8 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y2N-bb-kGs">
-                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2N-bb-kGs">
+                    <rect key="frame" x="0.0" y="495" width="600" height="44"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <items>
                         <barButtonItem image="cancel" id="dDL-DG-Mwh">
@@ -58,8 +57,35 @@
                     </items>
                     <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </toolbar>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlQ-QZ-8Bp">
+                    <rect key="frame" x="0.0" y="539" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="jRu-0m-0mb"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="uUE-MX-yBS"/>
+                        <barButtonItem image="dust" id="qlG-xf-x6V">
+                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vCD-6f-j14"/>
+                        <barButtonItem image="fav" id="2O6-oL-0Jj">
+                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="iTI-21-gSu"/>
+                        <barButtonItem image="share" id="aib-Hc-1AG">
+                            <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="mkP-Wq-kbx"/>
+                    </items>
+                    <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="HlQ-QZ-8Bp" firstAttribute="leading" secondItem="OOg-wL-yJJ" secondAttribute="leading" id="3Dr-ZH-s0Q"/>
+                <constraint firstItem="HlQ-QZ-8Bp" firstAttribute="top" secondItem="y2N-bb-kGs" secondAttribute="bottom" id="NvS-Mk-ELL"/>
+                <constraint firstAttribute="trailing" secondItem="HlQ-QZ-8Bp" secondAttribute="trailing" id="wXp-q7-c3J"/>
+            </constraints>
             <point key="canvasLocation" x="1019" y="604"/>
         </view>
         <view contentMode="scaleToFill" id="4YT-ek-cPW">
@@ -111,7 +137,10 @@
     <resources>
         <image name="camera" width="29" height="28"/>
         <image name="cancel" width="28" height="28"/>
+        <image name="dust" width="27" height="27"/>
+        <image name="fav" width="28" height="27"/>
         <image name="library" width="27" height="27"/>
         <image name="post" width="28" height="28"/>
+        <image name="share" width="28" height="27"/>
     </resources>
 </document>

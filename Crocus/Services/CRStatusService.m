@@ -18,6 +18,7 @@
 #import "CRUpdateWithMedia.h"
 #import "CRFavoritesCreate.h"
 #import "CRStatusUpdateViewController.h"
+#import "CRStatusesDestroy.h"
 
 
 @implementation CRStatusService {
@@ -72,6 +73,13 @@
         }
         [updateWithMedia load];
     }
+}
+
+- (void)delete {
+    CRStatusesDestroy *statusesDestroy = [[CRStatusesDestroy alloc] initWithShowId:_status.idStr loadFinished:^(NSDictionary *statusDic, NSError *error) {
+        _callback(error == nil);
+    }];
+    [statusesDestroy load];
 }
 
 - (void)spread {

@@ -76,8 +76,8 @@
 }
 
 - (NSTimer *)getTimer:(NSUInteger)timer {
-    if (timer > 30) {
-        timer = 30;
+    if (timer > 60) {
+        timer = 60;
     }
     __weak CRTimeLineViewController *weakSelf = self;
     if (weakSelf.repeats.isValid) {
@@ -154,9 +154,17 @@
 }
 
 - (void)refreshTimeLine {
-    NSIndexPath *indexPath = self.tableView.indexPathsForVisibleRows[0];
+    NSIndexPath *indexPath;
+    if (self.tableView.indexPathsForVisibleRows.count == 0) {
+        indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    }
+    else {
+        indexPath = self.tableView.indexPathsForVisibleRows[0];
+    }
     if (indexPath.row == 0) {
         [self.timeLineService update];
+    } else {
+        [self.refreshControl endRefreshing];
     }
 }
 

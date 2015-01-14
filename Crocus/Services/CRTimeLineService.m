@@ -63,7 +63,10 @@
                                                                loadFinished:^(NSArray *statusArray, BOOL reload, NSError *error) {
                                                                    if (error == nil) {
                                                                        [weakSelf refreshSection:statusArray];
+                                                                   } else {
+                                                                       if (_loaded) _loaded(@[], YES);
                                                                    }
+                                                                   dispatch_semaphore_signal(_semaphore);
                                                                }];
     }
 
@@ -92,7 +95,6 @@
     }
     if (_loaded) _loaded(tmpStatusArray, reloadFlg);
     weakSelf.newerStatuses = statusArray;
-    dispatch_semaphore_signal(_semaphore);
 }
 
 - (void)addObserver:(id)observer {
@@ -104,7 +106,7 @@
 }
 
 - (CRStatus *)status:(NSInteger)index {
-    return self.statuses[(NSUInteger) index];
+    return self.statusCount == 0 ? [[CRStatus alloc] init] : self.statuses[(NSUInteger) index];
 }
 
 - (NSInteger)statusCount {
@@ -119,7 +121,7 @@
 - (void)update {
     dispatch_queue_t queueT = dispatch_queue_create([self queueName:@"update"], NULL);
     dispatch_async(queueT, ^{
-        dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
+        dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 4));
         self.publicTimeLine.maxId = nil;
         CRStatus *lastStatus = [self status:0];
         self.publicTimeLine.sinceId = lastStatus.idStr;
@@ -130,7 +132,7 @@
 - (void)historyLoad {
     dispatch_queue_t queueT = dispatch_queue_create([self queueName:@"historyLoad"], NULL);
     dispatch_async(queueT, ^{
-        dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC));
+        dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 4));
         self.publicTimeLine.sinceId = nil;
         CRStatus *maxStatus = [self status:self.statusCount - 1];
         self.publicTimeLine.maxId = maxStatus.idStr;

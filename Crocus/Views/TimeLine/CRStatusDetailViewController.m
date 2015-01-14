@@ -19,6 +19,7 @@
 #import "CRUser.h"
 #import "CRSource.h"
 #import "CREntities.h"
+#import "CRUserInfoService.h"
 
 static const char kStatusDetailWindow;
 
@@ -33,6 +34,7 @@ static const char kStatusDetailWindow;
     IBOutlet UIImageView *_mediaImageView;
     IBOutlet UIScrollView *_scrollView;
     IBOutlet UIView *_backgroundView;
+    IBOutlet UIBarButtonItem *_deleteButton;
 
     CRStatus *_status;
     CRStatusService *_statusService;
@@ -55,6 +57,11 @@ static const char kStatusDetailWindow;
     }];
 
     CRStatus *loadStatus;
+    CRUserInfoService *userInfoService = [[CRUserInfoService alloc] init];
+    if (!userInfoService.isExistUserInfo || ![userInfoService checkMineStatus:_status]) {
+        _deleteButton.title = @"";
+        _deleteButton.enabled = NO;
+    }
     if (_status.isSpreadStatus) {
         loadStatus = _status.spreadStatus;
         [_spreadIconImageView sd_setImageWithURL:[[NSURL alloc] initWithString:_status.user.profileImageUrlHttps]];
