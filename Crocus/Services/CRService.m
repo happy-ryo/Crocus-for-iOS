@@ -20,7 +20,6 @@
 #import "CRSource.h"
 #import "CRStatus.h"
 #import "CRTimeLineService.h"
-#import "CRService.h"
 
 
 @implementation CRService {
@@ -65,7 +64,7 @@
     CRUser *user = [[CRUser alloc] init];
     user.idNum = dictionary[@"id"];
     user.idStr = dictionary[@"id_str"];
-    user.userDescription = dictionary[@"description"];
+    user.userDescription = [self nullToNil:dictionary key:@"description"];
     user.followRequestSent = (Boolean) dictionary[@"follow_request_sent"];
     user.followersCount = dictionary[@"followers_count"];
     user.friendsCount = dictionary[@"friends_count"];

@@ -25,7 +25,12 @@ static const char kProfileWindow;
     IBOutlet UILabel *_userNameLabel;
     IBOutlet UILabel *_screenNameLabel;
     IBOutlet UITextView *_profileTextView;
+    IBOutlet UIView *_backgroundView;
+}
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [_backgroundView.layer setCornerRadius:5];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
