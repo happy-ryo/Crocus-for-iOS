@@ -18,7 +18,13 @@
 
 
 @interface CRStatusService : CRService
+@property(nonatomic, copy) void (^callback)(BOOL);
+
+@property(nonatomic, copy) void (^deleteCallback)(BOOL);
+
 - (instancetype)initWithStatus:(CRStatus *)status callback:(void (^)(BOOL requestStatus))callback;
+
+- (instancetype)initWithStatus:(CRStatus *)status callback:(void (^)(BOOL))callback deleteCallback:(void (^)(BOOL))deleteCallback;
 
 - (void)post:(NSString *)message callback:(void (^)(BOOL status, NSError *error))callBack;
 

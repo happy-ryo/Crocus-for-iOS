@@ -36,6 +36,8 @@ static const char kStatusUpdateWindow;
     CRStatus *_status;
 
     void (^_callBack)(BOOL reload);
+
+    void (^_deleteCallback)(BOOL deleted);
 }
 
 - (void)viewDidLoad {
@@ -69,6 +71,11 @@ static const char kStatusUpdateWindow;
         }
         _statusService = [[CRStatusService alloc] initWithStatus:_status callback:^(BOOL requestStatus) {
             if (requestStatus) {
+                [weakSelf close];
+            }
+        }                                         deleteCallback:^(BOOL b) {
+            if (b) {
+                weakSelf.deleteCallback(b);
                 [weakSelf close];
             }
         }];
@@ -179,6 +186,42 @@ static BOOL showStatusUpdateFlg;
     CRStatusUpdateViewController *statusUpdateViewController = (CRStatusUpdateViewController *) window.rootViewController;
     statusUpdateViewController.callBack = callBack;
     statusUpdateViewController.status = status;
+
+    objc_setAssociatedObject([UIApplication sharedApplication], &kStatusUpdateWindow, window, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+    [UIView transitionWithView:window duration:0.2 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+        window.alpha = 1.0;
+        window.transform = CGAffineTransformIdentity;
+    }               completion:^(BOOL finished) {
+
+    }];
+}
+
++ (void)showStatus:(CRStatus *)status callBack:(void (^)(BOOL reload))callBack deleteCallback:(void (^)(BOOL deleted))deleteCallback {
+    if (showStatusUpdateFlg) {
+        return;
+    } else {
+        showStatusUpdateFlg = YES;
+    }
+    CGRect rect = [UIScreen mainScreen].bounds;
+    UIWindow *window = [[UIWindow alloc] initWithFrame:rect];
+    window.alpha = 0;
+    if (rect.size.height > 567) {
+        window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView" bundle:nil];
+    } else {
+        window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView4s" bundle:nil];
+    }
+    window.backgroundColor = [UIColor colorWithWhite:0 alpha:.3];
+    window.transform = CGAffineTransformMakeScale(1.3, 1.3);
+    window.transform = CGAffineTransformMakeTranslation(0, 0);
+    window.windowLevel = UIWindowLevelNormal + 5;
+
+    [window makeKeyAndVisible];
+
+    CRStatusUpdateViewController *statusUpdateViewController = (CRStatusUpdateViewController *) window.rootViewController;
+    statusUpdateViewController.callBack = callBack;
+    statusUpdateViewController.status = status;
+    statusUpdateViewController.deleteCallback = deleteCallback;
 
     objc_setAssociatedObject([UIApplication sharedApplication], &kStatusUpdateWindow, window, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 

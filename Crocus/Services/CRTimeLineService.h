@@ -33,6 +33,10 @@
 
 - (instancetype)initWithLoaded:(void (^)(NSArray *, BOOL))loaded;
 
+- (void)removeStatus:(CRStatus *)statuses;
+
+- (void)reset;
+
 - (void)removeObserver:(id)observer;
 
 - (CRStatus *)status:(NSInteger)index;

@@ -97,6 +97,18 @@
     weakSelf.newerStatuses = statusArray;
 }
 
+- (void)removeStatus:(CRStatus *)statuses {
+    if ([self.statuses containsObject:statuses]) {
+        [self.statuses removeObject:statuses];
+    }
+}
+
+- (void)reset {
+    dispatch_semaphore_signal(_semaphore);
+    self.statuses = @[].mutableCopy;
+    [self update];
+}
+
 - (void)addObserver:(id)observer {
     [self addObserver:observer forKeyPath:@"newerStatuses" options:NSKeyValueObservingOptionNew context:nil];
 }
