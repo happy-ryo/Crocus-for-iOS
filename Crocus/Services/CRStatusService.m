@@ -25,6 +25,18 @@
     CRStatus *_status;
 
     void(^_callback)(BOOL requestStatus);
+
+    void(^_deleteCallback)(BOOL status);
+}
+- (instancetype)initWithStatus:(CRStatus *)status callback:(void (^)(BOOL))callback deleteCallback:(void (^)(BOOL))deleteCallback {
+    self = [super init];
+    if (self) {
+        _status = status;
+        self.callback = callback;
+        _deleteCallback = deleteCallback;
+    }
+
+    return self;
 }
 
 - (instancetype)initWithStatus:(CRStatus *)status callback:(void (^)(BOOL status))callback {
@@ -77,21 +89,22 @@
 
 - (void)delete {
     CRStatusesDestroy *statusesDestroy = [[CRStatusesDestroy alloc] initWithShowId:_status.idStr loadFinished:^(NSDictionary *statusDic, NSError *error) {
-        _callback(error == nil);
+        if (_callback)_callback(error == nil);
+        if (_deleteCallback)_deleteCallback(error == nil);
     }];
     [statusesDestroy load];
 }
 
 - (void)spread {
     CRSpread *spread = [[CRSpread alloc] initWithShowId:_status.idStr loadFinished:^(NSDictionary *statusDic, NSError *error) {
-        _callback(error == nil);
+        if (_callback)_callback(error == nil);
     }];
     [spread load];
 }
 
 - (void)favourite {
     CRFavoritesCreate *favoritesCreate = [[CRFavoritesCreate alloc] initWithShowId:_status.idStr loadFinished:^(NSDictionary *statusDic, NSError *error) {
-        _callback(error == nil);
+        if (_callback) _callback(error == nil);
     }];
     [favoritesCreate load];
 }

@@ -75,9 +75,19 @@
 }
 
 - (void)selected:(UILongPressGestureRecognizer *)selected {
+    __weak CRTimeLineViewController *weakSelf = self;
+
     CGPoint p = [selected locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
-    [CRStatusUpdateViewController showStatus:[self.timeLineService status:indexPath.row] callBack:nil];
+    CRStatus *targetStatus = [self.timeLineService status:indexPath.row];
+    [CRStatusUpdateViewController showStatus:targetStatus callBack:^(BOOL reload) {
+
+    }                         deleteCallback:^(BOOL deleted) {
+        if (deleted) {
+            [weakSelf.timeLineService removeStatus:targetStatus];
+            [weakSelf.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+    }];
 }
 
 - (void)timerFire {
