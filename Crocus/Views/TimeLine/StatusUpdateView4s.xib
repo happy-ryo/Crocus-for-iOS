@@ -7,11 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CRStatusUpdateViewController">
             <connections>
                 <outlet property="_advanceInputAccessory" destination="gxZ-xG-6Ib" id="YRz-c9-qNF"/>
-                <outlet property="_deleteBarButtonItem" destination="qlG-xf-x6V" id="jkB-zP-K2q"/>
-                <outlet property="_favBarButtonItem" destination="2O6-oL-0Jj" id="tdf-4k-Chk"/>
                 <outlet property="_inputAccessory" destination="y2N-bb-kGs" id="AHF-Te-cST"/>
                 <outlet property="_postImageView" destination="I4V-VK-GDq" id="EHA-hU-VLC"/>
-                <outlet property="_spreadButtonItem" destination="aib-Hc-1AG" id="UvI-O7-bET"/>
                 <outlet property="_statusCountBarButtonItem" destination="3BZ-2h-9t0" id="kli-ka-vKn"/>
                 <outlet property="_textBackGroundView" destination="a2k-ex-SBt" id="fHQ-RY-w78"/>
                 <outlet property="_textView" destination="sJn-Ah-q6O" id="Gaf-hX-Hno"/>
@@ -67,39 +64,12 @@
                             </items>
                             <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </toolbar>
-                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlQ-QZ-8Bp">
-                            <rect key="frame" x="0.0" y="44" width="600" height="44"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="jRu-0m-0mb"/>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ycL-fi-CNQ"/>
-                            </constraints>
-                            <items>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="uUE-MX-yBS"/>
-                                <barButtonItem image="dust" id="qlG-xf-x6V">
-                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="vCD-6f-j14"/>
-                                <barButtonItem image="fav" id="2O6-oL-0Jj">
-                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="iTI-21-gSu"/>
-                                <barButtonItem image="share" id="aib-Hc-1AG">
-                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="mkP-Wq-kbx"/>
-                            </items>
-                            <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        </toolbar>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="88" id="F51-iz-xpm"/>
                         <constraint firstAttribute="trailing" secondItem="y2N-bb-kGs" secondAttribute="trailing" id="VGJ-kz-EQ1"/>
-                        <constraint firstItem="HlQ-QZ-8Bp" firstAttribute="leading" secondItem="gxZ-xG-6Ib" secondAttribute="leading" id="Zra-zN-6h5"/>
-                        <constraint firstAttribute="trailing" secondItem="HlQ-QZ-8Bp" secondAttribute="trailing" id="aci-g6-hsH"/>
                         <constraint firstItem="y2N-bb-kGs" firstAttribute="leading" secondItem="gxZ-xG-6Ib" secondAttribute="leading" id="mnM-5E-wiS"/>
-                        <constraint firstItem="HlQ-QZ-8Bp" firstAttribute="top" secondItem="y2N-bb-kGs" secondAttribute="bottom" id="mxB-1f-IX5"/>
                     </constraints>
                 </view>
             </subviews>
@@ -160,10 +130,7 @@
     <resources>
         <image name="camera" width="29" height="28"/>
         <image name="cancel" width="28" height="28"/>
-        <image name="dust" width="27" height="27"/>
-        <image name="fav" width="28" height="27"/>
         <image name="library" width="27" height="27"/>
         <image name="post" width="28" height="28"/>
-        <image name="share" width="28" height="27"/>
     </resources>
 </document>

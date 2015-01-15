@@ -51,7 +51,7 @@ static const char kStatusUpdateWindow;
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     __weak CRStatusUpdateViewController *weakSelf = self;
-    if (_status == nil || [UIScreen mainScreen].bounds.size.height < 568) {
+    if (_status == nil || [UIScreen mainScreen].bounds.size.height < 567) {
         _textView.inputAccessoryView = _inputAccessory;
         _statusService = [[CRStatusService alloc] init];
     } else {
@@ -164,7 +164,7 @@ static BOOL showStatusUpdateFlg;
     CGRect rect = [UIScreen mainScreen].bounds;
     UIWindow *window = [[UIWindow alloc] initWithFrame:rect];
     window.alpha = 0;
-    if (rect.size.height > 568) {
+    if (rect.size.height > 567) {
         window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView" bundle:nil];
     } else {
         window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView4s" bundle:nil];
