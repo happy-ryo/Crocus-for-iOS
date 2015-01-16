@@ -19,5 +19,9 @@
 @interface CRProfileViewController : UIViewController
 @property(nonatomic, strong) CRUser *user;
 
+@property(nonatomic, copy) void (^callback)();
+
 + (void)show:(CRUser *)user;
+
++ (void)show:(CRUser *)user callback:(void (^)())callback;
 @end

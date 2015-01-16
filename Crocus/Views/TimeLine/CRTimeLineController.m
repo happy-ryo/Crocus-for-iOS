@@ -93,18 +93,15 @@
 
 - (IBAction)modeChange {
     if (_isOpened) {
-        [UIView animateWithDuration:0.3 animations:^{
-            _postButton.transform = CGAffineTransformIdentity;
-            _rewindButton.transform = CGAffineTransformIdentity;
-            _fastForwardButton.transform = CGAffineTransformIdentity;
-        }                completion:^(BOOL finished) {
-            if (finished) {
-                _isOpened = NO;
-            }
-        }];
+        [self closeController];
     } else {
-        CGFloat baseHeight = -65;
-        [UIView animateWithDuration:0.3 animations:^{
+        [self openController];
+    }
+}
+
+- (void)openController {
+    CGFloat baseHeight = -65;
+    [UIView animateWithDuration:0.3 animations:^{
             _postButton.transform = CGAffineTransformMakeTranslation(0, baseHeight);
             _rewindButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 2);
             _fastForwardButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 3);
@@ -113,7 +110,18 @@
                 _isOpened = YES;
             }
         }];
-    }
+}
+
+- (void)closeController {
+    [UIView animateWithDuration:0.3 animations:^{
+        _postButton.transform = CGAffineTransformIdentity;
+        _rewindButton.transform = CGAffineTransformIdentity;
+        _fastForwardButton.transform = CGAffineTransformIdentity;
+    }                completion:^(BOOL finished) {
+        if (finished) {
+            _isOpened = NO;
+        }
+    }];
 }
 
 - (IBAction)statusUpdate {

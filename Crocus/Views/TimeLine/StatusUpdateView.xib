@@ -100,6 +100,9 @@
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="4cG-cE-jEh"/>
                                 <barButtonItem title="To happy_ryo" id="1kd-XD-E64">
                                     <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="userInfoOpen" destination="-1" id="DUR-JU-N9W"/>
+                                    </connections>
                                 </barButtonItem>
                             </items>
                             <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

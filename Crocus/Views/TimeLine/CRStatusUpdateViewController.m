@@ -18,6 +18,7 @@
 #import "CRStatus.h"
 #import "CRUser.h"
 #import "CRUserInfoService.h"
+#import "CRProfileViewController.h"
 
 static const char kStatusUpdateWindow;
 
@@ -140,6 +141,17 @@ static const char kStatusUpdateWindow;
 
 - (IBAction)favourite {
     [_statusService favourite];
+}
+
+- (IBAction)userInfoOpen {
+    _textView.resignFirstResponder;
+    __weak CRStatusUpdateViewController *weakSelf = self;
+
+    [CRProfileViewController show:_status.user callback:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.textView.becomeFirstResponder;
+        });
+    }];
 }
 
 - (IBAction)cameraOpen {

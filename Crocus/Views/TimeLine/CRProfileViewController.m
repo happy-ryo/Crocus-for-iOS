@@ -26,6 +26,8 @@ static const char kProfileWindow;
     IBOutlet UILabel *_screenNameLabel;
     IBOutlet UITextView *_profileTextView;
     IBOutlet UIView *_backgroundView;
+
+    void (^_callback)();
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -44,6 +46,10 @@ static const char kProfileWindow;
 
 
 + (void)show:(CRUser *)user {
+    [CRProfileViewController show:user callback:nil];
+}
+
++ (void)show:(CRUser *)user callback:(void (^)())callback {
     CGRect rect = [UIScreen mainScreen].bounds;
     UIWindow *window = [[UIWindow alloc] initWithFrame:rect];
     window.alpha = 0.3;
@@ -57,6 +63,7 @@ static const char kProfileWindow;
 
     CRProfileViewController *profileViewController = (CRProfileViewController *) window.rootViewController;
     profileViewController.user = user;
+    profileViewController.callback = callback;
 
     objc_setAssociatedObject([UIApplication sharedApplication], &kProfileWindow, window, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
@@ -69,6 +76,8 @@ static const char kProfileWindow;
 }
 
 - (IBAction)close {
+    __weak CRProfileViewController *weakSelf = self;
+
     UIWindow *window = objc_getAssociatedObject([UIApplication sharedApplication], &kProfileWindow);
     [UIView transitionWithView:window
                       duration:.2
@@ -87,6 +96,9 @@ static const char kProfileWindow;
                         UIWindow *nextWindow = [[UIApplication sharedApplication].delegate window];
                         [nextWindow makeKeyAndVisible];
                         [UIView setAnimationsEnabled:YES];
+                        if (weakSelf.callback) {
+                            weakSelf.callback();
+                        }
                     }];
 
 }

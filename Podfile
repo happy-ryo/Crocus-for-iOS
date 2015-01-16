@@ -2,7 +2,8 @@
 platform :ios, '7.0'
 
 target 'Crocus' do
-pod 'SDWebImage', '~> 3.7'
+pod 'SDWebImage'
+pod 'MBProgressHUD' 
 end
 
 target 'CrocusTests' do

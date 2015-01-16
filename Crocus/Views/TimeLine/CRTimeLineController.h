@@ -23,9 +23,15 @@
 
 @property(nonatomic, strong) UITableView *tableView;
 
+@property(nonatomic) BOOL isOpened;
+
 - (instancetype)initWithTableView:(UITableView *)tableView;
 
 - (void)install:(UIView *)baseView targetTableView:(UITableView *)uiTableView;
+
+- (void)closeController;
+
+- (void)openController;
 
 + (instancetype)controllerWithTableView:(UITableView *)tableView;
 
