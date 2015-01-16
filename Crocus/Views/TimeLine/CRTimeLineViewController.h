@@ -14,10 +14,13 @@
 #import <Foundation/Foundation.h>
 
 @class CRTimeLineService;
+@class CRTimeLineController;
 
 
 @interface CRTimeLineViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic, strong) CRTimeLineService *timeLineService;
+@property(nonatomic, strong) CRTimeLineController *timeLineController;
+
 - (void)createTimeLineService;
 
 - (void)reloadSection:(NSArray *)array history:(BOOL)flag;

@@ -35,7 +35,7 @@
 
 - (void)removeStatus:(CRStatus *)statuses;
 
-- (void)reset;
+- (void)reset:(UITableView *)target;
 
 - (void)removeObserver:(id)observer;
 

@@ -23,6 +23,7 @@
 #import "CRStatusUpdateViewController.h"
 #import "CRUser.h"
 #import "CRProfileViewController.h"
+#import "MBProgressHUD.h"
 
 @interface CRTimeLineViewController ()
 @property(nonatomic, strong) CRUserInfoService *userInfoService;
@@ -72,16 +73,38 @@
 
     UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(selected:)];
     [self.tableView addGestureRecognizer:longPressGestureRecognizer];
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refresh"] style:UIBarButtonItemStyleBordered target:self action:@selector(cleanReload)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
+}
+
+- (void)cleanReload {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:NO];
+    __weak CRTimeLineViewController *weakSelf = self;
+    self.tableView.scrollEnabled = NO;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 2), dispatch_get_main_queue(), ^{
+        [weakSelf.timeLineService reset:weakSelf.tableView];
+        weakSelf.tableView.scrollEnabled = YES;
+        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+    });
 }
 
 - (void)selected:(UILongPressGestureRecognizer *)selected {
+    BOOL timeLineControllerOpen = NO;
+    if (_timeLineController.isOpened) {
+        timeLineControllerOpen = YES;
+        [_timeLineController closeController];
+    }
     __weak CRTimeLineViewController *weakSelf = self;
 
     CGPoint p = [selected locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
     CRStatus *targetStatus = [self.timeLineService status:indexPath.row];
     [CRStatusUpdateViewController showStatus:targetStatus callBack:^(BOOL reload) {
-
+        if (reload && timeLineControllerOpen) {
+            [weakSelf.timeLineController openController];
+        }
     }                         deleteCallback:^(BOOL deleted) {
         if (deleted) {
             [weakSelf.timeLineService removeStatus:targetStatus];

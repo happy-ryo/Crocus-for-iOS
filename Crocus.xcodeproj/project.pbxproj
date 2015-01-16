@@ -34,6 +34,7 @@
 		82CDDEB88DD66EED4FCD3DAA /* CRTimeLineImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDDD7C345CBE3A79CE2A8 /* CRTimeLineImageCell.m */; };
 		82CDDEEA5BC66F3E6D524E81 /* CRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */; };
 		8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8967A8F01A52F25000FDB716 /* OAuth.storyboard */; };
+		897BC4841A68264B00964A68 /* StatusUpdateView5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897BC4831A68264B00964A68 /* StatusUpdateView5.xib */; };
 		8983A4691A655DEE00607BEC /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8983A4681A655DEE00607BEC /* ProfileView.xib */; };
 		89A914981A5950A400353993 /* TimeLineSpreadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A914971A5950A400353993 /* TimeLineSpreadCell.xib */; };
 		89A9149A1A59BD8A00353993 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A914991A59BD8A00353993 /* LoadingCell.xib */; };
@@ -147,6 +148,7 @@
 		82CDDFA909F8FC430E802133 /* CRProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRProfileViewController.m; sourceTree = "<group>"; };
 		82CDDFAA2AC71717678A7AEF /* CRTimeLineBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineBaseViewController.h; sourceTree = "<group>"; };
 		8967A8F01A52F25000FDB716 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
+		897BC4831A68264B00964A68 /* StatusUpdateView5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusUpdateView5.xib; sourceTree = "<group>"; };
 		8983A4681A655DEE00607BEC /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		89A914971A5950A400353993 /* TimeLineSpreadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineSpreadCell.xib; sourceTree = "<group>"; };
 		89A914991A59BD8A00353993 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				8983A4681A655DEE00607BEC /* ProfileView.xib */,
 				82CDDFA909F8FC430E802133 /* CRProfileViewController.m */,
 				82CDD66165948E06A25CBC28 /* CRProfileViewController.h */,
+				897BC4831A68264B00964A68 /* StatusUpdateView5.xib */,
 			);
 			path = TimeLine;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				89FA166B1A47B53B00271FBB /* LaunchScreen.xib in Resources */,
 				89A9149E1A5D825F00353993 /* TimeLineImageSpreadCell.xib in Resources */,
 				89A914A21A63CDC900353993 /* StatusUpdateView4s.xib in Resources */,
+				897BC4841A68264B00964A68 /* StatusUpdateView5.xib in Resources */,
 				89CB2FBA1A63F35E0066F0CF /* StatusDetailView.xib in Resources */,
 				8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */,
 				89A9149C1A5D792600353993 /* TimeLineImageCell.xib in Resources */,
@@ -851,6 +855,16 @@
 				INFOPLIST_FILE = Crocus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"Pods-Crocus-MBProgressHUD\"",
+					"-l\"Pods-Crocus-SDWebImage\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2c33b621-bd7f-442c-bc7d-16ab5a85c5a5";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
@@ -869,6 +883,16 @@
 				INFOPLIST_FILE = Crocus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"Pods-Crocus-MBProgressHUD\"",
+					"-l\"Pods-Crocus-SDWebImage\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c8a505d6-9a8a-401e-8d4f-07b8fb710385";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
