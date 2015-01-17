@@ -47,6 +47,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineReplyImageCell" bundle:nil] forCellReuseIdentifier:@"replyImageCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineSpreadCell" bundle:nil] forCellReuseIdentifier:@"spreadCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"TimeLineImageSpreadCell" bundle:nil] forCellReuseIdentifier:@"spreadImageCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"AdsTimeLineBaseCell" bundle:nil] forCellReuseIdentifier:@"adsCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"LoadingCell" bundle:nil] forCellReuseIdentifier:@"loadingCell"];
 
     CROAuth *auth = [[CROAuth alloc] init];
@@ -246,7 +247,7 @@
         if (status.isExistImage) {
             cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
         } else {
-            cell = [tableView dequeueReusableCellWithIdentifier:@"baseCell"];
+            cell = [tableView dequeueReusableCellWithIdentifier:@"adsCell"];
         }
     }
     [cell loadCRStatus:status];
