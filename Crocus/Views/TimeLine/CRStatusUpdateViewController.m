@@ -183,8 +183,10 @@ static BOOL showStatusUpdateFlg;
     CGRect rect = [UIScreen mainScreen].bounds;
     UIWindow *window = [[UIWindow alloc] initWithFrame:rect];
     window.alpha = 0;
-    if (rect.size.height > 567) {
+    if (rect.size.height > 666) {
         window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView" bundle:nil];
+    } else if (rect.size.height > 567) {
+        window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView5" bundle:nil];
     } else {
         window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView4s" bundle:nil];
     }
@@ -218,8 +220,10 @@ static BOOL showStatusUpdateFlg;
     CGRect rect = [UIScreen mainScreen].bounds;
     UIWindow *window = [[UIWindow alloc] initWithFrame:rect];
     window.alpha = 0;
-    if (rect.size.height > 567) {
+    if (rect.size.height > 666) {
         window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView" bundle:nil];
+    } else if (rect.size.height > 567) {
+        window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView5" bundle:nil];
     } else {
         window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView4s" bundle:nil];
     }

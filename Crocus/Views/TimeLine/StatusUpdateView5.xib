@@ -1,15 +1,148 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="pyq-oW-sIh">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kt-7c-7kt">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
+                    <subviews>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHP-xD-tNN">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="aaa-9F-Ndq"/>
+                            </constraints>
+                            <items>
+                                <barButtonItem image="cancel" id="3Kq-2V-tts">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="9FD-AY-vMH"/>
+                                <barButtonItem image="camera" id="RZ8-Ez-prT">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="p2D-pP-kmc"/>
+                                <barButtonItem image="library" id="Z7b-SQ-okr">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="Hs4-ub-vnb"/>
+                                <barButtonItem image="post" id="06x-SO-RJ7">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="Oru-AQ-O9P"/>
+                                <barButtonItem title="372" id="Ebh-87-6gQ">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                            </items>
+                            <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </toolbar>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffs-DY-zkx">
+                            <rect key="frame" x="0.0" y="44" width="600" height="44"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="3we-1e-crR"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="FL6-8H-ksd"/>
+                            </constraints>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="dH6-Mu-WPK"/>
+                                <barButtonItem image="dust" id="r4N-6E-Y7A">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="vfS-pc-F5f"/>
+                                <barButtonItem image="fav" id="PgI-lb-MvN">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="IiR-N3-Tbl"/>
+                                <barButtonItem image="share" id="8gW-vT-xkn">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="x51-Z9-fzt"/>
+                                <barButtonItem title="To happy_ryo" id="Gbe-kC-hXL">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                            </items>
+                            <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </toolbar>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ffs-DY-zkx" firstAttribute="leading" secondItem="3kt-7c-7kt" secondAttribute="leading" id="3s0-Ny-Wtr"/>
+                        <constraint firstAttribute="trailing" secondItem="vHP-xD-tNN" secondAttribute="trailing" id="5iL-t9-Cai"/>
+                        <constraint firstAttribute="height" constant="88" id="Au7-yB-wx6"/>
+                        <constraint firstItem="ffs-DY-zkx" firstAttribute="top" secondItem="vHP-xD-tNN" secondAttribute="bottom" id="Q7j-2g-faO"/>
+                        <constraint firstAttribute="trailing" secondItem="ffs-DY-zkx" secondAttribute="trailing" id="V6G-fX-aOl"/>
+                        <constraint firstAttribute="bottom" secondItem="ffs-DY-zkx" secondAttribute="bottom" id="Ydz-sA-zSC"/>
+                        <constraint firstItem="vHP-xD-tNN" firstAttribute="leading" secondItem="3kt-7c-7kt" secondAttribute="leading" id="bMG-Fv-CCL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3kt-7c-7kt" firstAttribute="top" secondItem="pyq-oW-sIh" secondAttribute="top" id="Xu3-Ls-y3S"/>
+                <constraint firstItem="3kt-7c-7kt" firstAttribute="leading" secondItem="pyq-oW-sIh" secondAttribute="leading" id="YTN-Ml-rJC"/>
+                <constraint firstAttribute="trailing" secondItem="3kt-7c-7kt" secondAttribute="trailing" id="ugC-RO-3y3"/>
+            </constraints>
+            <point key="canvasLocation" x="1271" y="380"/>
+        </view>
+        <view contentMode="scaleToFill" id="OsP-zq-G4w">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XE0-fS-R5w">
+                    <rect key="frame" x="475" y="190" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="KZ1-Rr-Lls"/>
+                        <constraint firstAttribute="height" constant="100" id="QPM-nT-bdO"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHG-8O-JSA">
+                    <rect key="frame" x="15" y="80" width="570" height="200"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amz-vq-CAU">
+                            <rect key="frame" x="10" y="10" width="550" height="180"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="180" id="ixN-6c-XrO"/>
+                            </constraints>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="amz-vq-CAU" firstAttribute="leading" secondItem="FHG-8O-JSA" secondAttribute="leading" constant="10" id="3xL-Uj-JHo"/>
+                        <constraint firstAttribute="bottom" secondItem="amz-vq-CAU" secondAttribute="bottom" constant="10" id="Adm-2E-YvH"/>
+                        <constraint firstItem="amz-vq-CAU" firstAttribute="top" secondItem="FHG-8O-JSA" secondAttribute="top" constant="10" id="QQy-Ka-5sW"/>
+                        <constraint firstAttribute="height" constant="200" id="nC3-dS-ILz"/>
+                        <constraint firstAttribute="trailing" secondItem="amz-vq-CAU" secondAttribute="trailing" constant="10" id="t8Y-Lo-EPJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="FHG-8O-JSA" secondAttribute="trailing" constant="15" id="2VA-7v-rDT"/>
+                <constraint firstAttribute="trailing" secondItem="XE0-fS-R5w" secondAttribute="trailing" constant="25" id="5tJ-rh-sU7"/>
+                <constraint firstItem="FHG-8O-JSA" firstAttribute="leading" secondItem="OsP-zq-G4w" secondAttribute="leading" constant="15" id="AMb-Lp-4LW"/>
+                <constraint firstItem="FHG-8O-JSA" firstAttribute="top" secondItem="OsP-zq-G4w" secondAttribute="top" constant="80" id="Fvb-sS-JM6"/>
+                <constraint firstItem="XE0-fS-R5w" firstAttribute="top" secondItem="OsP-zq-G4w" secondAttribute="top" constant="190" id="dgu-yS-tew"/>
+            </constraints>
+            <point key="canvasLocation" x="636" y="663"/>
         </view>
     </objects>
+    <resources>
+        <image name="camera" width="29" height="28"/>
+        <image name="cancel" width="28" height="28"/>
+        <image name="dust" width="27" height="27"/>
+        <image name="fav" width="28" height="27"/>
+        <image name="library" width="27" height="27"/>
+        <image name="post" width="28" height="28"/>
+        <image name="share" width="28" height="27"/>
+    </resources>
 </document>

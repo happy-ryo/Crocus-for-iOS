@@ -19,6 +19,7 @@
 		82CDD5CFF2DF56EAB66D9626 /* CRService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD700E7B1287349779C91 /* CRService.m */; };
 		82CDD6963059C0F60EAE163D /* CRHomeTimeLineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDE0F897B87A3725EBA43 /* CRHomeTimeLineService.m */; };
 		82CDD6A53650F89BF2291FCF /* CRUserInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDF0B4983CAD0E016EFD9 /* CRUserInfoService.m */; };
+		82CDD6BCA78BCD749E976088 /* CRAdsTimeLineBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDB9C6FB4762A045FC8FD /* CRAdsTimeLineBaseCell.m */; };
 		82CDD85843720012B95D6400 /* CRMentionTimeLineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDC6CB2EF35D142CCF081 /* CRMentionTimeLineService.m */; };
 		82CDD9439CCC56568C46CED5 /* CRMentionTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD218D98E2FE19FBA28F0 /* CRMentionTimeLineViewController.m */; };
 		82CDD9699A84F1687F9A4A4B /* CRStatusDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDECC9BC401CB4AE96494 /* CRStatusDetailViewController.m */; };
@@ -44,6 +45,7 @@
 		89A914A21A63CDC900353993 /* StatusUpdateView4s.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A914A11A63CDC800353993 /* StatusUpdateView4s.xib */; };
 		89A914A51A63ECD900353993 /* CRUIImage+rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A914A31A63ECD900353993 /* CRUIImage+rotation.m */; };
 		89CB2FBA1A63F35E0066F0CF /* StatusDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CB2FB91A63F35E0066F0CF /* StatusDetailView.xib */; };
+		89CB99431A6A8F53009AD3B9 /* AdsTimeLineBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CB99421A6A8F53009AD3B9 /* AdsTimeLineBaseCell.xib */; };
 		89CC2AD31A5E50C900D1B266 /* TimeLineReplyBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CC2AD21A5E50C900D1B266 /* TimeLineReplyBaseCell.xib */; };
 		89CC2AD51A5E520E00D1B266 /* TimeLineReplyImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CC2AD41A5E520E00D1B266 /* TimeLineReplyImageCell.xib */; };
 		89CC2AD71A5E767C00D1B266 /* TimeLineController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CC2AD61A5E767C00D1B266 /* TimeLineController.xib */; };
@@ -83,6 +85,11 @@
 		89FA16681A47B53B00271FBB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89FA16671A47B53B00271FBB /* Images.xcassets */; };
 		89FA166B1A47B53B00271FBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89FA16691A47B53B00271FBB /* LaunchScreen.xib */; };
 		89FA16771A47B53B00271FBB /* CrocusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FA16761A47B53B00271FBB /* CrocusTests.m */; };
+		89FB84171A6ABE21009D4573 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB84101A6ABE21009D4573 /* libNendAd.a */; };
+		89FB84181A6ABE21009D4573 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 89FB84161A6ABE21009D4573 /* NADView_readme.txt */; };
+		89FB841A1A6ABE46009D4573 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB84191A6ABE46009D4573 /* AdSupport.framework */; };
+		89FB841C1A6ABE4D009D4573 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB841B1A6ABE4D009D4573 /* Security.framework */; };
+		89FB841E1A6ABE57009D4573 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB841D1A6ABE57009D4573 /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +127,7 @@
 		82CDD6BE66AABBB434042E67 /* CRPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRPageViewController.h; sourceTree = "<group>"; };
 		82CDD6DAA6BD17FB6E03E254 /* CRStatusUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatusUpdateViewController.m; sourceTree = "<group>"; };
 		82CDD700E7B1287349779C91 /* CRService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRService.m; sourceTree = "<group>"; };
+		82CDD73E88DFEAA827A351F3 /* CRAdsTimeLineBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAdsTimeLineBaseCell.h; sourceTree = "<group>"; };
 		82CDD79998B5BA4F1BA4DA11 /* CRTimeLineBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineBaseCell.h; sourceTree = "<group>"; };
 		82CDD7D59DC6E35FAEBD99E3 /* Crocus-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Crocus-PrefixHeader.pch"; sourceTree = "<group>"; };
 		82CDD816A1053D69C511AB64 /* CRLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLoadingCell.m; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 		82CDD9E141C015FEAC25C43C /* CRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUser.h; sourceTree = "<group>"; };
 		82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineBaseCell.m; sourceTree = "<group>"; };
 		82CDDB29C09EC38BB26DB46C /* CRMentionTimeLineService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMentionTimeLineService.h; sourceTree = "<group>"; };
+		82CDDB9C6FB4762A045FC8FD /* CRAdsTimeLineBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRAdsTimeLineBaseCell.m; sourceTree = "<group>"; };
 		82CDDC6A060AC629D1C92F43 /* CRSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRSource.h; sourceTree = "<group>"; };
 		82CDDC6CB2EF35D142CCF081 /* CRMentionTimeLineService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMentionTimeLineService.m; sourceTree = "<group>"; };
 		82CDDC6FDF675DAEC8EF5965 /* CRHomeTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRHomeTimeLineViewController.h; sourceTree = "<group>"; };
@@ -159,6 +168,7 @@
 		89A914A31A63ECD900353993 /* CRUIImage+rotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CRUIImage+rotation.m"; sourceTree = "<group>"; };
 		89A914A41A63ECD900353993 /* CRUIImage+rotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CRUIImage+rotation.h"; sourceTree = "<group>"; };
 		89CB2FB91A63F35E0066F0CF /* StatusDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusDetailView.xib; sourceTree = "<group>"; };
+		89CB99421A6A8F53009AD3B9 /* AdsTimeLineBaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdsTimeLineBaseCell.xib; sourceTree = "<group>"; };
 		89CC2AD21A5E50C900D1B266 /* TimeLineReplyBaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineReplyBaseCell.xib; sourceTree = "<group>"; };
 		89CC2AD41A5E520E00D1B266 /* TimeLineReplyImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineReplyImageCell.xib; sourceTree = "<group>"; };
 		89CC2AD61A5E767C00D1B266 /* TimeLineController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineController.xib; sourceTree = "<group>"; };
@@ -232,6 +242,16 @@
 		89FA16701A47B53B00271FBB /* CrocusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrocusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FA16751A47B53B00271FBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89FA16761A47B53B00271FBB /* CrocusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrocusTests.m; sourceTree = "<group>"; };
+		89FB84101A6ABE21009D4573 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
+		89FB84111A6ABE21009D4573 /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
+		89FB84121A6ABE21009D4573 /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
+		89FB84131A6ABE21009D4573 /* NADIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconView.h; sourceTree = "<group>"; };
+		89FB84141A6ABE21009D4573 /* NADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADInterstitial.h; sourceTree = "<group>"; };
+		89FB84151A6ABE21009D4573 /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
+		89FB84161A6ABE21009D4573 /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
+		89FB84191A6ABE46009D4573 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		89FB841B1A6ABE4D009D4573 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		89FB841D1A6ABE57009D4573 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		CE9E387D4E48B7A8C8EC21A6 /* libPods-Crocus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crocus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90AD25C1A39F097F3BAED9B /* Pods-Crocus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crocus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crocus/Pods-Crocus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,7 +261,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FB841E1A6ABE57009D4573 /* ImageIO.framework in Frameworks */,
+				89FB841C1A6ABE4D009D4573 /* Security.framework in Frameworks */,
+				89FB841A1A6ABE46009D4573 /* AdSupport.framework in Frameworks */,
 				13AECF7624D6E759944FB383 /* libPods-Crocus.a in Frameworks */,
+				89FB84171A6ABE21009D4573 /* libNendAd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +282,10 @@
 		659AA79F3FEDD277C3EF1DFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89FB841D1A6ABE57009D4573 /* ImageIO.framework */,
+				89FB841B1A6ABE4D009D4573 /* Security.framework */,
+				89FB84191A6ABE46009D4573 /* AdSupport.framework */,
+				89FB840F1A6ABE21009D4573 /* NendAd */,
 				CE9E387D4E48B7A8C8EC21A6 /* libPods-Crocus.a */,
 			);
 			name = Frameworks;
@@ -344,6 +372,9 @@
 				82CDDFA909F8FC430E802133 /* CRProfileViewController.m */,
 				82CDD66165948E06A25CBC28 /* CRProfileViewController.h */,
 				897BC4831A68264B00964A68 /* StatusUpdateView5.xib */,
+				89CB99421A6A8F53009AD3B9 /* AdsTimeLineBaseCell.xib */,
+				82CDDB9C6FB4762A045FC8FD /* CRAdsTimeLineBaseCell.m */,
+				82CDD73E88DFEAA827A351F3 /* CRAdsTimeLineBaseCell.h */,
 			);
 			path = TimeLine;
 			sourceTree = "<group>";
@@ -510,6 +541,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		89FB840F1A6ABE21009D4573 /* NendAd */ = {
+			isa = PBXGroup;
+			children = (
+				89FB84101A6ABE21009D4573 /* libNendAd.a */,
+				89FB84111A6ABE21009D4573 /* NADIconArrayView.h */,
+				89FB84121A6ABE21009D4573 /* NADIconLoader.h */,
+				89FB84131A6ABE21009D4573 /* NADIconView.h */,
+				89FB84141A6ABE21009D4573 /* NADInterstitial.h */,
+				89FB84151A6ABE21009D4573 /* NADView.h */,
+				89FB84161A6ABE21009D4573 /* NADView_readme.txt */,
+			);
+			path = NendAd;
+			sourceTree = "<group>";
+		};
 		8D3CDE7E3E2E8C8BC7F1B974 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,8 +658,10 @@
 				8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */,
 				89A9149C1A5D792600353993 /* TimeLineImageCell.xib in Resources */,
 				89FA16681A47B53B00271FBB /* Images.xcassets in Resources */,
+				89CB99431A6A8F53009AD3B9 /* AdsTimeLineBaseCell.xib in Resources */,
 				82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */,
 				89CC2AD51A5E520E00D1B266 /* TimeLineReplyImageCell.xib in Resources */,
+				89FB84181A6ABE21009D4573 /* NADView_readme.txt in Resources */,
 				89A914A01A62B90400353993 /* StatusUpdateView.xib in Resources */,
 				89A9149A1A59BD8A00353993 /* LoadingCell.xib in Resources */,
 				8983A4691A655DEE00607BEC /* ProfileView.xib in Resources */,
@@ -725,6 +772,7 @@
 				82CDD9439CCC56568C46CED5 /* CRMentionTimeLineViewController.m in Sources */,
 				82CDDAEE61972C362A0A7855 /* CRPageViewController.m in Sources */,
 				82CDDC5E378E9F7A8F49B663 /* CRProfileViewController.m in Sources */,
+				82CDD6BCA78BCD749E976088 /* CRAdsTimeLineBaseCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,6 +894,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 139D21D2F31D4DE4E7D7E029 /* Pods-Crocus.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ryo Iwama (FH57HHU7X7)";
@@ -855,6 +904,10 @@
 				INFOPLIST_FILE = Crocus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NendAd",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-l\"Pods-Crocus-MBProgressHUD\"",
@@ -868,6 +921,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2c33b621-bd7f-442c-bc7d-16ab5a85c5a5";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -875,6 +929,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D90AD25C1A39F097F3BAED9B /* Pods-Crocus.release.xcconfig */;
 			buildSettings = {
+				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Ryo Iwama (X9AMR5X2G8)";
@@ -883,6 +938,10 @@
 				INFOPLIST_FILE = Crocus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NendAd",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-l\"Pods-Crocus-MBProgressHUD\"",
@@ -896,6 +955,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c8a505d6-9a8a-401e-8d4f-07b8fb710385";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
