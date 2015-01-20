@@ -38,6 +38,7 @@ static const char kStatusDetailWindow;
 
     CRStatus *_status;
     CRStatusService *_statusService;
+    UIImageView *_expandImageView;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -56,17 +57,11 @@ static const char kStatusDetailWindow;
         });
     }];
 
-    CRStatus *loadStatus;
+    CRStatus *loadStatus = self.loadStatus;
     CRUserInfoService *userInfoService = [[CRUserInfoService alloc] init];
     if (!userInfoService.isExistUserInfo || ![userInfoService checkMineStatus:_status]) {
         _deleteButton.title = @"";
         _deleteButton.enabled = NO;
-    }
-    if (_status.isSpreadStatus) {
-        loadStatus = _status.spreadStatus;
-        [_spreadIconImageView sd_setImageWithURL:[[NSURL alloc] initWithString:_status.user.profileImageUrlHttps]];
-    } else {
-        loadStatus = _status;
     }
     [_iconImageView sd_setImageWithURL:[[NSURL alloc] initWithString:loadStatus.user.profileImageUrlHttps] placeholderImage:nil];
     _userNameLabel.text = loadStatus.user.name;
@@ -75,19 +70,38 @@ static const char kStatusDetailWindow;
     _viaLabel.text = [NSString stringWithFormat:@"via %@", loadStatus.source.name];
     _textView.text = loadStatus.text;
     if (loadStatus.isExistImage) {
-        [UIView animateWithDuration:0 animations:^{
-            _mediaImageView.frame = CGRectMake(0, 0, _scrollView.frame.size.width, _scrollView.frame.size.height);
-        }];
         [_mediaImageView sd_setImageWithURL:[[NSURL alloc] initWithString:loadStatus.entities.mediaURL]];
-        _scrollView.delegate = self;
-        _scrollView.minimumZoomScale = 0.5;
-        _scrollView.maximumZoomScale = 3.0;
-    } else {
-        _scrollView.scrollEnabled = NO;
+        [_mediaImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(expandImage)]];
     }
     [_backgroundView.layer setCornerRadius:5];
 }
 
+- (void)expandImage {
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    scrollView.delegate = self;
+    scrollView.minimumZoomScale = 1.0;
+    scrollView.maximumZoomScale = 4.0;
+
+    CRStatus *loadStatus = self.loadStatus;
+    _expandImageView = [[UIImageView alloc] initWithFrame:scrollView.frame];
+    [_expandImageView sd_setImageWithURL:[[NSURL alloc] initWithString:loadStatus.entities.mediaURL]];
+    _expandImageView.userInteractionEnabled = YES;
+    _expandImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [_expandImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:scrollView action:@selector(removeFromSuperview)]];
+    [scrollView addSubview:_expandImageView];
+    [self.view addSubview:scrollView];
+}
+
+- (CRStatus *)loadStatus {
+    CRStatus *loadStatus;
+    if (_status.isSpreadStatus) {
+        loadStatus = _status.spreadStatus;
+        [_spreadIconImageView sd_setImageWithURL:[[NSURL alloc] initWithString:_status.user.profileImageUrlHttps]];
+    } else {
+        loadStatus = _status;
+    }
+    return loadStatus;
+}
 
 - (void)showAlert:(NSString *)message {
     __weak CRStatusDetailViewController *weakSelf = self;
@@ -113,7 +127,7 @@ static const char kStatusDetailWindow;
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    return _mediaImageView;
+    return _expandImageView;
 }
 
 + (void)show:(CRStatus *)status {
