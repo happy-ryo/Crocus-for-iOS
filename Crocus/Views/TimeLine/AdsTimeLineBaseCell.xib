@@ -75,7 +75,7 @@
                     <constraint firstItem="qvX-pw-P5v" firstAttribute="leading" secondItem="LvV-55-m5z" secondAttribute="trailing" constant="8" id="QoU-zd-FQU"/>
                     <constraint firstItem="LvV-55-m5z" firstAttribute="leading" secondItem="Ig9-1u-RvH" secondAttribute="leadingMargin" id="TXL-DL-9Mg"/>
                     <constraint firstItem="MoO-Eb-6lQ" firstAttribute="top" secondItem="Ig9-1u-RvH" secondAttribute="topMargin" id="VVA-5x-Oog"/>
-                    <constraint firstAttribute="trailing" secondItem="Fx6-T4-YLI" secondAttribute="trailing" id="YDi-ao-L83"/>
+                    <constraint firstAttribute="centerX" secondItem="Fx6-T4-YLI" secondAttribute="centerX" id="eHp-di-htD"/>
                     <constraint firstAttribute="bottom" secondItem="Fx6-T4-YLI" secondAttribute="bottom" constant="8" id="eKm-cs-8la"/>
                     <constraint firstItem="lr3-WC-iZn" firstAttribute="leading" secondItem="qvX-pw-P5v" secondAttribute="trailing" constant="8" id="g2H-o0-9dT"/>
                     <constraint firstItem="lr3-WC-iZn" firstAttribute="trailing" secondItem="Ig9-1u-RvH" secondAttribute="trailingMargin" id="joE-ek-kB5"/>

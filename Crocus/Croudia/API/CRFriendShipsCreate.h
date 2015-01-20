@@ -15,9 +15,9 @@
 #import <Foundation/Foundation.h>
 #import "CRAPIRequest.h"
 
-typedef void (^didFollowCreate)(BOOL result);
+typedef void (^didCreate)(BOOL result);
 
 @interface CRFriendShipsCreate : CRAPIRequest
-- (id)initWithUserId:(NSString *)userId didFollow:(didFollowCreate)didFollow;
+- (id)initWithUserId:(NSString *)userId didFollow:(didCreate)didFollow;
 
 @end

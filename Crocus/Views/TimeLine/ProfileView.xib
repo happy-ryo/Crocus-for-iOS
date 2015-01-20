@@ -8,9 +8,12 @@
             <connections>
                 <outlet property="_backgroundView" destination="ymG-uW-qGB" id="FkN-kd-hS3"/>
                 <outlet property="_coverImageView" destination="Vj1-bF-smj" id="kM7-xI-nqd"/>
+                <outlet property="_followBarButton" destination="awf-uU-bzF" id="24r-kV-CPm"/>
                 <outlet property="_iconImageView" destination="IDu-wO-GVZ" id="lxV-Li-4HJ"/>
                 <outlet property="_profileTextView" destination="ZWT-7m-Dax" id="w7I-UT-qFf"/>
                 <outlet property="_screenNameLabel" destination="4vw-nI-Lxs" id="uj6-nM-sG6"/>
+                <outlet property="_todayCountBarButton" destination="Acd-on-oBO" id="Uxf-YR-miE"/>
+                <outlet property="_totalStatusCountBarButton" destination="Uq3-Hs-jRY" id="yTc-MG-kTF"/>
                 <outlet property="_userNameLabel" destination="fkW-ay-Pv4" id="ECF-eW-he9"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Llq-85-Sll"/>
             </connections>
@@ -30,7 +33,7 @@
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWD-TS-5mK">
-                            <rect key="frame" x="8" y="60" width="56" height="56"/>
+                            <rect key="frame" x="8" y="50" width="56" height="56"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IDu-wO-GVZ">
                                     <rect key="frame" x="3" y="3" width="50" height="50"/>
@@ -51,7 +54,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkW-ay-Pv4">
-                            <rect key="frame" x="8" y="124" width="478" height="21"/>
+                            <rect key="frame" x="8" y="121" width="478" height="21"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -59,21 +62,25 @@
                             <size key="shadowOffset" width="1" height="1"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vw-nI-Lxs">
-                            <rect key="frame" x="8" y="146" width="7" height="18"/>
+                            <rect key="frame" x="8" y="143" width="7" height="18"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                             <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <size key="shadowOffset" width="1" height="1"/>
                         </label>
-                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aux-tA-FL1">
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aux-tA-FL1">
                             <rect key="frame" x="0.0" y="422" width="560" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="aaU-Ab-klO"/>
                             </constraints>
                             <items>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="9cO-Q0-RKe"/>
-                                <barButtonItem enabled="NO" title="Mute" width="120" id="deX-ld-o98">
+                                <barButtonItem title="Total" width="120" id="Uq3-Hs-jRY">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="S7V-Xt-emv"/>
+                                <barButtonItem title="Today" width="120" id="Acd-on-oBO">
                                     <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
                                 </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="UOU-2e-QUy"/>
@@ -96,26 +103,8 @@
                             </items>
                             <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </toolbar>
-                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRy-kk-ZWH">
-                            <rect key="frame" x="0.0" y="356" width="560" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="gp0-FO-kT7"/>
-                            </constraints>
-                            <items>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="s2q-g0-ZQl"/>
-                                <barButtonItem enabled="NO" title="Follow" width="120" id="awf-uU-bzF">
-                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                                </barButtonItem>
-                                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="sX7-pR-lvX"/>
-                                <barButtonItem enabled="NO" title="Today" width="120" id="Acd-on-oBO">
-                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="Zz4-Rd-eJl"/>
-                            </items>
-                            <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        </toolbar>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="-" translatesAutoresizingMaskIntoConstraints="NO" id="ZWT-7m-Dax">
-                            <rect key="frame" x="8" y="172" width="542" height="150"/>
+                            <rect key="frame" x="8" y="169" width="542" height="150"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="150" id="eQU-ec-mEa"/>
@@ -125,6 +114,30 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <dataDetectorType key="dataDetectorTypes" link="YES"/>
                         </textView>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRy-kk-ZWH">
+                            <rect key="frame" x="0.0" y="378" width="560" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="gp0-FO-kT7"/>
+                            </constraints>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="s2q-g0-ZQl"/>
+                                <barButtonItem title="Follow" width="120" id="awf-uU-bzF">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="followAction" destination="-1" id="dOC-p0-ymU"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="sX7-pR-lvX"/>
+                                <barButtonItem title="Mute" width="120" id="deX-ld-o98">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="mute:" destination="-1" id="SZr-va-ALu"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="Zz4-Rd-eJl"/>
+                            </items>
+                            <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </toolbar>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -141,12 +154,12 @@
                         <constraint firstItem="Vj1-bF-smj" firstAttribute="top" secondItem="ymG-uW-qGB" secondAttribute="top" id="V5R-e6-wdt"/>
                         <constraint firstAttribute="trailing" secondItem="fkW-ay-Pv4" secondAttribute="trailing" constant="74" id="WmD-o0-DJv"/>
                         <constraint firstItem="hOE-JW-TnD" firstAttribute="leading" secondItem="ymG-uW-qGB" secondAttribute="leading" id="XL4-gO-zKE"/>
-                        <constraint firstItem="vWD-TS-5mK" firstAttribute="top" secondItem="ymG-uW-qGB" secondAttribute="top" constant="60" id="a7g-pb-IvR"/>
+                        <constraint firstItem="vWD-TS-5mK" firstAttribute="top" secondItem="ymG-uW-qGB" secondAttribute="top" constant="50" id="a7g-pb-IvR"/>
                         <constraint firstItem="4vw-nI-Lxs" firstAttribute="leading" secondItem="ymG-uW-qGB" secondAttribute="leading" constant="8" id="afT-ih-hog"/>
-                        <constraint firstItem="aux-tA-FL1" firstAttribute="top" secondItem="pRy-kk-ZWH" secondAttribute="bottom" constant="22" id="bjq-lq-s8W"/>
+                        <constraint firstItem="aux-tA-FL1" firstAttribute="top" secondItem="pRy-kk-ZWH" secondAttribute="bottom" id="bjq-lq-s8W"/>
                         <constraint firstItem="aux-tA-FL1" firstAttribute="leading" secondItem="ymG-uW-qGB" secondAttribute="leading" id="dRI-c0-zuw"/>
                         <constraint firstItem="ZWT-7m-Dax" firstAttribute="leading" secondItem="ymG-uW-qGB" secondAttribute="leading" constant="8" id="eop-00-IN0"/>
-                        <constraint firstItem="fkW-ay-Pv4" firstAttribute="top" secondItem="vWD-TS-5mK" secondAttribute="bottom" constant="8" id="gU2-56-MiF"/>
+                        <constraint firstItem="fkW-ay-Pv4" firstAttribute="top" secondItem="vWD-TS-5mK" secondAttribute="bottom" constant="15" id="gU2-56-MiF"/>
                         <constraint firstAttribute="trailing" secondItem="Vj1-bF-smj" secondAttribute="trailing" id="iti-20-YD3"/>
                         <constraint firstItem="fkW-ay-Pv4" firstAttribute="leading" secondItem="ymG-uW-qGB" secondAttribute="leading" constant="8" id="jUV-Bj-1dQ"/>
                         <constraint firstItem="Vj1-bF-smj" firstAttribute="leading" secondItem="ymG-uW-qGB" secondAttribute="leading" id="qMM-od-5nt"/>
@@ -158,12 +171,27 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ymG-uW-qGB" secondAttribute="trailing" constant="20" id="4Pv-9e-40E"/>
                 <constraint firstItem="ymG-uW-qGB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="G5f-xf-DRf"/>
                 <constraint firstAttribute="bottom" secondItem="ymG-uW-qGB" secondAttribute="bottom" constant="20" id="OYz-jt-TVB"/>
                 <constraint firstItem="ymG-uW-qGB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="R8d-XY-Hdr"/>
             </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="i8a-pW-fsN" appends="YES" id="dV8-Ns-EVB"/>
+                <outletCollection property="gestureRecognizers" destination="jEi-YA-TIl" appends="YES" id="RBr-rj-bnM"/>
+            </connections>
         </view>
+        <swipeGestureRecognizer direction="right" id="i8a-pW-fsN">
+            <connections>
+                <action selector="close" destination="-1" id="qcf-0K-uok"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <swipeGestureRecognizer direction="left" id="jEi-YA-TIl">
+            <connections>
+                <action selector="close" destination="-1" id="22I-w8-MzH"/>
+            </connections>
+        </swipeGestureRecognizer>
     </objects>
 </document>

@@ -16,6 +16,7 @@
  */
 
 #import "AppDelegate.h"
+#import "Parse.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [Parse enableLocalDatastore];
+
+    // Initialize Parse.
+    [Parse setApplicationId:@"LzHEwVYvwESqmpVYfVDsQbyEKfSLlSuCg2C6ovPi"
+                  clientKey:@"QzXNRfQgMj6kW4t4EfgB8sVZB9j4X0P2EaY4WqDj"];
+
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
+    [PFPurchase addObserverForProduct:@"info.happyryo.crocus.adblocking" block:^(SKPaymentTransaction *transaction) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setBool:YES forKey:@"adblocking"];
+        [userDefaults synchronize];
+    }];
     return YES;
 }
 

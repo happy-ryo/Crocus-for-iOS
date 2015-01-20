@@ -26,6 +26,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="PTL" id="fw4-ig-NAi"/>
+                    <connections>
+                        <segue destination="Ztg-gE-Ppc" kind="show" identifier="config" id="tMb-kv-lBh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bI-Wn-KjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,10 +56,200 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Mention" id="OzV-1p-jti"/>
+                    <connections>
+                        <segue destination="Ztg-gE-Ppc" kind="show" identifier="config" id="rOv-W7-dbF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVg-T2-Vp5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="952"/>
+            <point key="canvasLocation" x="-9" y="952"/>
+        </scene>
+        <!--Config View Controller-->
+        <scene sceneID="5SV-T6-0Up">
+            <objects>
+                <tableViewController id="Ztg-gE-Ppc" customClass="CRConfigViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Kd4-e2-Lkl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <color key="separatorColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="Skp-cd-tfg">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="PIv-bi-xgt" style="IBUITableViewCellStyleDefault" id="0kP-gV-a20">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0kP-gV-a20" id="9dy-L2-Fo1">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Open Source License" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PIv-bi-xgt">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="uIh-Lb-PXV" kind="show" id="rp7-A4-BoK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="dPL-tl-BlU">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="x7x-9Y-sCZ" style="IBUITableViewCellStyleDefault" id="kTr-6D-Wet">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kTr-6D-Wet" id="P8L-P3-faX">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Ad Block" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x7x-9Y-sCZ">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Ztg-gE-Ppc" id="Kom-6V-mPW"/>
+                            <outlet property="delegate" destination="Ztg-gE-Ppc" id="hTu-wU-qxo"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ifi-jE-kdL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="224"/>
+        </scene>
+        <!--License View Controller-->
+        <scene sceneID="uKO-kx-J6s">
+            <objects>
+                <viewController id="uIh-Lb-PXV" customClass="CRLicenseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MB8-k1-b1t"/>
+                        <viewControllerLayoutGuide type="bottom" id="MfS-P9-D8E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oSz-eO-6CX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2x-m9-sKq">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">
+Crocus
+
+Copyright 2015 happy_ryo
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Bolts
+
+BSD License
+
+For Bolts software
+
+Copyright (c) 2013, Facebook, Inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following
+  disclaimer.
+  
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following
+  disclaimer in the documentation and/or other materials provided with the distribution.
+  
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+MBProgressHUD
+
+Copyright (c) 2013 Matej Bukovinski
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+Parse
+
+See https://www.parse.com/about/terms
+
+SDWebImage
+
+Copyright (c) 2009 Olivier Poitrey &lt;rs@dailymotion.com&gt;
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:
+ 
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+ 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I2x-m9-sKq" firstAttribute="leading" secondItem="oSz-eO-6CX" secondAttribute="leading" id="1ge-3o-gKI"/>
+                            <constraint firstItem="MfS-P9-D8E" firstAttribute="top" secondItem="I2x-m9-sKq" secondAttribute="bottom" id="EHt-uq-GIF"/>
+                            <constraint firstAttribute="trailing" secondItem="I2x-m9-sKq" secondAttribute="trailing" id="SZs-cg-E3U"/>
+                            <constraint firstItem="I2x-m9-sKq" firstAttribute="top" secondItem="oSz-eO-6CX" secondAttribute="top" id="hUu-7W-bRR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TDh-Sv-dNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="952"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vPF-Vs-lca">
@@ -101,10 +294,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Home" id="9rm-lS-cVF"/>
+                    <connections>
+                        <segue destination="Ztg-gE-Ppc" kind="show" id="X7p-VH-w82"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvO-dr-b3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="1652"/>
+            <point key="canvasLocation" x="-9" y="1652"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="kiN-C0-xLW">
@@ -199,4 +395,7 @@
             <point key="canvasLocation" x="-779" y="224"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tMb-kv-lBh"/>
+    </inferredMetricsTieBreakers>
 </document>

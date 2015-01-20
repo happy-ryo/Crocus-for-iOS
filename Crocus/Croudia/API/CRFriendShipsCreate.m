@@ -18,10 +18,10 @@
 @implementation CRFriendShipsCreate {
     NSString *_userId;
     NSString *_screenName;
-    didFollowCreate _didFollowCreate;
+    didCreate _didFollowCreate;
 }
 
-- (id)initWithUserId:(NSString *)userId didFollow:(didFollowCreate)didFollow {
+- (id)initWithUserId:(NSString *)userId didFollow:(didCreate)didFollow {
     self = [super init];
     if (self) {
         _userId = userId;

@@ -21,6 +21,8 @@
 @property(nonatomic, strong) CRTimeLineService *timeLineService;
 @property(nonatomic, strong) CRTimeLineController *timeLineController;
 
+@property(nonatomic) NSInteger adProbability;
+
 - (void)createTimeLineService;
 
 - (void)reloadSection:(NSArray *)array history:(BOOL)flag;
