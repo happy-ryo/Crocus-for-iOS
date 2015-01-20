@@ -24,6 +24,7 @@
 #import "CRUser.h"
 #import "CRProfileViewController.h"
 #import "MBProgressHUD.h"
+#import "Parse.h"
 
 @interface CRTimeLineViewController ()
 @property(nonatomic, strong) CRUserInfoService *userInfoService;
@@ -32,12 +33,14 @@
 
 @implementation CRTimeLineViewController {
     CRTimeLineController *_timeLineController;
+    BOOL _adBlocking;
+    NSInteger _adProbability;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     __weak CRTimeLineViewController *weakSelf = self;
-
+    _adProbability = 95;
 
     self.tableView.estimatedRowHeight = 60;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -62,7 +65,7 @@
                 [weakSelf createTimeLineService];
                 [weakSelf.timeLineService load];
                 weakSelf.repeats = [weakSelf getTimer:4];
-                [weakSelf.repeats fire];
+                [weakSelf timerFire];
             });
         }];
     }
@@ -75,8 +78,20 @@
     UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(selected:)];
     [self.tableView addGestureRecognizer:longPressGestureRecognizer];
 
+    [self loadNavigationItem];
+
+}
+
+- (void)loadNavigationItem {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refresh"] style:UIBarButtonItemStyleBordered target:self action:@selector(cleanReload)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"setting"] style:UIBarButtonItemStyleBordered target:self action:@selector(openConfig)];
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor lightGrayColor];
+}
+
+- (void)openConfig {
+    [self performSegueWithIdentifier:@"config" sender:nil];
 }
 
 - (void)cleanReload {
@@ -136,13 +151,32 @@
                                            repeats:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    __weak CRTimeLineViewController *weakSelf = self;
+
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    PFQuery *query = [PFQuery queryWithClassName:@"Advertising"];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!error) {
+            weakSelf.adProbability = [object[@"probability"] integerValue];
+        }
+    }];
+
+    [self startTimer];
+}
+
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.userInfoService = [[CRUserInfoService alloc] init];
     [self.userInfoService loadUserInfo];
-
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self stopTimer];
+}
 
 - (void)createTimeLineService {
     __weak CRTimeLineViewController *weakSelf = self;
@@ -247,7 +281,12 @@
         if (status.isExistImage) {
             cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
         } else {
-            cell = [tableView dequeueReusableCellWithIdentifier:@"adsCell"];
+            int rand = arc4random() % 100 + 1;
+            if (rand > _adProbability && !_adBlocking) {
+                cell = [tableView dequeueReusableCellWithIdentifier:@"adsCell"];
+            } else {
+                cell = [tableView dequeueReusableCellWithIdentifier:@"baseCell"];
+            }
         }
     }
     [cell loadCRStatus:status];
@@ -294,6 +333,13 @@
     [self.timeLineService removeObserver:self];
 }
 
+- (void)handleTouchImage:(UIImageView *)sender event:(UIEvent *)event {
+    NSIndexPath *indexPath = [self indexPathForControlEvent:event];
+    CRStatus *status = [_timeLineService status:indexPath.row];
+
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+}
+
 - (void)handleTouchButton:(UIButton *)sender event:(UIEvent *)event {
     NSIndexPath *indexPath = [self indexPathForControlEvent:event];
     CRStatus *status = [_timeLineService status:indexPath.row];
@@ -307,4 +353,16 @@
     return indexPath;
 }
 
+- (void)startTimer {
+    CROAuth *auth = [[CROAuth alloc] init];
+    if (auth.authorized) {
+        self.repeats = [self getTimer:4];
+        [self timerFire];
+    }
+}
+
+- (void)stopTimer {
+    [self.repeats invalidate];
+    self.repeats = nil;
+}
 @end

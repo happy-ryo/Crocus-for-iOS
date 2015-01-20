@@ -1,4 +1,4 @@
-//  Copyright 2013 happy_ryo
+//  Copyright 2015 happy_ryo
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -12,12 +12,25 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 #import <Foundation/Foundation.h>
-#import "CRTimeLine.h"
+#import "CRService.h"
 
-@interface CRUserTimeLine : CRTimeLine
-@property(nonatomic, copy) NSString *userId;
+@class CRUser;
 
-@property(nonatomic, copy) NSString *count;
 
-- (id)initWithLoadFinished:(LoadFinished)loadFinished userId:(NSString *)userId;
+@interface CRProfileService : CRService
+- (instancetype)initWithUser:(CRUser *)user;
+
+- (void)loadUserInfo:(void (^)(CRUser *user))callback;
+
+- (void)mute:(void (^)(BOOL b))callback;
+
+- (void)unMute:(void (^)(BOOL b))callback;
+
+- (BOOL)isFollowed;
+
+- (void)follow:(void (^)(BOOL result))callback;
+
+- (void)unFollow:(void (^)(BOOL result))callback;
+
+- (void)today:(void (^)(NSUInteger count))callback;
 @end

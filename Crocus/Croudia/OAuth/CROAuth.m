@@ -183,7 +183,14 @@ static const char kOAuthWindow;
     return YES;
 }
 
+static BOOL showOAuth;
+
 + (void)showWithCROAuth:(CROAuth *)auth {
+    if (showOAuth) {
+        return;
+    } else {
+        showOAuth = YES;
+    }
     CGRect screenRect = [UIScreen mainScreen].bounds;
     UIWindow *window = [[UIWindow alloc] initWithFrame:screenRect];
     window.alpha = 0;
@@ -206,6 +213,9 @@ static const char kOAuthWindow;
 }
 
 + (void)close {
+    if (showOAuth) {
+        showOAuth = NO;
+    }
     UIWindow *window = objc_getAssociatedObject([UIApplication sharedApplication], &kOAuthWindow);
     CGRect screenRect = [UIScreen mainScreen].bounds;
     [UIView transitionWithView:window

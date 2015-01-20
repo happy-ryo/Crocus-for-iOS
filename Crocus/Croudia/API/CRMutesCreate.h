@@ -1,4 +1,4 @@
-//  Copyright 2013 happy_ryo
+//  Copyright 2015 happy_ryo
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -12,12 +12,8 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 #import <Foundation/Foundation.h>
-#import "CRTimeLine.h"
+#import "CRFriendShipsCreate.h"
 
-@interface CRUserTimeLine : CRTimeLine
-@property(nonatomic, copy) NSString *userId;
 
-@property(nonatomic, copy) NSString *count;
-
-- (id)initWithLoadFinished:(LoadFinished)loadFinished userId:(NSString *)userId;
+@interface CRMutesCreate : CRFriendShipsCreate
 @end

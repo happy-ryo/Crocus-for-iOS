@@ -1,4 +1,4 @@
-//  Copyright 2013 happy_ryo
+//  Copyright 2015 happy_ryo
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -11,13 +11,19 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
-#import <Foundation/Foundation.h>
-#import "CRTimeLine.h"
+#import "CRLicenseViewController.h"
 
-@interface CRUserTimeLine : CRTimeLine
-@property(nonatomic, copy) NSString *userId;
 
-@property(nonatomic, copy) NSString *count;
+@implementation CRLicenseViewController {
 
-- (id)initWithLoadFinished:(LoadFinished)loadFinished userId:(NSString *)userId;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.title = @"License";
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"<" style:UIBarButtonItemStyleBordered target:self.navigationController action:@selector(popViewControllerAnimated:)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
+}
+
 @end

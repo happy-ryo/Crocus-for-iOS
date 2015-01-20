@@ -15,17 +15,22 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CRProfileViewController.h"
 #import "CRUser.h"
+#import "CRProfileService.h"
 
 static const char kProfileWindow;
 
 @implementation CRProfileViewController {
     CRUser *_user;
+    CRProfileService *_profileService;
     IBOutlet UIImageView *_coverImageView;
     IBOutlet UIImageView *_iconImageView;
     IBOutlet UILabel *_userNameLabel;
     IBOutlet UILabel *_screenNameLabel;
     IBOutlet UITextView *_profileTextView;
     IBOutlet UIView *_backgroundView;
+    IBOutlet UIBarButtonItem *_followBarButton;
+    IBOutlet UIBarButtonItem *_totalStatusCountBarButton;
+    IBOutlet UIBarButtonItem *_todayCountBarButton;
 
     void (^_callback)();
 }
@@ -35,6 +40,41 @@ static const char kProfileWindow;
     [_backgroundView.layer setCornerRadius:5];
 }
 
+
+- (IBAction)mute:(UIBarButtonItem *)muteButton {
+    // TODO この部分の処理が適当なので何れ精神的にどうにかしたい
+    if ([muteButton.title isEqualToString:@"Mute"]) {
+        [_profileService mute:^(BOOL b) {
+            if (b) {
+                muteButton.title = @"UnMute";
+            }
+        }];
+    } else {
+        [_profileService unMute:^(BOOL b) {
+            if (b) {
+                muteButton.title = @"Mute";
+            }
+        }];
+    }
+
+}
+
+- (IBAction)followAction {
+    __weak CRProfileViewController *weakSelf = self;
+
+    if (_profileService.isFollowed) {
+        [_profileService unFollow:^(BOOL result) {
+            if (result) {
+                weakSelf.followBarButton.title = @"Follow";
+            }
+        }];
+    } else {
+        [_profileService follow:^(BOOL result) {
+            weakSelf.followBarButton.title = @"UnFollow";
+        }];
+    }
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_coverImageView sd_setImageWithURL:[[NSURL alloc] initWithString:_user.coverImageUrlHttps] placeholderImage:nil];
@@ -42,6 +82,30 @@ static const char kProfileWindow;
     _userNameLabel.text = _user.name;
     _screenNameLabel.text = [NSString stringWithFormat:@"@%@", _user.screenName];
     _profileTextView.text = _user.userDescription;
+
+    _profileService = [[CRProfileService alloc] initWithUser:_user];
+    __weak CRProfileViewController *weakSelf = self;
+
+    [_profileService loadUserInfo:^(CRUser *user) {
+        weakSelf.user = user;
+        [weakSelf statusUpdate];
+    }];
+
+    [self statusUpdate];
+
+}
+
+- (void)statusUpdate {
+    if (_profileService.isFollowed) {
+        _followBarButton.title = @"UnFollow";
+    }
+
+    _totalStatusCountBarButton.title = [NSString stringWithFormat:@"Total / %@", _user.statusesCount];
+    __weak CRProfileViewController *weakSelf = self;
+
+    [_profileService today:^(NSUInteger count) {
+        weakSelf.todayCountBarButton.title = [NSString stringWithFormat:@"Today / %u", count];
+    }];
 }
 
 

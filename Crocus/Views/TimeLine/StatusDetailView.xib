@@ -135,6 +135,7 @@ Label</string>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="arb-PA-29T" secondAttribute="bottom" id="2Zb-cz-3gb"/>
                         <constraint firstItem="n5t-eb-AFj" firstAttribute="top" secondItem="LDf-YD-E7g" secondAttribute="bottom" constant="2" id="5Oo-Wd-xSK"/>
@@ -163,9 +164,14 @@ Label</string>
                         <constraint firstAttribute="trailing" secondItem="XDX-Id-tyf" secondAttribute="trailing" constant="8" id="vOX-7D-ioc"/>
                         <constraint firstItem="FbD-66-1xu" firstAttribute="top" secondItem="vK6-ge-opw" secondAttribute="bottom" constant="2" id="ySE-vB-iBt"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="lCt-mU-WWF" appends="YES" id="1H2-Ec-WQx"/>
+                        <outletCollection property="gestureRecognizers" destination="NCw-jf-b4C" appends="YES" id="S2e-b1-i7Q"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="120-bk-Zcu" secondAttribute="trailing" constant="20" id="BFl-yV-FNV"/>
                 <constraint firstItem="120-bk-Zcu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="FyO-aK-f6t"/>
@@ -174,5 +180,15 @@ Label</string>
             </constraints>
             <point key="canvasLocation" x="140" y="178"/>
         </view>
+        <swipeGestureRecognizer direction="right" id="lCt-mU-WWF">
+            <connections>
+                <action selector="close" destination="-1" id="duf-Ya-bAK"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <swipeGestureRecognizer direction="right" id="NCw-jf-b4C">
+            <connections>
+                <action selector="close" destination="-1" id="Ulc-e8-aBB"/>
+            </connections>
+        </swipeGestureRecognizer>
     </objects>
 </document>

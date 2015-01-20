@@ -21,6 +21,10 @@
 
 @property(nonatomic, copy) void (^callback)();
 
+@property(nonatomic, strong) UIBarButtonItem *followBarButton;
+
+@property(nonatomic, strong) UIBarButtonItem *todayCountBarButton;
+
 + (void)show:(CRUser *)user;
 
 + (void)show:(CRUser *)user callback:(void (^)())callback;

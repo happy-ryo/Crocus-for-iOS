@@ -19,5 +19,7 @@
 @interface CRTimeLineBaseCell : UITableViewCell
 @property(nonatomic, strong) UIButton *iconButton;
 
+@property(nonatomic, strong) UILabel *statusLabel;
+
 - (void)loadCRStatus:(CRStatus *)status;
 @end

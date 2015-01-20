@@ -15,6 +15,7 @@
 
 @implementation CRUserTimeLine {
     NSString *_userId;
+    NSString *_count;
 }
 
 - (id)initWithLoadFinished:(LoadFinished)loadFinished userId:(NSString *)userId {
@@ -34,6 +35,9 @@
 - (NSDictionary *)requestParams {
     [super requestParams];
     _requestParams[@"user_id"] = _userId;
+    if (_count) {
+        _requestParams[@"count"] = _count;
+    }
     return _requestParams;
 }
 

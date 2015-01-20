@@ -28,4 +28,9 @@
         });
     }];
 }
+
+- (void)loadNavigationItem {
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refresh"] style:UIBarButtonItemStyleBordered target:self action:@selector(cleanReload)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
+}
 @end
