@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -13,7 +13,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nvr-9K-tCy" id="vlx-98-4ZW">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zii-0E-6Xo">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zii-0E-6Xo">
                         <rect key="frame" x="8" y="8" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="Feg-ql-TFA"/>
@@ -42,15 +42,27 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xo-Bk-Vnd">
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="4lC-lG-WCO"/>
+                            <constraint firstAttribute="width" constant="40" id="5Sp-97-DGn"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.1873184192453422" blue="0.18514548788992768" alpha="0.19" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="SHi-TV-KmH" firstAttribute="top" secondItem="vlx-98-4ZW" secondAttribute="topMargin" constant="1" id="6Vx-f1-KDI"/>
                     <constraint firstItem="oSr-pX-6ve" firstAttribute="leading" secondItem="zii-0E-6Xo" secondAttribute="trailing" constant="8" id="7aA-Xg-3H6"/>
                     <constraint firstItem="SHi-TV-KmH" firstAttribute="leading" secondItem="5rT-jx-gDB" secondAttribute="trailing" constant="8" id="84A-MZ-1zL"/>
+                    <constraint firstItem="1Xo-Bk-Vnd" firstAttribute="top" secondItem="vlx-98-4ZW" secondAttribute="topMargin" id="CrN-lf-aH7"/>
                     <constraint firstItem="SHi-TV-KmH" firstAttribute="trailing" secondItem="vlx-98-4ZW" secondAttribute="trailingMargin" id="Hji-My-bNH"/>
                     <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="zii-0E-6Xo" secondAttribute="bottom" id="LGZ-EW-Bnk"/>
                     <constraint firstItem="zii-0E-6Xo" firstAttribute="top" secondItem="vlx-98-4ZW" secondAttribute="topMargin" id="O5E-UA-R4a"/>
+                    <constraint firstItem="1Xo-Bk-Vnd" firstAttribute="leading" secondItem="vlx-98-4ZW" secondAttribute="leadingMargin" id="ONq-sK-k1Q"/>
                     <constraint firstItem="SHi-TV-KmH" firstAttribute="leading" secondItem="5rT-jx-gDB" secondAttribute="trailing" constant="8" id="Va1-D4-GPJ"/>
                     <constraint firstItem="oSr-pX-6ve" firstAttribute="top" secondItem="SHi-TV-KmH" secondAttribute="bottom" constant="2" id="bbI-en-8DH"/>
                     <constraint firstItem="oSr-pX-6ve" firstAttribute="trailing" secondItem="vlx-98-4ZW" secondAttribute="trailingMargin" id="jkC-zG-hq7"/>
@@ -61,6 +73,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="_iconButton" destination="1Xo-Bk-Vnd" id="a1q-fB-yPZ"/>
                 <outlet property="_iconImageView" destination="zii-0E-6Xo" id="baS-Ep-C0e"/>
                 <outlet property="_screenNameLabel" destination="SHi-TV-KmH" id="lEF-lg-Mhy"/>
                 <outlet property="_statusLabel" destination="oSr-pX-6ve" id="xXx-Kw-xhJ"/>

@@ -80,6 +80,16 @@
                             <constraint firstItem="ZXq-OH-mem" firstAttribute="top" relation="greaterThanOrEqual" secondItem="POI-HY-4kW" secondAttribute="top" constant="8" id="nvB-na-YAq"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a78-9U-p2j">
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="2JW-YJ-teE"/>
+                            <constraint firstAttribute="height" constant="40" id="My9-QL-e3z"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="POI-HY-4kW" firstAttribute="leading" secondItem="MSr-3H-bjU" secondAttribute="leadingMargin" id="BIx-sL-E3I"/>
@@ -89,7 +99,9 @@
                     <constraint firstItem="cRd-x3-Idh" firstAttribute="leading" secondItem="dmf-xW-vYH" secondAttribute="trailing" constant="8" id="SsU-Qc-peA"/>
                     <constraint firstItem="POI-HY-4kW" firstAttribute="top" secondItem="dmf-xW-vYH" secondAttribute="bottom" constant="27" id="X0c-NF-1cs"/>
                     <constraint firstItem="POI-HY-4kW" firstAttribute="trailing" secondItem="MSr-3H-bjU" secondAttribute="trailingMargin" id="Y4j-21-kIt"/>
+                    <constraint firstItem="a78-9U-p2j" firstAttribute="leading" secondItem="MSr-3H-bjU" secondAttribute="leadingMargin" id="ZOo-SK-2Kd"/>
                     <constraint firstItem="POI-HY-4kW" firstAttribute="top" secondItem="0Ny-OR-Gpa" secondAttribute="bottom" constant="7" id="c5d-eK-bxx"/>
+                    <constraint firstItem="a78-9U-p2j" firstAttribute="top" secondItem="MSr-3H-bjU" secondAttribute="topMargin" id="hO6-bc-EwX"/>
                     <constraint firstItem="cRd-x3-Idh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MSr-3H-bjU" secondAttribute="trailingMargin" priority="250" id="hkn-tR-2fX"/>
                     <constraint firstItem="dmf-xW-vYH" firstAttribute="leading" secondItem="0Ny-OR-Gpa" secondAttribute="trailing" constant="8" id="p2F-vJ-lRe"/>
                     <constraint firstItem="cRd-x3-Idh" firstAttribute="top" secondItem="MSr-3H-bjU" secondAttribute="topMargin" constant="2" id="quh-gx-LDv"/>
@@ -98,6 +110,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="_iconButton" destination="a78-9U-p2j" id="mAv-mO-ifP"/>
                 <outlet property="_iconImageView" destination="0Ny-OR-Gpa" id="mX0-CN-GXX"/>
                 <outlet property="_screenNameLabel" destination="cRd-x3-Idh" id="v20-wr-6tJ"/>
                 <outlet property="_spreadBackgroundView" destination="POI-HY-4kW" id="ha3-Jq-uwi"/>

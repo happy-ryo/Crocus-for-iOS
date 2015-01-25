@@ -106,6 +106,7 @@
 - (void)reset:(UITableView *)target {
     dispatch_semaphore_signal(_semaphore);
     self.statuses = @[].mutableCopy;
+    self.newerStatuses = @[].mutableCopy;
     [target reloadData];
     [self update];
 }

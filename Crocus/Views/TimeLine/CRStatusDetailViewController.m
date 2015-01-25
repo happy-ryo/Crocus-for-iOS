@@ -81,6 +81,7 @@ static const char kStatusDetailWindow;
     scrollView.delegate = self;
     scrollView.minimumZoomScale = 1.0;
     scrollView.maximumZoomScale = 4.0;
+    scrollView.backgroundColor = [UIColor darkGrayColor];
 
     CRStatus *loadStatus = self.loadStatus;
     _expandImageView = [[UIImageView alloc] initWithFrame:scrollView.frame];

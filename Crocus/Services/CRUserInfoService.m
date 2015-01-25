@@ -19,6 +19,8 @@
 #import "CRVerifyCredentials.h"
 #import "CRUser.h"
 #import "CRStatus.h"
+#import "CRUserTimeLine.h"
+#import "CRStatusesDestroy.h"
 
 
 @implementation CRUserInfoService {
@@ -86,5 +88,43 @@
     }
     _user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
     return _user;
+}
+
+- (void)deleteTodayStatuses:(void (^)(NSUInteger count))callback {
+    NSDate *today = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *todayZero = [formatter dateFromString:[formatter stringFromDate:today]];
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss Z"];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+
+    __block NSUInteger count = 0;
+    __block CRUserTimeLine *userTimeLine = [[CRUserTimeLine alloc] initWithLoadFinished:^(NSArray *statusArray, BOOL reload, NSError *error) {
+        for (NSDictionary *dictionary in statusArray) {
+            NSDate *date = [dateFormatter dateFromString:dictionary[@"created_at"]];
+            NSComparisonResult comparisonResult = [todayZero compare:date];
+            if (comparisonResult == NSOrderedAscending) {
+                count++;
+                CRStatusesDestroy *statusesDestroy = [[CRStatusesDestroy alloc] initWithShowId:dictionary[@"id_str"]
+                                                                                  loadFinished:^(NSDictionary *statusDic, NSError *error) {
+                                                                                  }];
+                [statusesDestroy load];
+            } else {
+                callback(count);
+                return;
+            }
+        }
+        if (count == 0) {
+            callback(count);
+            return;
+        }
+        NSDictionary *maxDictionary = statusArray.lastObject;
+        userTimeLine.maxId = maxDictionary[@"id_str"];
+        [userTimeLine load];
+    }                                                                            userId:self.getUser.idStr];
+    userTimeLine.count = @"50";
+    [userTimeLine load];
 }
 @end

@@ -13,6 +13,8 @@
 //  limitations under the License.
 #import "CRConfigViewController.h"
 #import "Parse.h"
+#import "CRUserInfoService.h"
+#import "MBProgressHUD.h"
 
 @implementation CRConfigViewController {
 
@@ -36,7 +38,34 @@
                 [userDefaults synchronize];
             }
         }];
+    } else if (indexPath.section == 0 && indexPath.row == 1) {
+        [self checkDelete];
     }
+}
+
+- (void)checkDelete {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Crocus" message:@"本日中のささやきを出来る限り消しますか？" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+
+    }]];
+
+    __weak CRConfigViewController *weakSelf = self;
+
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        CRUserInfoService *userInfoService = [[CRUserInfoService alloc] init];
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+        [userInfoService deleteTodayStatuses:^(NSUInteger count) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+                UIAlertController *uiAlertController = [UIAlertController alertControllerWithTitle:@"Crocus" message:@"出来るだけ消しました。" preferredStyle:UIAlertControllerStyleAlert];
+                [uiAlertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                }]];
+                [weakSelf presentViewController:uiAlertController animated:YES completion:nil];
+            });
+        }];
+    }]];
+
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
