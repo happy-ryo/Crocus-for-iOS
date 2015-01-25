@@ -107,6 +107,10 @@
                 return;
             }
         }
+        if(count == 0){
+            callback(count);
+            return;
+        }
         NSDictionary *maxDictionary = statusArray.lastObject;
         userTimeLine.maxId = maxDictionary[@"id_str"];
         [userTimeLine load];

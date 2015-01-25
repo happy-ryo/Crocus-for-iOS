@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -48,12 +48,23 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFz-gG-HmD">
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="LxA-rj-d1Y"/>
+                            <constraint firstAttribute="height" constant="40" id="UpP-0Y-avL"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.1873184192" blue="0.18514548789999999" alpha="0.19" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="HGP-84-7vh" firstAttribute="leading" secondItem="Mox-UK-dGp" secondAttribute="trailing" constant="8" id="1M2-W8-2T1"/>
                     <constraint firstItem="2Mn-IF-WEa" firstAttribute="top" secondItem="8y9-jr-QgY" secondAttribute="topMargin" constant="1" id="3BC-ft-PvA"/>
                     <constraint firstItem="HGP-84-7vh" firstAttribute="top" secondItem="2Mn-IF-WEa" secondAttribute="bottom" constant="2" id="6nr-sE-vNE"/>
+                    <constraint firstItem="aFz-gG-HmD" firstAttribute="leading" secondItem="8y9-jr-QgY" secondAttribute="leadingMargin" id="Cn6-bb-BEB"/>
                     <constraint firstItem="HGP-84-7vh" firstAttribute="trailing" secondItem="8y9-jr-QgY" secondAttribute="trailingMargin" id="LNE-nQ-ZZP"/>
                     <constraint firstItem="2Mn-IF-WEa" firstAttribute="trailing" secondItem="8y9-jr-QgY" secondAttribute="trailingMargin" id="Q0Q-aN-erL"/>
                     <constraint firstItem="G9c-dP-VFy" firstAttribute="trailing" secondItem="8y9-jr-QgY" secondAttribute="trailingMargin" id="TkI-Al-Uru"/>
@@ -61,6 +72,7 @@
                     <constraint firstItem="Mox-UK-dGp" firstAttribute="leading" secondItem="8y9-jr-QgY" secondAttribute="leadingMargin" id="VPX-hg-6yf"/>
                     <constraint firstAttribute="bottomMargin" secondItem="G9c-dP-VFy" secondAttribute="bottom" constant="2" id="Z1I-mR-5lb"/>
                     <constraint firstItem="jRU-iU-Qhg" firstAttribute="top" secondItem="8y9-jr-QgY" secondAttribute="topMargin" constant="1" id="bqM-jK-YXo"/>
+                    <constraint firstItem="aFz-gG-HmD" firstAttribute="top" secondItem="8y9-jr-QgY" secondAttribute="topMargin" id="gp0-oV-Ec5"/>
                     <constraint firstItem="Mox-UK-dGp" firstAttribute="top" secondItem="8y9-jr-QgY" secondAttribute="topMargin" id="lzg-h8-w3x"/>
                     <constraint firstItem="2Mn-IF-WEa" firstAttribute="leading" secondItem="jRU-iU-Qhg" secondAttribute="trailing" constant="8" id="mEW-0A-THV"/>
                     <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Mox-UK-dGp" secondAttribute="bottom" id="qNF-9R-zny"/>
@@ -70,6 +82,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="_iconButton" destination="aFz-gG-HmD" id="j9B-wt-gyN"/>
                 <outlet property="_iconImageView" destination="Mox-UK-dGp" id="Wxz-Va-RnC"/>
                 <outlet property="_screenNameLabel" destination="2Mn-IF-WEa" id="re4-of-34u"/>
                 <outlet property="_statusImageView" destination="G9c-dP-VFy" id="BDN-2g-TqT"/>

@@ -48,11 +48,22 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLu-Oa-3Cd">
+                        <rect key="frame" x="8" y="9" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="BA5-YQ-sEW"/>
+                            <constraint firstAttribute="height" constant="40" id="kup-VF-7Mp"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hVV-hs-Akd" firstAttribute="top" secondItem="Bda-tk-lUc" secondAttribute="topMargin" constant="1" id="1DT-TC-L2O"/>
                     <constraint firstItem="KZ0-hG-ZgD" firstAttribute="leading" secondItem="w13-5e-mfK" secondAttribute="trailing" constant="8" id="47v-vn-ZQo"/>
                     <constraint firstItem="KZ0-hG-ZgD" firstAttribute="top" secondItem="Bda-tk-lUc" secondAttribute="topMargin" constant="1" id="7aA-wZ-KZg"/>
+                    <constraint firstItem="uLu-Oa-3Cd" firstAttribute="leading" secondItem="Bda-tk-lUc" secondAttribute="leadingMargin" id="A7h-c9-ap6"/>
                     <constraint firstItem="8AU-AS-xu7" firstAttribute="leading" secondItem="w13-5e-mfK" secondAttribute="trailing" constant="8" id="Ako-4K-fVu"/>
                     <constraint firstItem="xz0-a6-u3v" firstAttribute="trailing" secondItem="Bda-tk-lUc" secondAttribute="trailingMargin" id="Bg3-qq-5cy"/>
                     <constraint firstAttribute="bottomMargin" secondItem="xz0-a6-u3v" secondAttribute="bottom" constant="2" id="GZQ-sh-zm0"/>
@@ -61,6 +72,7 @@
                     <constraint firstItem="w13-5e-mfK" firstAttribute="leading" secondItem="Bda-tk-lUc" secondAttribute="leadingMargin" id="RGw-OO-LXt"/>
                     <constraint firstItem="xz0-a6-u3v" firstAttribute="leading" secondItem="Bda-tk-lUc" secondAttribute="leadingMargin" constant="48" id="RN4-CS-tol"/>
                     <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="w13-5e-mfK" secondAttribute="bottom" id="WQJ-Rf-pwR"/>
+                    <constraint firstItem="uLu-Oa-3Cd" firstAttribute="top" secondItem="Bda-tk-lUc" secondAttribute="topMargin" id="We6-2b-dv6"/>
                     <constraint firstItem="hVV-hs-Akd" firstAttribute="leading" secondItem="KZ0-hG-ZgD" secondAttribute="trailing" constant="8" id="fMc-j9-s4B"/>
                     <constraint firstItem="hVV-hs-Akd" firstAttribute="leading" secondItem="KZ0-hG-ZgD" secondAttribute="trailing" constant="8" id="hlg-vV-7R8"/>
                     <constraint firstItem="hVV-hs-Akd" firstAttribute="trailing" secondItem="Bda-tk-lUc" secondAttribute="trailingMargin" id="iIj-7d-qzQ"/>
@@ -69,6 +81,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="_iconButton" destination="uLu-Oa-3Cd" id="MrY-Fn-d0B"/>
                 <outlet property="_iconImageView" destination="w13-5e-mfK" id="q1i-qa-3DF"/>
                 <outlet property="_screenNameLabel" destination="hVV-hs-Akd" id="hqL-Tf-4yp"/>
                 <outlet property="_statusImageView" destination="xz0-a6-u3v" id="Q8f-Qq-1Md"/>
