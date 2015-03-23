@@ -111,10 +111,11 @@
                 return;
             }
         }
+    } else if (error.code == -1009) {
     } else if (error.code == -1012) {
         [self refreshToken];
         return;
-    }  else if (error.code) {
+    } else if (error.code) {
         [self refreshToken];
         return;
     }

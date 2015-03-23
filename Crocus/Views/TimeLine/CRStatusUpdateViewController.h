@@ -28,7 +28,11 @@
 
 @property(nonatomic, copy) void (^deleteCallback)(BOOL);
 
+@property(nonatomic, copy) void (^postCallBack)();
+
 + (void)showStatus:(CRStatus *)status callBack:(void (^)(BOOL reload))callBack;
+
++ (void)showStatus:(CRStatus *)status callBack:(void (^)(BOOL reload))callBack postCallBack:(void (^)())postCallBack;
 
 + (void)showStatus:(CRStatus *)status callBack:(void (^)(BOOL reload))callBack deleteCallback:(void (^)(BOOL deleted))deleteCallback;
 

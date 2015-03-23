@@ -74,6 +74,9 @@
     [self.refreshControl addTarget:self action:@selector(refreshTimeLine) forControlEvents:UIControlEventValueChanged];
     _timeLineController = [CRTimeLineController view];
     [_timeLineController install:self.navigationController.view targetTableView:self.tableView];
+    _timeLineController.reload = ^{
+        [weakSelf refreshTimeLine];
+    };
 
     UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(selected:)];
     [self.tableView addGestureRecognizer:longPressGestureRecognizer];
@@ -203,7 +206,11 @@
             for (NSUInteger i = (weakSelf.timeLineService.statusCount - array.count); weakSelf.timeLineService.statusCount > i; i++) {
                 [indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
             }
-            [weakSelf.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
+            if (_timeLineService.statusCount < 20) {
+                [weakSelf.tableView reloadData];
+            } else {
+                [weakSelf.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
+            }
         }
     } else {
         if (array.count == 20) {
@@ -249,7 +256,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.timeLineService.statusCount > 0) {
+    if (self.timeLineService.statusCount >= 20) {
         return self.timeLineService.statusCount + 1;
     } else {
         return self.timeLineService.statusCount;
@@ -257,8 +264,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.timeLineService.statusCount == indexPath.row + 8) {
+//        [self.timeLineService performSelector:@selector(historyLoad) withObject:nil afterDelay:0.1];
+        [self.timeLineService historyLoad];
+    }
     if (self.timeLineService.statusCount == indexPath.row) {
-        [self.timeLineService performSelector:@selector(historyLoad) withObject:nil afterDelay:0.5];
         CRLoadingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"loadingCell"];
         [cell startAnimating];
         return cell;

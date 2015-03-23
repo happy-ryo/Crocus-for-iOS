@@ -12,6 +12,7 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 #import <objc/runtime.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "CRStatusUpdateViewController.h"
 #import "CRStatusService.h"
 #import "CRUIImage+rotation.h"
@@ -39,6 +40,8 @@ static const char kStatusUpdateWindow;
     void (^_callBack)(BOOL reload);
 
     void (^_deleteCallback)(BOOL deleted);
+
+    void (^_postCallBack)();
 }
 
 - (void)viewDidLoad {
@@ -97,6 +100,9 @@ static const char kStatusUpdateWindow;
                 [weakSelf textCounter:weakSelf.textView];
                 weakSelf.postImageView.image = nil;
                 weakSelf.postImageView.hidden = YES;
+                if (weakSelf.postCallBack != nil) {
+                    weakSelf.postCallBack();
+                }
                 if (weakSelf.status != nil) {
                     [weakSelf close];
                 }
@@ -175,6 +181,10 @@ static const char kStatusUpdateWindow;
 static BOOL showStatusUpdateFlg;
 
 + (void)showStatus:(CRStatus *)status callBack:(void (^)(BOOL reload))callBack {
+    [self showStatus:status callBack:callBack postCallBack:nil];
+}
+
++ (void)showStatus:(CRStatus *)status callBack:(void (^)(BOOL reload))callBack postCallBack:(void (^)())postCallBack {
     if (showStatusUpdateFlg) {
         return;
     } else {
@@ -200,6 +210,7 @@ static BOOL showStatusUpdateFlg;
     CRStatusUpdateViewController *statusUpdateViewController = (CRStatusUpdateViewController *) window.rootViewController;
     statusUpdateViewController.callBack = callBack;
     statusUpdateViewController.status = status;
+    statusUpdateViewController.postCallBack = postCallBack;
 
     objc_setAssociatedObject([UIApplication sharedApplication], &kStatusUpdateWindow, window, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 

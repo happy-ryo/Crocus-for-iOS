@@ -17,7 +17,7 @@
 @class CROAuthParams;
 @class CROAuth;
 
-
+static BOOL showOAuth;
 static NSString *const kCROAuthTokenURL = @"https://api.croudia.com/oauth/token";
 
 static NSString *const kCRAuthorizeURLFormat = @"https://api.croudia.com/oauth/authorize?response_type=code&client_id=%@&state=%@";

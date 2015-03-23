@@ -102,6 +102,10 @@
 
     __block NSUInteger count = 0;
     __block CRUserTimeLine *userTimeLine = [[CRUserTimeLine alloc] initWithLoadFinished:^(NSArray *statusArray, BOOL reload, NSError *error) {
+        if (statusArray.count == 0) {
+            callback(0);
+            return;
+        }
         for (NSDictionary *dictionary in statusArray) {
             NSDate *date = [dateFormatter dateFromString:dictionary[@"created_at"]];
             NSComparisonResult comparisonResult = [todayZero compare:date];
@@ -125,6 +129,26 @@
         [userTimeLine load];
     }                                                                            userId:self.getUser.idStr];
     userTimeLine.count = @"50";
+    [userTimeLine load];
+}
+
+- (void)deleteAllStatuses:(void (^)(NSUInteger count))callback {
+    __block CRUserTimeLine *userTimeLine = [[CRUserTimeLine alloc] initWithLoadFinished:^(NSArray *statusArray, BOOL reload, NSError *error) {
+        if (statusArray.count == 0) {
+            callback(0);
+            return;
+        }
+        for (NSDictionary *dictionary in statusArray) {
+            CRStatusesDestroy *statusesDestroy = [[CRStatusesDestroy alloc] initWithShowId:dictionary[@"id_str"]
+                                                                              loadFinished:^(NSDictionary *statusDic, NSError *error) {
+                                                                              }];
+            [statusesDestroy load];
+        }
+
+        NSDictionary *maxDictionary = statusArray.lastObject;
+        userTimeLine.maxId = maxDictionary[@"id_str"];
+        [userTimeLine load];
+    }                                                                            userId:self.getUser.idStr];
     [userTimeLine load];
 }
 @end
