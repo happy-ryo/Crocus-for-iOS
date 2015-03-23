@@ -11,9 +11,11 @@
 		82CDD0483619FDB1FD7E2CBD /* CREntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDCF4EC24F0CEF41016ED /* CREntities.m */; };
 		82CDD12A370487EA463E0169 /* CRTimeLineSpreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD4BA60D8B7B26D04B4BF /* CRTimeLineSpreadCell.m */; };
 		82CDD195BBC65326778D0134 /* CRStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD1506298447CEBF2CD33 /* CRStatus.m */; };
+		82CDD238F3F4F4817750DED2 /* CRFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD587DCE7BCD27361F5AB /* CRFavorite.m */; };
 		82CDD321CA4F11515B5D7DF1 /* CRLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD816A1053D69C511AB64 /* CRLoadingCell.m */; };
 		82CDD37B0E0B17915E8D6710 /* CRTimeLineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD65CBC3D0FA65FD7FB23 /* CRTimeLineController.m */; };
 		82CDD3C40F45F20FE450929F /* CRTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD022DA7BDE6411E21E68 /* CRTimeLineViewController.m */; };
+		82CDD42826C7D4AB39FD1F08 /* CRFavoriteTimeLineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDEC8998049C3B80A660E /* CRFavoriteTimeLineService.m */; };
 		82CDD4EFA3C3C5B335226C9C /* CRMutesCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD8C7C12B4276837A3F85 /* CRMutesCreate.m */; };
 		82CDD5429862FC1309951023 /* CRTimeLineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDF31E57138AAC5C0E7CE /* CRTimeLineService.m */; };
 		82CDD579251223889B8212E4 /* CRTimeLineBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD05A7E671C8269F7DACD /* CRTimeLineBaseViewController.m */; };
@@ -35,10 +37,14 @@
 		82CDDB152A0F74F093191B07 /* CRStatusUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD6DAA6BD17FB6E03E254 /* CRStatusUpdateViewController.m */; };
 		82CDDB467A52C713B35F337C /* CRHomeTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD3AD81E4EB6C24E5E6D4 /* CRHomeTimeLineViewController.m */; };
 		82CDDBCA9B2EC60F6A04C12F /* CRStatusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD3C95B9C9E22F930A06C /* CRStatusService.m */; };
+		82CDDC28F1B51F12687135FC /* CRFavouriteTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDA7813CA771B8CF26081 /* CRFavouriteTimeLineViewController.m */; };
 		82CDDC5E378E9F7A8F49B663 /* CRProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDFA909F8FC430E802133 /* CRProfileViewController.m */; };
 		82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82CDD32CE6B0B933816EA019 /* Localizable.strings */; };
 		82CDDEB88DD66EED4FCD3DAA /* CRTimeLineImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDDD7C345CBE3A79CE2A8 /* CRTimeLineImageCell.m */; };
 		82CDDEEA5BC66F3E6D524E81 /* CRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */; };
+		890BCFCF1AB07A130055D96E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890BCFCD1AB07A130055D96E /* Crashlytics.framework */; };
+		890BCFD01AB07A130055D96E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890BCFCE1AB07A130055D96E /* Fabric.framework */; };
+		894029F11AB5D60A0035C35E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894029F01AB5D60A0035C35E /* AssetsLibrary.framework */; };
 		8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8967A8F01A52F25000FDB716 /* OAuth.storyboard */; };
 		897BC4841A68264B00964A68 /* StatusUpdateView5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897BC4831A68264B00964A68 /* StatusUpdateView5.xib */; };
 		8983A4691A655DEE00607BEC /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8983A4681A655DEE00607BEC /* ProfileView.xib */; };
@@ -95,7 +101,6 @@
 		89FB841A1A6ABE46009D4573 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB84191A6ABE46009D4573 /* AdSupport.framework */; };
 		89FB841C1A6ABE4D009D4573 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB841B1A6ABE4D009D4573 /* Security.framework */; };
 		89FB841E1A6ABE57009D4573 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB841D1A6ABE57009D4573 /* ImageIO.framework */; };
-		89FB84201A6C1AC0009D4573 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB841F1A6C1AC0009D4573 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +129,7 @@
 		82CDD2E5D4AA55BCD1C5E6F6 /* CRLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLoadingCell.h; sourceTree = "<group>"; };
 		82CDD32CE6B0B933816EA019 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Croudia/API/Localizable.strings; sourceTree = "<group>"; };
 		82CDD363F80AF6457B0DAEF6 /* CRMutesCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMutesCreate.h; sourceTree = "<group>"; };
+		82CDD39D3D9BC8D164291584 /* CRFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFavorite.h; sourceTree = "<group>"; };
 		82CDD3AD81E4EB6C24E5E6D4 /* CRHomeTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRHomeTimeLineViewController.m; sourceTree = "<group>"; };
 		82CDD3C95B9C9E22F930A06C /* CRStatusService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatusService.m; sourceTree = "<group>"; };
 		82CDD3CC95EFD4E0283CE034 /* CRTimeLineImageSpreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineImageSpreadCell.m; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 		82CDD4BA60D8B7B26D04B4BF /* CRTimeLineSpreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineSpreadCell.m; sourceTree = "<group>"; };
 		82CDD4CD36FBE54AC0B74FC7 /* CRStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRStatus.h; sourceTree = "<group>"; };
 		82CDD537474FA78C9846EF39 /* CRProfileService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRProfileService.m; sourceTree = "<group>"; };
+		82CDD587DCE7BCD27361F5AB /* CRFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRFavorite.m; sourceTree = "<group>"; };
 		82CDD65CBC3D0FA65FD7FB23 /* CRTimeLineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineController.m; sourceTree = "<group>"; };
 		82CDD66165948E06A25CBC28 /* CRProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRProfileViewController.h; sourceTree = "<group>"; };
 		82CDD6BE66AABBB434042E67 /* CRPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRPageViewController.h; sourceTree = "<group>"; };
@@ -149,7 +156,9 @@
 		82CDD99EAAEAF7D82B70899B /* CRTimeLineImageSpreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineImageSpreadCell.h; sourceTree = "<group>"; };
 		82CDD9D3D7AEA0087C85BA18 /* CRMentionTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMentionTimeLineViewController.h; sourceTree = "<group>"; };
 		82CDD9E141C015FEAC25C43C /* CRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUser.h; sourceTree = "<group>"; };
+		82CDD9F27EF7C4E0A9EFB123 /* CRFavouriteTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFavouriteTimeLineViewController.h; sourceTree = "<group>"; };
 		82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineBaseCell.m; sourceTree = "<group>"; };
+		82CDDA7813CA771B8CF26081 /* CRFavouriteTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRFavouriteTimeLineViewController.m; sourceTree = "<group>"; };
 		82CDDB29C09EC38BB26DB46C /* CRMentionTimeLineService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMentionTimeLineService.h; sourceTree = "<group>"; };
 		82CDDB9C6FB4762A045FC8FD /* CRAdsTimeLineBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRAdsTimeLineBaseCell.m; sourceTree = "<group>"; };
 		82CDDC6A060AC629D1C92F43 /* CRSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRSource.h; sourceTree = "<group>"; };
@@ -161,7 +170,9 @@
 		82CDDDF90F60958629323DE3 /* CRSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRSource.m; sourceTree = "<group>"; };
 		82CDDE0F897B87A3725EBA43 /* CRHomeTimeLineService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRHomeTimeLineService.m; sourceTree = "<group>"; };
 		82CDDE55A1C8247E59D8F8C8 /* CRConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRConfigViewController.h; sourceTree = "<group>"; };
+		82CDDE645410145EA5C19A09 /* CRFavoriteTimeLineService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFavoriteTimeLineService.h; sourceTree = "<group>"; };
 		82CDDE93A9E23681D030A97C /* CRTimeLineService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineService.h; sourceTree = "<group>"; };
+		82CDDEC8998049C3B80A660E /* CRFavoriteTimeLineService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRFavoriteTimeLineService.m; sourceTree = "<group>"; };
 		82CDDECC9BC401CB4AE96494 /* CRStatusDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatusDetailViewController.m; sourceTree = "<group>"; };
 		82CDDEE3198A8FEBE5832891 /* CRStatusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRStatusService.h; sourceTree = "<group>"; };
 		82CDDEFA3CA0C5330CB827CD /* CRTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineViewController.h; sourceTree = "<group>"; };
@@ -172,6 +183,9 @@
 		82CDDFA909F8FC430E802133 /* CRProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRProfileViewController.m; sourceTree = "<group>"; };
 		82CDDFAA2AC71717678A7AEF /* CRTimeLineBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineBaseViewController.h; sourceTree = "<group>"; };
 		82CDDFC943208ADD696629B6 /* CRMutesDestroy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMutesDestroy.h; sourceTree = "<group>"; };
+		890BCFCD1AB07A130055D96E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		890BCFCE1AB07A130055D96E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		894029F01AB5D60A0035C35E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8967A8F01A52F25000FDB716 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
 		897BC4831A68264B00964A68 /* StatusUpdateView5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusUpdateView5.xib; sourceTree = "<group>"; };
 		8983A4681A655DEE00607BEC /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
@@ -268,7 +282,6 @@
 		89FB84191A6ABE46009D4573 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		89FB841B1A6ABE4D009D4573 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		89FB841D1A6ABE57009D4573 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		89FB841F1A6C1AC0009D4573 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		CE9E387D4E48B7A8C8EC21A6 /* libPods-Crocus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crocus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90AD25C1A39F097F3BAED9B /* Pods-Crocus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crocus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crocus/Pods-Crocus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,11 +291,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894029F11AB5D60A0035C35E /* AssetsLibrary.framework in Frameworks */,
+				890BCFD01AB07A130055D96E /* Fabric.framework in Frameworks */,
 				89FB841E1A6ABE57009D4573 /* ImageIO.framework in Frameworks */,
 				89FB841C1A6ABE4D009D4573 /* Security.framework in Frameworks */,
 				89FB841A1A6ABE46009D4573 /* AdSupport.framework in Frameworks */,
-				89FB84201A6C1AC0009D4573 /* StoreKit.framework in Frameworks */,
 				13AECF7624D6E759944FB383 /* libPods-Crocus.a in Frameworks */,
+				890BCFCF1AB07A130055D96E /* Crashlytics.framework in Frameworks */,
 				89FB84171A6ABE21009D4573 /* libNendAd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +315,9 @@
 		659AA79F3FEDD277C3EF1DFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				89FB841F1A6C1AC0009D4573 /* StoreKit.framework */,
+				894029F01AB5D60A0035C35E /* AssetsLibrary.framework */,
+				890BCFCD1AB07A130055D96E /* Crashlytics.framework */,
+				890BCFCE1AB07A130055D96E /* Fabric.framework */,
 				89FB841D1A6ABE57009D4573 /* ImageIO.framework */,
 				89FB841B1A6ABE4D009D4573 /* Security.framework */,
 				89FB84191A6ABE46009D4573 /* AdSupport.framework */,
@@ -395,6 +412,8 @@
 				89CB99421A6A8F53009AD3B9 /* AdsTimeLineBaseCell.xib */,
 				82CDDB9C6FB4762A045FC8FD /* CRAdsTimeLineBaseCell.m */,
 				82CDD73E88DFEAA827A351F3 /* CRAdsTimeLineBaseCell.h */,
+				82CDDA7813CA771B8CF26081 /* CRFavouriteTimeLineViewController.m */,
+				82CDD9F27EF7C4E0A9EFB123 /* CRFavouriteTimeLineViewController.h */,
 			);
 			path = TimeLine;
 			sourceTree = "<group>";
@@ -427,6 +446,8 @@
 				82CDDB29C09EC38BB26DB46C /* CRMentionTimeLineService.h */,
 				82CDD537474FA78C9846EF39 /* CRProfileService.m */,
 				82CDD3DA95C997F0D78DBB61 /* CRProfileService.h */,
+				82CDDEC8998049C3B80A660E /* CRFavoriteTimeLineService.m */,
+				82CDDE645410145EA5C19A09 /* CRFavoriteTimeLineService.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -482,6 +503,8 @@
 				82CDD363F80AF6457B0DAEF6 /* CRMutesCreate.h */,
 				82CDD0440872EE75C05B1687 /* CRMutesDestroy.m */,
 				82CDDFC943208ADD696629B6 /* CRMutesDestroy.h */,
+				82CDD587DCE7BCD27361F5AB /* CRFavorite.m */,
+				82CDD39D3D9BC8D164291584 /* CRFavorite.h */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -613,6 +636,7 @@
 				89FA16541A47B53B00271FBB /* Frameworks */,
 				89FA16551A47B53B00271FBB /* Resources */,
 				5CA6B31F609257D4CB3946EB /* Copy Pods Resources */,
+				890BCFCC1AB079D10055D96E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -655,7 +679,7 @@
 						DevelopmentTeam = X9AMR5X2G8;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -736,6 +760,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crocus/Pods-Crocus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		890BCFCC1AB079D10055D96E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run dedb8ae82a73a7f65468356b49fb24a31d447321 039f08271f914cdd9a7c6f7f950b26825fd1b892d50c6354afd0465bebfc9887";
 		};
 		991F12BBDC95DCBC5713D860 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -821,6 +858,9 @@
 				82CDD8094C313A66C452F365 /* CRMutesDestroy.m in Sources */,
 				82CDD617C9A887A316CC77F8 /* CRConfigViewController.m in Sources */,
 				82CDD6D7FFDFD335D1B73BF3 /* CRLicenseViewController.m in Sources */,
+				82CDDC28F1B51F12687135FC /* CRFavouriteTimeLineViewController.m in Sources */,
+				82CDD238F3F4F4817750DED2 /* CRFavorite.m in Sources */,
+				82CDD42826C7D4AB39FD1F08 /* CRFavoriteTimeLineService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -942,12 +982,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 139D21D2F31D4DE4E7D7E029 /* Pods-Crocus.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = armv7;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "Crocus/Crocus-PrefixHeader.pch";
 				INFOPLIST_FILE = Crocus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -971,7 +1015,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -979,12 +1023,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D90AD25C1A39F097F3BAED9B /* Pods-Crocus.release.xcconfig */;
 			buildSettings = {
-				ARCHS = armv7;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "Crocus/Crocus-PrefixHeader.pch";
 				INFOPLIST_FILE = Crocus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1006,9 +1054,9 @@
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "87d288fd-f852-4d73-9417-b5567db71383";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

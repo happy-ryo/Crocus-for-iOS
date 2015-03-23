@@ -27,7 +27,8 @@
     _pageViews = @[
             [self.storyboard instantiateViewControllerWithIdentifier:@"home"],
             [self.storyboard instantiateViewControllerWithIdentifier:@"ptl"],
-            [self.storyboard instantiateViewControllerWithIdentifier:@"mention"]
+            [self.storyboard instantiateViewControllerWithIdentifier:@"mention"],
+            [self.storyboard instantiateViewControllerWithIdentifier:@"fav"]
     ];
     [self.pageViewController setViewControllers:@[_pageViews[1]]
                                       direction:UIPageViewControllerNavigationDirectionForward
@@ -49,12 +50,38 @@
 
 }
 
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+//    NSInteger index = [_pageViews indexOfObject:viewController];
+//    if (index == 1) {
+//        return _pageViews[0];
+//    } else if (index == 0) {
+//        return _pageViews[2];
+//    } else {
+//        return _pageViews[1];
+//    }
+//}
+//
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+//    NSInteger index = [_pageViews indexOfObject:viewController];
+//    if (index == 1) {
+//        return _pageViews[2];
+//    } else if (index == 0) {
+//        return _pageViews[1];
+//    } else {
+//        return _pageViews[0];
+//    }
+//}
+
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     NSInteger index = [_pageViews indexOfObject:viewController];
+    if (index + 1 == _pageViews.count) {
+        return _pageViews[0];
+    }
+    return _pageViews[(NSUInteger) (index + 1)];
     if (index == 1) {
         return _pageViews[0];
     } else if (index == 0) {
-        return _pageViews[2];
+        return _pageViews[1];
     } else {
         return _pageViews[1];
     }
@@ -62,6 +89,10 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     NSInteger index = [_pageViews indexOfObject:viewController];
+    if (index == 0) {
+        return _pageViews.lastObject;
+    }
+    return _pageViews[(NSUInteger) (index - 1)];
     if (index == 1) {
         return _pageViews[2];
     } else if (index == 0) {

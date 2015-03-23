@@ -25,6 +25,8 @@
 
 @property(nonatomic) BOOL isOpened;
 
+@property(nonatomic, copy) void (^reload)();
+
 - (instancetype)initWithTableView:(UITableView *)tableView;
 
 - (void)install:(UIView *)baseView targetTableView:(UITableView *)uiTableView;

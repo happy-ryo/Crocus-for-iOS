@@ -46,7 +46,7 @@
     NSError *connectionError = nil;
     NSData *responseData;
     responseData = [NSURLConnection sendSynchronousRequest:self.request returningResponse:&response error:&connectionError];
-    id obj = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:nil];
+    
     if (connectionError) {
         NSMutableURLRequest *mutableURLRequest = self.request.mutableCopy;
         [mutableURLRequest setCachePolicy:NSURLRequestReturnCacheDataDontLoad];

@@ -40,7 +40,41 @@
         }];
     } else if (indexPath.section == 0 && indexPath.row == 1) {
         [self checkDelete];
+    } else if (indexPath.section == 0 && indexPath.row == 2) {
+        [self checkAllDelete];
     }
+}
+
+- (void)checkAllDelete {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Crocus" message:@"すべてのささやきを出来る限り消しますか？" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+
+    }]];
+
+    __weak CRConfigViewController *weakSelf = self;
+
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Crocus" message:@"まじで？" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"やめとくわ" style:UIAlertActionStyleCancel handler:nil]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"過去と決別する" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                CRUserInfoService *userInfoService = [[CRUserInfoService alloc] init];
+                [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+                [userInfoService deleteAllStatuses:^(NSUInteger count) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+                        UIAlertController *uiAlertController = [UIAlertController alertControllerWithTitle:@"Crocus" message:@"出来るだけ消しました。" preferredStyle:UIAlertControllerStyleAlert];
+                        [uiAlertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                        }]];
+                        [weakSelf presentViewController:uiAlertController animated:YES completion:nil];
+                    });
+                }];
+            }]];
+            [weakSelf presentViewController:alert animated:YES completion:nil];
+        });
+    }]];
+
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)checkDelete {

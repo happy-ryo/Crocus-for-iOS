@@ -52,6 +52,8 @@
     IBOutlet UIButton *_fastForwardButton;
     UITableView *_tableView;
     BOOL _isOpened;
+
+    void (^_reload)();
 }
 
 
@@ -102,14 +104,14 @@
 - (void)openController {
     CGFloat baseHeight = -65;
     [UIView animateWithDuration:0.3 animations:^{
-            _postButton.transform = CGAffineTransformMakeTranslation(0, baseHeight);
-            _rewindButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 2);
-            _fastForwardButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 3);
-        }                completion:^(BOOL finished) {
-            if (finished) {
-                _isOpened = YES;
-            }
-        }];
+        _postButton.transform = CGAffineTransformMakeTranslation(0, baseHeight);
+        _rewindButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 2);
+        _fastForwardButton.transform = CGAffineTransformMakeTranslation(0, baseHeight * 3);
+    }                completion:^(BOOL finished) {
+        if (finished) {
+            _isOpened = YES;
+        }
+    }];
 }
 
 - (void)closeController {
@@ -138,7 +140,7 @@
                 [weakSelf modeChange];
             }
         });
-    }];
+    }                           postCallBack:_reload];
 }
 
 - (IBAction)fastForward {

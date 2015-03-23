@@ -37,7 +37,7 @@
     status.favoritedCount = dictionary[@"favorited_count"];
     status.inReplyToStatusId = [self nullToNil:dictionary key:@"in_reply_to_status_id"];
     status.inReplyToStatusIdStr = [self nullToNil:dictionary key:@"in_reply_to_status_id_str"];
-    status.text = dictionary[@"text"];
+    status.text = [self nullToEmpty:dictionary key:@"text"];
     status.favorited = [self numberToBool:dictionary[@"favorited"]];
     status.entities = [self parseEntities:dictionary[@"entities"]];
     status.inReplyToUserId = [self nullToNil:dictionary key:@"in_reply_to_user_id"];
@@ -58,6 +58,10 @@
 
 - (id)nullToNil:(NSDictionary *)dictionary key:(NSString *)key {
     return dictionary[key] != [NSNull null] ? dictionary[key] : nil;
+}
+
+- (NSString *)nullToEmpty:(NSDictionary *)dictionary key:(NSString *)key {
+    return [self nullToNil:dictionary key:key] ?: @"";
 }
 
 - (CRUser *)parseUser:(NSDictionary *)dictionary {

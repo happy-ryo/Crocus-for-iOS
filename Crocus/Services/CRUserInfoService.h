@@ -35,4 +35,6 @@ static NSString *const USER_INFO_KEY = @"crocusUserInfo";
 - (BOOL)checkMineStatus:(CRStatus *)status;
 
 - (void)deleteTodayStatuses:(void (^)(NSUInteger count))callback;
+
+- (void)deleteAllStatuses:(void (^)(NSUInteger count))callback;
 @end
