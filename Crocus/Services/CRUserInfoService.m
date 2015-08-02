@@ -21,10 +21,14 @@
 #import "CRStatus.h"
 #import "CRUserTimeLine.h"
 #import "CRStatusesDestroy.h"
+#import "Parse.h"
+#import "CRUpdateProtected.h"
+#import "CRUpdateTimerSec.h"
 
 
 @implementation CRUserInfoService {
-
+    CRUpdateProtected *_updateProtected;
+    CRUpdateTimerSec *_updateTimerSec;
     CRVerifyCredentials *_verifyCredentials;
     CRUser *_user;
 }
@@ -35,13 +39,25 @@
     _verifyCredentials = [[CRVerifyCredentials alloc] initWithGetFinished:^(NSDictionary *userDic, NSError *error) {
         if (error == nil) {
             CRUser *user = [weakSelf parseUser:userDic];
-            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-            NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:user];
-            [userDefaults setObject:userData forKey:USER_INFO_KEY];
-            [userDefaults synchronize];
+            CRUser *oldUser = weakSelf.getUser;
+            user.timerSec = oldUser.timerSec;
+            user.timerStart = oldUser.timerStart;
+            [self saveUser:user];
+            PFInstallation *installation = [PFInstallation currentInstallation];
+            NSString *userName = [NSString stringWithFormat:@"c_%@", user.screenName];
+            [installation setChannels:@[userName]];
+            [installation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            }];
         }
     }];
     [_verifyCredentials load];
+}
+
+- (void)saveUser:(CRUser *)user {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:user];
+    [userDefaults setObject:userData forKey:USER_INFO_KEY];
+    [userDefaults synchronize];
 }
 
 - (BOOL)isExistUserInfo {
@@ -150,5 +166,44 @@
         [userTimeLine load];
     }                                                                            userId:self.getUser.idStr];
     [userTimeLine load];
+}
+
+- (void)protect:(BOOL)status updateFinish:(UpdateFinished)pFunction {
+    __weak CRUserInfoService *weakSelf = self;
+
+    _updateProtected = [[CRUpdateProtected alloc] initWithProtect:status updateFinished:^(BOOL result) {
+        if (result) {
+            CRUser *user = weakSelf.getUser;
+            user.userProtected = status;
+            [weakSelf saveUser:user];
+        }
+    }];
+    [_updateProtected load];
+}
+
+- (void)startTimer:(BOOL)status {
+    CRUser *user = self.getUser;
+    user.timerStart = status;
+    [self saveUser:user];
+}
+
+- (void)timer:(NSString *)timerSec updateFinish:(UpdateFinished)pFunction {
+    if (timerSec.integerValue) {
+        NSInteger integer = timerSec.integerValue;
+        if (integer >= 1 && 300 >= integer) {
+            __weak CRUserInfoService *weakSelf = self;
+            _updateTimerSec = [[CRUpdateTimerSec alloc] initWithTimerSec:timerSec updateFinished:^(BOOL result) {
+                if (result) {
+                    CRUser *user = weakSelf.getUser;
+                    user.timerSec = timerSec;
+                    [weakSelf saveUser:user];
+                }
+                pFunction(result);
+            }];
+            [_updateTimerSec load];
+        } else {
+            pFunction(NO);
+        }
+    }
 }
 @end

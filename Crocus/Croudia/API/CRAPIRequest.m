@@ -119,7 +119,6 @@
         [self refreshToken];
         return;
     }
-
 }
 
 - (void)refreshToken {

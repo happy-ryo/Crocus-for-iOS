@@ -22,7 +22,7 @@
 - (void)loadCRStatus:(CRStatus *)status {
     [super loadCRStatus:status];
     NADView *nadView = [[NADView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
-    [nadView setNendID:@"" spotID:@""];
+    [nadView setNendID:@"44c08b258a152ce675c783fbe0766beab12bb445" spotID:@"301147"];
     [nadView load];
     [_nadView addSubview:nadView];
 }

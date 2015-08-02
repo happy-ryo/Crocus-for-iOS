@@ -15,6 +15,7 @@
 		82CDD321CA4F11515B5D7DF1 /* CRLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD816A1053D69C511AB64 /* CRLoadingCell.m */; };
 		82CDD37B0E0B17915E8D6710 /* CRTimeLineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD65CBC3D0FA65FD7FB23 /* CRTimeLineController.m */; };
 		82CDD3C40F45F20FE450929F /* CRTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD022DA7BDE6411E21E68 /* CRTimeLineViewController.m */; };
+		82CDD3CDCE7D21234B6FE605 /* CRUpdateProtected.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDAB7A5EF90D65BE0F858 /* CRUpdateProtected.m */; };
 		82CDD42826C7D4AB39FD1F08 /* CRFavoriteTimeLineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDEC8998049C3B80A660E /* CRFavoriteTimeLineService.m */; };
 		82CDD4EFA3C3C5B335226C9C /* CRMutesCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD8C7C12B4276837A3F85 /* CRMutesCreate.m */; };
 		82CDD5429862FC1309951023 /* CRTimeLineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDF31E57138AAC5C0E7CE /* CRTimeLineService.m */; };
@@ -31,6 +32,7 @@
 		82CDD9439CCC56568C46CED5 /* CRMentionTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD218D98E2FE19FBA28F0 /* CRMentionTimeLineViewController.m */; };
 		82CDD9699A84F1687F9A4A4B /* CRStatusDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDECC9BC401CB4AE96494 /* CRStatusDetailViewController.m */; };
 		82CDD9AB91C06F79CC11CD24 /* CRTimeLineBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */; };
+		82CDDA65A6D413969ACED403 /* CRUpdateTimerSec.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD12E7862E595FB5F0D76 /* CRUpdateTimerSec.m */; };
 		82CDDAC914DF8CA690F8DFF2 /* CRTimeLineImageSpreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD3CC95EFD4E0283CE034 /* CRTimeLineImageSpreadCell.m */; };
 		82CDDAEE61972C362A0A7855 /* CRPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD00BEE0A2A0D7A5701FC /* CRPageViewController.m */; };
 		82CDDB04ABB352A406FA7510 /* CRSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDDDF90F60958629323DE3 /* CRSource.m */; };
@@ -88,6 +90,7 @@
 		89DE9E701A4A558800654D3E /* NSDictionary+CRURLParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E511A4A558800654D3E /* NSDictionary+CRURLParams.m */; };
 		89DE9E711A4A558800654D3E /* CROAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E541A4A558800654D3E /* CROAuth.m */; };
 		89DE9E721A4A558800654D3E /* CROAuthParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DE9E561A4A558800654D3E /* CROAuthParams.m */; };
+		89E6A3F11AF4BA82008D3184 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E6A3F01AF4BA82008D3184 /* AudioToolbox.framework */; };
 		89F931B31A56CF8E009CD6E9 /* TimeLineBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89F931B21A56CF8E009CD6E9 /* TimeLineBaseCell.xib */; };
 		89FA165D1A47B53B00271FBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FA165C1A47B53B00271FBB /* main.m */; };
 		89FA16601A47B53B00271FBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FA165F1A47B53B00271FBB /* AppDelegate.m */; };
@@ -120,12 +123,14 @@
 		82CDD0440872EE75C05B1687 /* CRMutesDestroy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMutesDestroy.m; sourceTree = "<group>"; };
 		82CDD05A7E671C8269F7DACD /* CRTimeLineBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineBaseViewController.m; sourceTree = "<group>"; };
 		82CDD1161E0D2573A6C031DF /* CRTimeLineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineController.h; sourceTree = "<group>"; };
+		82CDD12E7862E595FB5F0D76 /* CRUpdateTimerSec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUpdateTimerSec.m; sourceTree = "<group>"; };
 		82CDD12EC63D99BBE169885B /* CRStatusUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRStatusUpdateViewController.h; sourceTree = "<group>"; };
 		82CDD1506298447CEBF2CD33 /* CRStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRStatus.m; sourceTree = "<group>"; };
 		82CDD1957C496D9F167794BA /* CRUserInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUserInfoService.h; sourceTree = "<group>"; };
 		82CDD1B7E4B051D66EA2B358 /* CRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRService.h; sourceTree = "<group>"; };
 		82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUser.m; sourceTree = "<group>"; };
 		82CDD218D98E2FE19FBA28F0 /* CRMentionTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMentionTimeLineViewController.m; sourceTree = "<group>"; };
+		82CDD22DA712180C656B8900 /* CRUpdateTimerSec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUpdateTimerSec.h; sourceTree = "<group>"; };
 		82CDD2E5D4AA55BCD1C5E6F6 /* CRLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLoadingCell.h; sourceTree = "<group>"; };
 		82CDD32CE6B0B933816EA019 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Croudia/API/Localizable.strings; sourceTree = "<group>"; };
 		82CDD363F80AF6457B0DAEF6 /* CRMutesCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMutesCreate.h; sourceTree = "<group>"; };
@@ -151,6 +156,7 @@
 		82CDD7D59DC6E35FAEBD99E3 /* Crocus-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Crocus-PrefixHeader.pch"; sourceTree = "<group>"; };
 		82CDD816A1053D69C511AB64 /* CRLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLoadingCell.m; sourceTree = "<group>"; };
 		82CDD8C7C12B4276837A3F85 /* CRMutesCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMutesCreate.m; sourceTree = "<group>"; };
+		82CDD96BCF6183199BCB1535 /* CRUpdateProtected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUpdateProtected.h; sourceTree = "<group>"; };
 		82CDD984FEC0366CD7C06BCF /* CREntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CREntities.h; sourceTree = "<group>"; };
 		82CDD99DB9FB2C2D249CBD57 /* CRTimeLineSpreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineSpreadCell.h; sourceTree = "<group>"; };
 		82CDD99EAAEAF7D82B70899B /* CRTimeLineImageSpreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeLineImageSpreadCell.h; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 		82CDD9F27EF7C4E0A9EFB123 /* CRFavouriteTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFavouriteTimeLineViewController.h; sourceTree = "<group>"; };
 		82CDDA234DF4C1B51066967A /* CRTimeLineBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeLineBaseCell.m; sourceTree = "<group>"; };
 		82CDDA7813CA771B8CF26081 /* CRFavouriteTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRFavouriteTimeLineViewController.m; sourceTree = "<group>"; };
+		82CDDAB7A5EF90D65BE0F858 /* CRUpdateProtected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUpdateProtected.m; sourceTree = "<group>"; };
 		82CDDB29C09EC38BB26DB46C /* CRMentionTimeLineService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMentionTimeLineService.h; sourceTree = "<group>"; };
 		82CDDB9C6FB4762A045FC8FD /* CRAdsTimeLineBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRAdsTimeLineBaseCell.m; sourceTree = "<group>"; };
 		82CDDC6A060AC629D1C92F43 /* CRSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRSource.h; sourceTree = "<group>"; };
@@ -258,6 +265,7 @@
 		89DE9E541A4A558800654D3E /* CROAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROAuth.m; sourceTree = "<group>"; };
 		89DE9E551A4A558800654D3E /* CROAuthParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROAuthParams.h; sourceTree = "<group>"; };
 		89DE9E561A4A558800654D3E /* CROAuthParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROAuthParams.m; sourceTree = "<group>"; };
+		89E6A3F01AF4BA82008D3184 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		89F931B21A56CF8E009CD6E9 /* TimeLineBaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineBaseCell.xib; sourceTree = "<group>"; };
 		89FA16571A47B53B00271FBB /* Crocus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crocus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FA165B1A47B53B00271FBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -291,6 +299,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E6A3F11AF4BA82008D3184 /* AudioToolbox.framework in Frameworks */,
 				894029F11AB5D60A0035C35E /* AssetsLibrary.framework in Frameworks */,
 				890BCFD01AB07A130055D96E /* Fabric.framework in Frameworks */,
 				89FB841E1A6ABE57009D4573 /* ImageIO.framework in Frameworks */,
@@ -315,6 +324,7 @@
 		659AA79F3FEDD277C3EF1DFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89E6A3F01AF4BA82008D3184 /* AudioToolbox.framework */,
 				894029F01AB5D60A0035C35E /* AssetsLibrary.framework */,
 				890BCFCD1AB07A130055D96E /* Crashlytics.framework */,
 				890BCFCE1AB07A130055D96E /* Fabric.framework */,
@@ -505,6 +515,10 @@
 				82CDDFC943208ADD696629B6 /* CRMutesDestroy.h */,
 				82CDD587DCE7BCD27361F5AB /* CRFavorite.m */,
 				82CDD39D3D9BC8D164291584 /* CRFavorite.h */,
+				82CDDAB7A5EF90D65BE0F858 /* CRUpdateProtected.m */,
+				82CDD96BCF6183199BCB1535 /* CRUpdateProtected.h */,
+				82CDD12E7862E595FB5F0D76 /* CRUpdateTimerSec.m */,
+				82CDD22DA712180C656B8900 /* CRUpdateTimerSec.h */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -678,6 +692,9 @@
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = X9AMR5X2G8;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 0;
 							};
@@ -861,6 +878,8 @@
 				82CDDC28F1B51F12687135FC /* CRFavouriteTimeLineViewController.m in Sources */,
 				82CDD238F3F4F4817750DED2 /* CRFavorite.m in Sources */,
 				82CDD42826C7D4AB39FD1F08 /* CRFavoriteTimeLineService.m in Sources */,
+				82CDD3CDCE7D21234B6FE605 /* CRUpdateProtected.m in Sources */,
+				82CDDA65A6D413969ACED403 /* CRUpdateTimerSec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -985,8 +1004,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ryo Iwama (Z99BC37WX8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ryo Iwama (Z99BC37WX8)";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1013,7 +1032,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "9c032026-618a-4d89-a490-fe8962ebbe8c";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -1026,8 +1045,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ryo Iwama";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ryo Iwama";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1054,7 +1073,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "50d39c9a-d213-47f8-87eb-5d33a1ce32fd";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

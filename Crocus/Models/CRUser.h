@@ -32,8 +32,12 @@
 @property(nonatomic, copy) NSString *screenName;
 @property(nonatomic, strong) NSNumber *statusesCount;
 @property(nonatomic, copy) NSString *url;
+@property(nonatomic, copy) NSString *timerSec;
+
+@property(nonatomic) BOOL timerStart;
 
 - (id)initWithCoder:(NSCoder *)coder;
 
 - (void)encodeWithCoder:(NSCoder *)coder;
+
 @end

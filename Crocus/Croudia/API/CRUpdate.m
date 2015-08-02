@@ -18,7 +18,7 @@
 
 }
 
-- (id)initWithStatus:(NSString *)status updateFinished:(UpdateFinished)updateFinished {
+- (id)initWithStatus:(NSString *)status updateFinished:(UpdateStatusFinished)updateFinished {
     self = [super init];
     if (self) {
         _status = status;
@@ -62,6 +62,10 @@
 
     if (_inReplyWithQuote) {
         [_params setValue:_inReplyWithQuote forKey:@"in_reply_with_quote"];
+    }
+
+    if (_timer) {
+        [_params setValue:@"true" forKey:@"timer"];
     }
     return _params;
 }

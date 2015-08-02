@@ -119,11 +119,11 @@ static const char kProfileWindow;
     window.alpha = 0.3;
     window.rootViewController = [[CRProfileViewController alloc] initWithNibName:@"ProfileView" bundle:nil];
     window.backgroundColor = [UIColor colorWithWhite:0 alpha:.3];
+    [window makeKeyAndVisible];
     window.transform = CGAffineTransformMakeScale(1.3, 1.3);
     window.transform = CGAffineTransformMakeTranslation(0, 0);
     window.windowLevel = UIWindowLevelNormal + 5;
 
-    [window makeKeyAndVisible];
 
     CRProfileViewController *profileViewController = (CRProfileViewController *) window.rootViewController;
     profileViewController.user = user;

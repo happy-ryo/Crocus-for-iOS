@@ -19,6 +19,8 @@
 #import "CRFavoritesCreate.h"
 #import "CRStatusUpdateViewController.h"
 #import "CRStatusesDestroy.h"
+#import "CRUserInfoService.h"
+#import "CRUser.h"
 
 
 @implementation CRStatusService {
@@ -63,6 +65,11 @@
         if (_status != nil) {
             update.inReplyToStatusId = _status.idStr;
         }
+
+        CRUserInfoService *userInfoService = [[CRUserInfoService alloc] init];
+        CRUser *user = userInfoService.getUser;
+        update.timer = user.timerStart;
+
         [update load];
     }
 }

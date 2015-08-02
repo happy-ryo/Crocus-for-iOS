@@ -137,11 +137,11 @@ static const char kStatusDetailWindow;
     window.alpha = 0.3;
     window.rootViewController = [[CRStatusDetailViewController alloc] initWithNibName:@"StatusDetailView" bundle:nil];
     window.backgroundColor = [UIColor colorWithWhite:0 alpha:.3];
+    [window makeKeyAndVisible];
     window.transform = CGAffineTransformMakeScale(1.3, 1.3);
     window.transform = CGAffineTransformMakeTranslation(0, 0);
     window.windowLevel = UIWindowLevelNormal + 5;
 
-    [window makeKeyAndVisible];
 
     CRStatusDetailViewController *statusUpdateViewController = (CRStatusDetailViewController *) window.rootViewController;
     statusUpdateViewController.status = status;
