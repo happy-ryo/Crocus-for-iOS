@@ -21,7 +21,6 @@
     NSString *_url;
     NSString *_location;
     NSString *_description;
-    UpdateFinished _updateFinished;
 }
 
 - (id)initWithName:(NSString *)name url:(NSString *)url location:(NSString *)location description:(NSString *)description updateFinished:(UpdateFinished)updateFinished {

@@ -17,14 +17,19 @@
 
 #import <Foundation/Foundation.h>
 #import "CRService.h"
+#import "CRUpdateProfile.h"
+#import "CRUpdateProfileImage.h"
 
 @class CRStatus;
+@class CRUser;
 
 
 static NSString *const USER_INFO_KEY = @"crocusUserInfo";
 
 @interface CRUserInfoService : CRService
 - (void)loadUserInfo;
+
+- (void)saveUser:(CRUser *)user;
 
 - (BOOL)isExistUserInfo;
 
@@ -34,7 +39,15 @@ static NSString *const USER_INFO_KEY = @"crocusUserInfo";
 
 - (BOOL)checkMineStatus:(CRStatus *)status;
 
+- (CRUser *)getUser;
+
 - (void)deleteTodayStatuses:(void (^)(NSUInteger count))callback;
 
 - (void)deleteAllStatuses:(void (^)(NSUInteger count))callback;
+
+- (void)protect:(BOOL)status updateFinish:(UpdateFinished)pFunction;
+
+- (void)startTimer:(BOOL)status;
+
+- (void)timer:(NSString *)timerSec updateFinish:(UpdateFinished)pFunction;
 @end

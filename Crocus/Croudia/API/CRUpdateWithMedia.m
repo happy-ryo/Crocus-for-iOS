@@ -23,7 +23,7 @@
     UIBackgroundTaskIdentifier _bgTask;
 }
 
-- (id)initWithStatus:(NSString *)status media:(UIImage *)media updateFinished:(UpdateFinished)updateFinished {
+- (id)initWithStatus:(NSString *)status media:(UIImage *)media updateFinished:(UpdateStatusFinished)updateFinished {
     self = [super init];
     if (self) {
         _status = status;

@@ -18,5 +18,5 @@
 
 
 @interface CRUpdateWithMedia : CRUpdate
-- (id)initWithStatus:(NSString *)status media:(UIImage *)media updateFinished:(UpdateFinished)updateFinished;
+- (id)initWithStatus:(NSString *)status media:(UIImage *)media updateFinished:(UpdateStatusFinished)updateFinished;
 @end

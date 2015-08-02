@@ -18,7 +18,9 @@
 
 typedef void (^UpdateFinished)(BOOL result);
 
-@interface CRUpdateProfile : CRAPIRequest
+@interface CRUpdateProfile : CRAPIRequest{
+    UpdateFinished _updateFinished;
+}
 - (id)initWithName:(NSString *)name url:(NSString *)url location:(NSString *)location description:(NSString *)description updateFinished:(UpdateFinished)updateFinished;
 
 @end

@@ -201,11 +201,11 @@ static BOOL showStatusUpdateFlg;
         window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView4s" bundle:nil];
     }
     window.backgroundColor = [UIColor colorWithWhite:0 alpha:.3];
+    [window makeKeyAndVisible];
     window.transform = CGAffineTransformMakeScale(1.3, 1.3);
     window.transform = CGAffineTransformMakeTranslation(0, 0);
     window.windowLevel = UIWindowLevelNormal + 5;
 
-    [window makeKeyAndVisible];
 
     CRStatusUpdateViewController *statusUpdateViewController = (CRStatusUpdateViewController *) window.rootViewController;
     statusUpdateViewController.callBack = callBack;
@@ -239,11 +239,11 @@ static BOOL showStatusUpdateFlg;
         window.rootViewController = [[CRStatusUpdateViewController alloc] initWithNibName:@"StatusUpdateView4s" bundle:nil];
     }
     window.backgroundColor = [UIColor colorWithWhite:0 alpha:.3];
+    [window makeKeyAndVisible];
     window.transform = CGAffineTransformMakeScale(1.3, 1.3);
     window.transform = CGAffineTransformMakeTranslation(0, 0);
     window.windowLevel = UIWindowLevelNormal + 5;
 
-    [window makeKeyAndVisible];
 
     CRStatusUpdateViewController *statusUpdateViewController = (CRStatusUpdateViewController *) window.rootViewController;
     statusUpdateViewController.callBack = callBack;

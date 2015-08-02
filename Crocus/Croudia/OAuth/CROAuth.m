@@ -18,9 +18,9 @@
 #import "CRHTTPLoader.h"
 #import <objc/runtime.h>
 
-#define CONSUMER_KEY @""
-#define CONSUMER_SECRET @""
-#define CR_URL_SCHEME @""
+#define CONSUMER_KEY @"0497b369a2ed39c6010bf9ad95ac914b514af065e7450305edc235022efbc1a2"
+#define CONSUMER_SECRET @"2b604d62bff0e0d901171ba0f7fe128690e773283d411a7d87178c98fe68a322"
+#define CR_URL_SCHEME @"crocusurlscheme"
 
 @implementation CROAuth {
     NSString *_uuid;
@@ -183,7 +183,6 @@ static const char kOAuthWindow;
     return YES;
 }
 
-static BOOL showOAuth;
 
 + (void)showWithCROAuth:(CROAuth *)auth {
     if (showOAuth) {
@@ -197,9 +196,9 @@ static BOOL showOAuth;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"OAuth" bundle:nil];
     window.rootViewController = [storyboard instantiateInitialViewController];
     window.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
+    [window makeKeyAndVisible];
     window.transform = CGAffineTransformMakeTranslation(0, screenRect.size.height);
     window.windowLevel = UIWindowLevelNormal + 5;
-    [window makeKeyAndVisible];
 
     CROAuthViewController *authViewController = (CROAuthViewController *) window.rootViewController;
     authViewController.auth = auth;

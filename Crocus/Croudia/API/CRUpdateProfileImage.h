@@ -15,9 +15,10 @@
 
 #import <Foundation/Foundation.h>
 #import "CRAPIRequest.h"
+#import "CRUpdate.h"
 
-typedef void (^UpdateFinished)(BOOL result);
+typedef void (^UpdateProfileImageFinished)(BOOL result);
 @interface CRUpdateProfileImage : CRAPIRequest
-- (id)initWithMedia:(UIImage *)media updateFinished:(UpdateFinished)updateFinished;
+- (id)initWithMedia:(UIImage *)media updateFinished:(UpdateProfileImageFinished)updateFinished;
 
 @end

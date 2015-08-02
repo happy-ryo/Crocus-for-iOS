@@ -16,7 +16,7 @@
 #import "CRAPIRequest.h"
 
 
-typedef void (^UpdateFinished)(NSDictionary *dictionary, NSError *error);
+typedef void (^UpdateStatusFinished)(NSDictionary *dictionary, NSError *error);
 
 @interface CRUpdate : CRAPIRequest {
     NSString *_status;
@@ -24,14 +24,17 @@ typedef void (^UpdateFinished)(NSDictionary *dictionary, NSError *error);
     NSString *_inReplyWithQuote;
     NSString *_trimUser;
     NSString *_includeEntities;
+    BOOL _timer;
     NSMutableDictionary *_params;
-    UpdateFinished _updateFinished;
+    UpdateStatusFinished _updateFinished;
 }
 @property(nonatomic, copy) NSString *inReplyToStatusId;
 @property(nonatomic, copy) NSString *inReplyWithQuote;
 @property(nonatomic, copy) NSString *trimUser;
 @property(nonatomic, copy) NSString *includeEntities;
 
-- (id)initWithStatus:(NSString *)status updateFinished:(UpdateFinished)updateFinished;
+@property(nonatomic) BOOL timer;
+
+- (id)initWithStatus:(NSString *)status updateFinished:(UpdateStatusFinished)updateFinished;
 
 @end

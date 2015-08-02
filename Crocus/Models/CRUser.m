@@ -32,6 +32,8 @@
     NSString *_screenName;
     NSNumber *_statusesCount;
     NSString *_url;
+    NSString *_timerSec;
+    BOOL _timerStart;
 }
 
 - (id)initWithCoder:(NSCoder *)coder {
@@ -54,6 +56,8 @@
         self.screenName = [coder decodeObjectForKey:@"self.screenName"];
         self.statusesCount = [coder decodeObjectForKey:@"self.statusesCount"];
         self.url = [coder decodeObjectForKey:@"self.url"];
+        self.timerSec = [coder decodeObjectForKey:@"self.timerSec"];
+        self.timerStart = [coder decodeBoolForKey:@"self.timerStart"];
     }
 
     return self;
@@ -77,6 +81,8 @@
     [coder encodeObject:self.screenName forKey:@"self.screenName"];
     [coder encodeObject:self.statusesCount forKey:@"self.statusesCount"];
     [coder encodeObject:self.url forKey:@"self.url"];
+    [coder encodeObject:self.timerSec forKey:@"self.timerSec"];
+    [coder encodeBool:self.timerStart forKey:@"self.timerStart"];
 }
 
 @end

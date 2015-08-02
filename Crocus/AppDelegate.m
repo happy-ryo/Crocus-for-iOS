@@ -19,6 +19,7 @@
 #import "Parse.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface AppDelegate ()
 
@@ -30,7 +31,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [Parse enableLocalDatastore];
-    
+
     [Fabric with:@[CrashlyticsKit]];
 
     // Initialize Parse.
@@ -45,12 +46,55 @@
         [userDefaults setBool:YES forKey:@"adblocking"];
         [userDefaults synchronize];
     }];
+
+    UIUserNotificationType types =
+            UIUserNotificationTypeBadge |
+                    UIUserNotificationTypeSound |
+                    UIUserNotificationTypeAlert;
+
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+
+    [application registerUserNotificationSettings:mySettings];
+    [application registerForRemoteNotifications];
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    if (application.applicationState == UIApplicationStateActive) {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+        application.applicationIconBadgeNumber = 0;
+        PFInstallation *installation = [PFInstallation currentInstallation];
+        installation.badge = 0;
+        installation.saveInBackground;
+    } else if (application.applicationState == UIApplicationStateInactive || application.applicationState == UIApplicationStateBackground) {
+        [PFPush handlePush:userInfo];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    UIUserNotificationType types =
+            UIUserNotificationTypeBadge |
+                    UIUserNotificationTypeSound |
+                    UIUserNotificationTypeAlert;
+
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+
+    [application registerUserNotificationSettings:mySettings];
+    [application registerForRemoteNotifications];
+
+    application.applicationIconBadgeNumber = 0;
+    PFInstallation *installation = [PFInstallation currentInstallation];
+    installation.badge = 0;
+    installation.saveInBackground;
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

@@ -20,10 +20,10 @@
 
 @implementation CRUpdateProfileImage {
     UIImage *_media;
-    UpdateFinished _updateFinished;
+    UpdateProfileImageFinished _updateFinished;
 }
 
-- (id)initWithMedia:(UIImage *)media updateFinished:(UpdateFinished)updateFinished {
+- (id)initWithMedia:(UIImage *)media updateFinished:(UpdateProfileImageFinished)updateFinished {
     self = [super init];
     if (self) {
         _media = media;

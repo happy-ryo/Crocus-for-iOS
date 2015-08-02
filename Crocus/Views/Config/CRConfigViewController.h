@@ -14,5 +14,5 @@
 #import <Foundation/Foundation.h>
 
 
-@interface CRConfigViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CRConfigViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @end

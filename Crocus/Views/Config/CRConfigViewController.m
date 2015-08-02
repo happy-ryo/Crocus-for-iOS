@@ -15,9 +15,13 @@
 #import "Parse.h"
 #import "CRUserInfoService.h"
 #import "MBProgressHUD.h"
+#import "CRUser.h"
 
 @implementation CRConfigViewController {
-
+    IBOutlet UISwitch *_protectSwitch;
+    IBOutlet UISwitch *_startTimerSwitch;
+    IBOutlet UITextField *_timerSecTextField;
+    CRUserInfoService *_userInfoService;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -26,6 +30,25 @@
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"<" style:UIBarButtonItemStyleBordered target:self.navigationController action:@selector(popViewControllerAnimated:)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
+
+    [_protectSwitch removeTarget:self action:@selector(protect:) forControlEvents:UIControlEventValueChanged];
+    [_startTimerSwitch removeTarget:self action:@selector(startTimer:) forControlEvents:UIControlEventValueChanged];
+
+    _userInfoService = [[CRUserInfoService alloc] init];
+    [_userInfoService loadUserInfo];
+    if (_userInfoService.isExistUserInfo) {
+        CRUser *crUser = _userInfoService.getUser;
+        _protectSwitch.on = crUser.userProtected;
+        _startTimerSwitch.on = crUser.timerStart;
+        if (crUser.timerSec != nil) {
+            _timerSecTextField.text = crUser.timerSec;
+        }
+    }
+
+    [_protectSwitch addTarget:self action:@selector(protect:) forControlEvents:UIControlEventValueChanged];
+    [_startTimerSwitch addTarget:self action:@selector(startTimer:) forControlEvents:UIControlEventValueChanged];
+    _timerSecTextField.delegate = self;
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,6 +134,35 @@
         count = 2;
     }
     return count;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    textField.resignFirstResponder;
+    return YES;
+}
+
+
+- (IBAction)protect:(UISwitch *)sender {
+    [_userInfoService protect:sender.isOn updateFinish:^(BOOL result) {
+        if (result == NO) {
+            sender.on = !sender.on;
+        }
+    }];
+}
+
+- (void)startTimer:(UISwitch *)sender {
+    [_userInfoService startTimer:sender.isOn];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [_userInfoService timer:textField.text updateFinish:^(BOOL result) {
+        if (result == NO) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Crocus" message:@"入力した値、ネットワークの接続状況を確認して下さい" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+            });
+        }
+    }];
 }
 
 @end
