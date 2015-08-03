@@ -20,6 +20,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <AdobeCreativeSDKFoundation/AdobeCreativeSDKFoundation.h>
 
 @interface AppDelegate ()
 
@@ -56,6 +57,8 @@
 
     [application registerUserNotificationSettings:mySettings];
     [application registerForRemoteNotifications];
+
+    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:@"3ccdbbfeafcb41ee8590cad2983b141a" clientSecret:@"aafeafde-bd75-4496-8996-b7bcfeb67432" enableSignUp:NO];
     return YES;
 }
 

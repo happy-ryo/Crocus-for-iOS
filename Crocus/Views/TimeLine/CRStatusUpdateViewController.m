@@ -12,7 +12,6 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 #import <objc/runtime.h>
-#import <AssetsLibrary/AssetsLibrary.h>
 #import "CRStatusUpdateViewController.h"
 #import "CRStatusService.h"
 #import "CRUIImage+rotation.h"
@@ -292,12 +291,56 @@ static BOOL showStatusUpdateFlg;
 
 - (void)imagePickerController:(UIImagePickerController *)picker
         didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
-    _postImageView.image = [UIImage rotateImage:image];
-    _postImageView.hidden = NO;
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self launchPhotoEditorWithImage:image];
+        });
+    }];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// Developer-defined method, perhaps called when an image is chosen from an image picker or when a button is pressed.
+- (void)launchPhotoEditorWithImage:(UIImage *)image {
+    // Create photo editor
+    AdobeUXImageEditorViewController *photoEditor = [[AdobeUXImageEditorViewController alloc] initWithImage:image];
+    [photoEditor setDelegate:self];
+
+    // Present the editor
+    [self presentViewController:photoEditor animated:YES completion:nil];
+
+//    // Enqueue the high resolution render
+//    id <AdobeImageEditorRender> render = [photoEditor enqueueHighResolutionRenderWithImage:highResImage completion:^(UIImage *result, NSError *error) {
+//        if (result) {
+//            [self saveHighResImage:result]; // Developer-defined method that saves the high resolution image to disk, perhaps.
+//        } else {
+//            NSLog(@"High-res render failed with error : %@", error);
+//        }
+//    }];
+//
+//    // Provide a block to receive updates about the status of the render
+//    [render setProgressHandler:^(CGFloat progress) {
+////        [self updateProgressIndicator:progress];
+//    }];
+}
+
+- (void)photoEditor:(AdobeUXImageEditorViewController *)editor finishedWithImage:(UIImage *)image {
+    // Handle the result image here and dismiss the editor.
+    [self doSomethingWithImage:image]; // Developer-defined method that presents the final editing-resolution image to the user, perhaps.
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)doSomethingWithImage:(UIImage *)image {
+    _postImageView.image = [UIImage rotateImage:image];
+    _postImageView.hidden = NO;
+}
+
+- (void)photoEditorCanceled:(AdobeUXImageEditorViewController *)editor {
+    // Dismiss the editor.
+    _postImageView.image = nil;
+    _postImageView.hidden = YES;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

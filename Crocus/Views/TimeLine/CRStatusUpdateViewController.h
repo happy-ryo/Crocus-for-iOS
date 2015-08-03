@@ -16,7 +16,7 @@
 @class CRStatus;
 
 
-@interface CRStatusUpdateViewController : UIViewController <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface CRStatusUpdateViewController : UIViewController <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, AdobeUXImageEditorViewControllerDelegate>
 @property(nonatomic, strong) UITextView *textView;
 @property(nonatomic, copy) void (^callBack)(BOOL);
 
