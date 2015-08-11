@@ -29,6 +29,6 @@
     [_iconImageView sd_setImageWithURL:[[NSURL alloc] initWithString:status.user.profileImageUrlHttps] placeholderImage:nil];
     _statusLabel.text = status.text;
     _userNameLabel.text = status.user.name;
-    _screenNameLabel.text = [NSString stringWithFormat:@"@%@", status.user.screenName];
+    _screenNameLabel.text = [NSString stringWithFormat:@"@%@%@", status.user.screenName, @"\U0001F512"];
 }
 @end

@@ -1137,7 +1137,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "50d39c9a-d213-47f8-87eb-5d33a1ce32fd";
+				PROVISIONING_PROFILE = "3bffe6a0-6806-4de2-975f-f03460aa8f7a";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
