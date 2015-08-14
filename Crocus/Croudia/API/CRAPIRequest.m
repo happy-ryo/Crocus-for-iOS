@@ -114,9 +114,8 @@
         }
 
     } else if (error.code == -1001 || error.code == -1008) {
-//        [self showAlertView:@"タイムアウトです。\nなんと言われようとも。"];
         return;
-    } else if (error != nil) {
+    } else if (error.code < 0) {
         __weak CRAPIRequest *weakSelf = self;
         [_oAuth refreshToken:^(BOOL result) {
             if (result) {

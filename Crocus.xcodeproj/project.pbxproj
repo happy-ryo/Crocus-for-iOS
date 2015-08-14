@@ -115,8 +115,6 @@
 		89FA16681A47B53B00271FBB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89FA16671A47B53B00271FBB /* Images.xcassets */; };
 		89FA166B1A47B53B00271FBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89FA16691A47B53B00271FBB /* LaunchScreen.xib */; };
 		89FA16771A47B53B00271FBB /* CrocusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FA16761A47B53B00271FBB /* CrocusTests.m */; };
-		89FB84171A6ABE21009D4573 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB84101A6ABE21009D4573 /* libNendAd.a */; };
-		89FB84181A6ABE21009D4573 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 89FB84161A6ABE21009D4573 /* NADView_readme.txt */; };
 		89FB841A1A6ABE46009D4573 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB84191A6ABE46009D4573 /* AdSupport.framework */; };
 		89FB841C1A6ABE4D009D4573 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB841B1A6ABE4D009D4573 /* Security.framework */; };
 		89FB841E1A6ABE57009D4573 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB841D1A6ABE57009D4573 /* ImageIO.framework */; };
@@ -312,13 +310,6 @@
 		89FA16701A47B53B00271FBB /* CrocusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrocusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FA16751A47B53B00271FBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89FA16761A47B53B00271FBB /* CrocusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrocusTests.m; sourceTree = "<group>"; };
-		89FB84101A6ABE21009D4573 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
-		89FB84111A6ABE21009D4573 /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
-		89FB84121A6ABE21009D4573 /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
-		89FB84131A6ABE21009D4573 /* NADIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconView.h; sourceTree = "<group>"; };
-		89FB84141A6ABE21009D4573 /* NADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADInterstitial.h; sourceTree = "<group>"; };
-		89FB84151A6ABE21009D4573 /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
-		89FB84161A6ABE21009D4573 /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
 		89FB84191A6ABE46009D4573 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		89FB841B1A6ABE4D009D4573 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		89FB841D1A6ABE57009D4573 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -353,7 +344,6 @@
 				89FB841A1A6ABE46009D4573 /* AdSupport.framework in Frameworks */,
 				13AECF7624D6E759944FB383 /* libPods-Crocus.a in Frameworks */,
 				890BCFCF1AB07A130055D96E /* Crashlytics.framework in Frameworks */,
-				89FB84171A6ABE21009D4573 /* libNendAd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +383,6 @@
 				89FB841D1A6ABE57009D4573 /* ImageIO.framework */,
 				89FB841B1A6ABE4D009D4573 /* Security.framework */,
 				89FB84191A6ABE46009D4573 /* AdSupport.framework */,
-				89FB840F1A6ABE21009D4573 /* NendAd */,
 				CE9E387D4E48B7A8C8EC21A6 /* libPods-Crocus.a */,
 			);
 			name = Frameworks;
@@ -677,20 +666,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		89FB840F1A6ABE21009D4573 /* NendAd */ = {
-			isa = PBXGroup;
-			children = (
-				89FB84101A6ABE21009D4573 /* libNendAd.a */,
-				89FB84111A6ABE21009D4573 /* NADIconArrayView.h */,
-				89FB84121A6ABE21009D4573 /* NADIconLoader.h */,
-				89FB84131A6ABE21009D4573 /* NADIconView.h */,
-				89FB84141A6ABE21009D4573 /* NADInterstitial.h */,
-				89FB84151A6ABE21009D4573 /* NADView.h */,
-				89FB84161A6ABE21009D4573 /* NADView_readme.txt */,
-			);
-			path = NendAd;
-			sourceTree = "<group>";
-		};
 		8D3CDE7E3E2E8C8BC7F1B974 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -807,7 +782,6 @@
 				89CB99431A6A8F53009AD3B9 /* AdsTimeLineBaseCell.xib in Resources */,
 				82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */,
 				89CC2AD51A5E520E00D1B266 /* TimeLineReplyImageCell.xib in Resources */,
-				89FB84181A6ABE21009D4573 /* NADView_readme.txt in Resources */,
 				8924CA3D1B7DD4D7006010BF /* AdobeCreativeSDKCoreResources.bundle in Resources */,
 				89A914A01A62B90400353993 /* StatusUpdateView.xib in Resources */,
 				89A9149A1A59BD8A00353993 /* LoadingCell.xib in Resources */,
@@ -1137,7 +1111,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "50d39c9a-d213-47f8-87eb-5d33a1ce32fd";
+				PROVISIONING_PROFILE = "3bffe6a0-6806-4de2-975f-f03460aa8f7a";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

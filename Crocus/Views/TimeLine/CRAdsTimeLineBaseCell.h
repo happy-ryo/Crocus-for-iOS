@@ -13,8 +13,7 @@
 //  limitations under the License.
 #import <Foundation/Foundation.h>
 #import "CRTimeLineBaseCell.h"
-#import "NADView.h"
 
 
-@interface CRAdsTimeLineBaseCell : CRTimeLineBaseCell <NADViewDelegate>
+@interface CRAdsTimeLineBaseCell : CRTimeLineBaseCell
 @end

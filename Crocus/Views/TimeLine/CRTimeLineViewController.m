@@ -196,7 +196,7 @@
 
     [weakSelf.refreshControl endRefreshing];
     if (array.count == 0) {
-        weakSelf.repeats = [weakSelf refreshTimer:(NSUInteger) (weakSelf.repeats.timeInterval + 1)];
+        weakSelf.repeats = [weakSelf refreshTimer:(NSUInteger) (weakSelf.repeats.timeInterval + 2)];
         return;
     } else if (flag) {
         if (weakSelf.timeLineService.statusCount == 20) {
@@ -291,12 +291,7 @@
         if (status.isExistImage) {
             cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
         } else {
-            int rand = arc4random() % 100 + 1;
-            if (rand > _adProbability && !_adBlocking) {
-                cell = [tableView dequeueReusableCellWithIdentifier:@"adsCell"];
-            } else {
-                cell = [tableView dequeueReusableCellWithIdentifier:@"baseCell"];
-            }
+            cell = [tableView dequeueReusableCellWithIdentifier:@"baseCell"];
         }
     }
     [cell loadCRStatus:status];

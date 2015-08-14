@@ -12,6 +12,7 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 #import <objc/runtime.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 #import "CRStatusUpdateViewController.h"
 #import "CRStatusService.h"
 #import "CRUIImage+rotation.h"
@@ -97,6 +98,7 @@ static const char kStatusUpdateWindow;
 }
 
 - (void)statusUpdateWithTimerOn:(BOOL)on {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak CRStatusUpdateViewController *weakSelf = self;
     NSString *attach = _status == nil ? @"" : [NSString stringWithFormat:@"@%@ ", _status.user.screenName];
     [_statusService update:[NSString stringWithFormat:@"%@%@", attach, _textView.text] image:_postImageView.image timerOn:on callback:^(BOOL status, NSError *error) {
@@ -120,6 +122,7 @@ static const char kStatusUpdateWindow;
                                                           otherButtonTitles:nil];
                 [alertView show];
             }
+            [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
         });
     }];
 }
