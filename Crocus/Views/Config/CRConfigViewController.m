@@ -16,11 +16,13 @@
 #import "CRUserInfoService.h"
 #import "MBProgressHUD.h"
 #import "CRUser.h"
+#import "CROAuth.h"
 
 @implementation CRConfigViewController {
     IBOutlet UISwitch *_protectSwitch;
     IBOutlet UITextField *_timerSecTextField;
     CRUserInfoService *_userInfoService;
+    CROAuth *_auth;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -61,6 +63,9 @@
         [self checkDelete];
     } else if (indexPath.section == 0 && indexPath.row == 2) {
         [self checkAllDelete];
+    } else if (indexPath.section == 0 && indexPath.row == 7) {
+        _auth = [[CROAuth alloc] init];
+        [_auth authorizeWebView:nil];
     }
 }
 

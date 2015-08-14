@@ -113,21 +113,21 @@
             }
         }
 
-    } else if (error.code == -1001 || error.code == -1008) {
+    } else if (error.code == -1001 || error.code == -1008 || error.code == -1009) {
         return;
-    } else if (error.code < 0) {
+    } else if (error.code == -1012) {
         __weak CRAPIRequest *weakSelf = self;
         [_oAuth refreshToken:^(BOOL result) {
             if (result) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf load];
+                });
+            } else {
                 [_oAuth authorizeWebView:^(BOOL result) {
                     if (result) {
                         [weakSelf load];
                     }
                 }];
-            } else {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [weakSelf load];
-                });
             }
         }];
         return;

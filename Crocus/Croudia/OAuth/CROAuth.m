@@ -57,8 +57,8 @@
 
 - (void)authorizeWebView:(void (^)(BOOL result))didFinishedRequest {
     DidFinishedRequest = ^(BOOL result) {
+        [CROAuthViewController close];
         if (didFinishedRequest) {
-            [CROAuthViewController close];
             didFinishedRequest(result);
         }
     };
