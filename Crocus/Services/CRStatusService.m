@@ -19,8 +19,6 @@
 #import "CRFavoritesCreate.h"
 #import "CRStatusUpdateViewController.h"
 #import "CRStatusesDestroy.h"
-#import "CRUserInfoService.h"
-#import "CRUser.h"
 
 
 @implementation CRStatusService {
@@ -51,7 +49,7 @@
     return self;
 }
 
-- (void)post:(NSString *)message callback:(void (^)(BOOL status, NSError *error))callBack {
+- (void)post:(NSString *)message callback:(void (^)(BOOL status, NSError *error))callBack timerOn:(BOOL)yesOrNo {
     if (message.length == 0) {
         callBack(NO, [NSError errorWithDomain:@"crocus" code:500 userInfo:@{@"message" : @"投稿文が空です"}]);
     } else {
@@ -66,17 +64,15 @@
             update.inReplyToStatusId = _status.idStr;
         }
 
-        CRUserInfoService *userInfoService = [[CRUserInfoService alloc] init];
-        CRUser *user = userInfoService.getUser;
-        update.timer = user.timerStart;
+        update.timer = yesOrNo;
 
         [update load];
     }
 }
 
-- (void)postWithMedia:(NSString *)message image:(UIImage *)image callback:(void (^)(BOOL status, NSError *error))callback {
-    if (image == nil) {
-        [self post:message callback:callback];
+- (void)update:(NSString *)message image:(UIImage *)image timerOn:(BOOL)yesOrNo callback:(void (^)(BOOL status, NSError *error))callback {
+    if (image == nil || message.length == 0) {
+        [self post:message callback:callback timerOn:yesOrNo];
     } else {
         CRUpdateWithMedia *updateWithMedia = [[CRUpdateWithMedia alloc] initWithStatus:message
                                                                                  media:image
@@ -90,6 +86,9 @@
         if (_status != nil) {
             updateWithMedia.inReplyToStatusId = _status.idStr;
         }
+
+        updateWithMedia.timer = yesOrNo;
+
         [updateWithMedia load];
     }
 }

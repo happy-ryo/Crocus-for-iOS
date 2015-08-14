@@ -47,7 +47,5 @@ static NSString *const USER_INFO_KEY = @"crocusUserInfo";
 
 - (void)protect:(BOOL)status updateFinish:(UpdateFinished)pFunction;
 
-- (void)startTimer:(BOOL)status;
-
 - (void)timer:(NSString *)timerSec updateFinish:(UpdateFinished)pFunction;
 @end

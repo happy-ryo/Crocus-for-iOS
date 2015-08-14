@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -51,6 +51,13 @@
                                     </connections>
                                 </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="Vs1-pd-Htl"/>
+                                <barButtonItem image="timer" id="fLQ-jI-Ahb">
+                                    <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="timerPost" destination="-1" id="ulH-BC-IQn"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="EF3-ll-ZNE"/>
                                 <barButtonItem image="post" id="Ngr-B9-teV">
                                     <color key="tintColor" red="1" green="0.51761386610000004" blue="0.2127324374" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
@@ -132,5 +139,6 @@
         <image name="cancel" width="28" height="28"/>
         <image name="library" width="27" height="27"/>
         <image name="post" width="28" height="28"/>
+        <image name="timer" width="28" height="28"/>
     </resources>
 </document>

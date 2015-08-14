@@ -89,10 +89,17 @@ static const char kStatusUpdateWindow;
 
 
 - (IBAction)post {
+    [self statusUpdateWithTimerOn:NO];
+}
+
+- (IBAction)timerPost {
+    [self statusUpdateWithTimerOn:YES];
+}
+
+- (void)statusUpdateWithTimerOn:(BOOL)on {
     __weak CRStatusUpdateViewController *weakSelf = self;
     NSString *attach = _status == nil ? @"" : [NSString stringWithFormat:@"@%@ ", _status.user.screenName];
-
-    [_statusService postWithMedia:[NSString stringWithFormat:@"%@%@", attach, _textView.text] image:_postImageView.image callback:^(BOOL status, NSError *error) {
+    [_statusService update:[NSString stringWithFormat:@"%@%@", attach, _textView.text] image:_postImageView.image timerOn:on callback:^(BOOL status, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error == nil) {
                 weakSelf.textView.text = @"";

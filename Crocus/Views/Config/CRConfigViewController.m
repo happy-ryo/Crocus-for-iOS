@@ -19,7 +19,6 @@
 
 @implementation CRConfigViewController {
     IBOutlet UISwitch *_protectSwitch;
-    IBOutlet UISwitch *_startTimerSwitch;
     IBOutlet UITextField *_timerSecTextField;
     CRUserInfoService *_userInfoService;
 }
@@ -32,21 +31,18 @@
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
 
     [_protectSwitch removeTarget:self action:@selector(protect:) forControlEvents:UIControlEventValueChanged];
-    [_startTimerSwitch removeTarget:self action:@selector(startTimer:) forControlEvents:UIControlEventValueChanged];
 
     _userInfoService = [[CRUserInfoService alloc] init];
     [_userInfoService loadUserInfo];
     if (_userInfoService.isExistUserInfo) {
         CRUser *crUser = _userInfoService.getUser;
         _protectSwitch.on = crUser.userProtected;
-        _startTimerSwitch.on = crUser.timerStart;
         if (crUser.timerSec != nil) {
             _timerSecTextField.text = crUser.timerSec;
         }
     }
 
     [_protectSwitch addTarget:self action:@selector(protect:) forControlEvents:UIControlEventValueChanged];
-    [_startTimerSwitch addTarget:self action:@selector(startTimer:) forControlEvents:UIControlEventValueChanged];
     _timerSecTextField.delegate = self;
 
 }
@@ -148,10 +144,6 @@
             sender.on = !sender.on;
         }
     }];
-}
-
-- (void)startTimer:(UISwitch *)sender {
-    [_userInfoService startTimer:sender.isOn];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {

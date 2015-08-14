@@ -20,7 +20,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import <AdobeCreativeSDKFoundation/AdobeCreativeSDKFoundation.h>
+#import <AdobeCreativeSDKCore/AdobeCreativeSDKCore.h>
 
 @interface AppDelegate ()
 

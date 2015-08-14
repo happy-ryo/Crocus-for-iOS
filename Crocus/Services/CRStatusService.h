@@ -26,9 +26,9 @@
 
 - (instancetype)initWithStatus:(CRStatus *)status callback:(void (^)(BOOL))callback deleteCallback:(void (^)(BOOL))deleteCallback;
 
-- (void)post:(NSString *)message callback:(void (^)(BOOL status, NSError *error))callBack;
+- (void)post:(NSString *)message callback:(void (^)(BOOL status, NSError *error))callBack timerOn:(BOOL)yesOrNo;
 
-- (void)postWithMedia:(NSString *)message image:(UIImage *)image callback:(void (^)(BOOL status, NSError *error))callback;
+- (void)update:(NSString *)message image:(UIImage *)image timerOn:(BOOL)yesOrNo callback:(void (^)(BOOL status, NSError *error))callback;
 
 - (void)delete;
 

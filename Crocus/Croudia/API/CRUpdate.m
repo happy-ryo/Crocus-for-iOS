@@ -30,7 +30,6 @@
 
 - (void)load {
     [super load];
-    if (_updateFinished)_updateFinished(@{}, nil);
 }
 
 
@@ -39,6 +38,8 @@
     if (error) {
         UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Crocus", @"Crocus") message:[NSString stringWithFormat:@"%@\nerror code %i", @"投稿に失敗しました、時間をおいて再度お試し下さい。 ", error.code] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [errorAlertView show];
+    } else {
+        if (_updateFinished)_updateFinished(@{}, nil);
     }
 }
 

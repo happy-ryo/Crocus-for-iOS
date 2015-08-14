@@ -46,12 +46,14 @@
 		82CDDEEA5BC66F3E6D524E81 /* CRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CDD1C9BE4385E3FF8FCD23 /* CRUser.m */; };
 		890BCFCF1AB07A130055D96E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890BCFCD1AB07A130055D96E /* Crashlytics.framework */; };
 		890BCFD01AB07A130055D96E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890BCFCE1AB07A130055D96E /* Fabric.framework */; };
+		8924CA3B1B7DD4CB006010BF /* AdobeCreativeSDKImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8924CA3A1B7DD4CB006010BF /* AdobeCreativeSDKImageResources.bundle */; };
+		8924CA3D1B7DD4D7006010BF /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8924CA3C1B7DD4D7006010BF /* AdobeCreativeSDKCoreResources.bundle */; };
+		8924CA401B7DD4EC006010BF /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8924CA3E1B7DD4EC006010BF /* AdobeCreativeSDKCore.framework */; };
+		8924CA411B7DD4EC006010BF /* AdobeCreativeSDKImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8924CA3F1B7DD4EC006010BF /* AdobeCreativeSDKImage.framework */; };
 		894029F11AB5D60A0035C35E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894029F01AB5D60A0035C35E /* AssetsLibrary.framework */; };
 		8967A8F11A52F25000FDB716 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8967A8F01A52F25000FDB716 /* OAuth.storyboard */; };
-		896AB8351B701C3700D68CBE /* AdobeCreativeSDKImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896AB8341B701C3700D68CBE /* AdobeCreativeSDKImage.framework */; };
 		896AB8371B701E9700D68CBE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896AB8361B701E9700D68CBE /* Accelerate.framework */; };
 		896AB8391B701EA000D68CBE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896AB8381B701EA000D68CBE /* CoreData.framework */; };
-		896AB83B1B701ED400D68CBE /* AdobeCreativeSDKFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896AB83A1B701ED400D68CBE /* AdobeCreativeSDKFoundation.framework */; };
 		896AB83D1B701EE300D68CBE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 896AB83C1B701EE300D68CBE /* libsqlite3.dylib */; };
 		896AB83F1B701EF000D68CBE /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 896AB83E1B701EF000D68CBE /* libz.1.2.5.dylib */; };
 		896AB8411B701EFE00D68CBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896AB8401B701EFE00D68CBE /* Foundation.framework */; };
@@ -61,9 +63,7 @@
 		896AB8491B701F2A00D68CBE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896AB8481B701F2A00D68CBE /* StoreKit.framework */; };
 		896AB84B1B701F3800D68CBE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896AB84A1B701F3800D68CBE /* MobileCoreServices.framework */; };
 		896AB84D1B701F4800D68CBE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 896AB84C1B701F4800D68CBE /* libc++.dylib */; };
-		896AB84F1B701FE300D68CBE /* AdobeCreativeSDKImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 896AB84E1B701FE300D68CBE /* AdobeCreativeSDKImageResources.bundle */; };
 		896AB8511B70251200D68CBE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896AB8501B70251200D68CBE /* UIKit.framework */; };
-		896AB8531B70260C00D68CBE /* AdobeCreativeSDKFoundationResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 896AB8521B70260C00D68CBE /* AdobeCreativeSDKFoundationResources.bundle */; };
 		897BC4841A68264B00964A68 /* StatusUpdateView5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897BC4831A68264B00964A68 /* StatusUpdateView5.xib */; };
 		8983A4691A655DEE00607BEC /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8983A4681A655DEE00607BEC /* ProfileView.xib */; };
 		89A914981A5950A400353993 /* TimeLineSpreadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A914971A5950A400353993 /* TimeLineSpreadCell.xib */; };
@@ -208,12 +208,14 @@
 		82CDDFC943208ADD696629B6 /* CRMutesDestroy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMutesDestroy.h; sourceTree = "<group>"; };
 		890BCFCD1AB07A130055D96E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		890BCFCE1AB07A130055D96E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		8924CA3A1B7DD4CB006010BF /* AdobeCreativeSDKImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKImageResources.bundle; path = AdobeCreativeSDKImage.framework/Versions/A/Resources/AdobeCreativeSDKImageResources.bundle; sourceTree = "<group>"; };
+		8924CA3C1B7DD4D7006010BF /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
+		8924CA3E1B7DD4EC006010BF /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		8924CA3F1B7DD4EC006010BF /* AdobeCreativeSDKImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdobeCreativeSDKImage.framework; sourceTree = "<group>"; };
 		894029F01AB5D60A0035C35E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8967A8F01A52F25000FDB716 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
-		896AB8341B701C3700D68CBE /* AdobeCreativeSDKImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdobeCreativeSDKImage.framework; sourceTree = "<group>"; };
 		896AB8361B701E9700D68CBE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		896AB8381B701EA000D68CBE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		896AB83A1B701ED400D68CBE /* AdobeCreativeSDKFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdobeCreativeSDKFoundation.framework; sourceTree = "<group>"; };
 		896AB83C1B701EE300D68CBE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		896AB83E1B701EF000D68CBE /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		896AB8401B701EFE00D68CBE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -223,9 +225,7 @@
 		896AB8481B701F2A00D68CBE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		896AB84A1B701F3800D68CBE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		896AB84C1B701F4800D68CBE /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		896AB84E1B701FE300D68CBE /* AdobeCreativeSDKImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AdobeCreativeSDKImageResources.bundle; sourceTree = "<group>"; };
 		896AB8501B70251200D68CBE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		896AB8521B70260C00D68CBE /* AdobeCreativeSDKFoundationResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AdobeCreativeSDKFoundationResources.bundle; sourceTree = "<group>"; };
 		897BC4831A68264B00964A68 /* StatusUpdateView5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusUpdateView5.xib; sourceTree = "<group>"; };
 		8983A4681A655DEE00607BEC /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		89A914971A5950A400353993 /* TimeLineSpreadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineSpreadCell.xib; sourceTree = "<group>"; };
@@ -336,14 +336,15 @@
 				896AB84B1B701F3800D68CBE /* MobileCoreServices.framework in Frameworks */,
 				896AB8491B701F2A00D68CBE /* StoreKit.framework in Frameworks */,
 				896AB8471B701F2100D68CBE /* QuartzCore.framework in Frameworks */,
+				8924CA411B7DD4EC006010BF /* AdobeCreativeSDKImage.framework in Frameworks */,
 				896AB8451B701F1600D68CBE /* OpenGLES.framework in Frameworks */,
 				896AB8431B701F0A00D68CBE /* MessageUI.framework in Frameworks */,
 				896AB8411B701EFE00D68CBE /* Foundation.framework in Frameworks */,
 				896AB83F1B701EF000D68CBE /* libz.1.2.5.dylib in Frameworks */,
+				8924CA401B7DD4EC006010BF /* AdobeCreativeSDKCore.framework in Frameworks */,
 				896AB83D1B701EE300D68CBE /* libsqlite3.dylib in Frameworks */,
 				896AB8391B701EA000D68CBE /* CoreData.framework in Frameworks */,
 				896AB8371B701E9700D68CBE /* Accelerate.framework in Frameworks */,
-				896AB83B1B701ED400D68CBE /* AdobeCreativeSDKFoundation.framework in Frameworks */,
 				89E6A3F11AF4BA82008D3184 /* AudioToolbox.framework in Frameworks */,
 				894029F11AB5D60A0035C35E /* AssetsLibrary.framework in Frameworks */,
 				890BCFD01AB07A130055D96E /* Fabric.framework in Frameworks */,
@@ -352,7 +353,6 @@
 				89FB841A1A6ABE46009D4573 /* AdSupport.framework in Frameworks */,
 				13AECF7624D6E759944FB383 /* libPods-Crocus.a in Frameworks */,
 				890BCFCF1AB07A130055D96E /* Crashlytics.framework in Frameworks */,
-				896AB8351B701C3700D68CBE /* AdobeCreativeSDKImage.framework in Frameworks */,
 				89FB84171A6ABE21009D4573 /* libNendAd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,9 +370,11 @@
 		659AA79F3FEDD277C3EF1DFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				896AB8521B70260C00D68CBE /* AdobeCreativeSDKFoundationResources.bundle */,
+				8924CA3E1B7DD4EC006010BF /* AdobeCreativeSDKCore.framework */,
+				8924CA3F1B7DD4EC006010BF /* AdobeCreativeSDKImage.framework */,
+				8924CA3C1B7DD4D7006010BF /* AdobeCreativeSDKCoreResources.bundle */,
+				8924CA3A1B7DD4CB006010BF /* AdobeCreativeSDKImageResources.bundle */,
 				896AB8501B70251200D68CBE /* UIKit.framework */,
-				896AB84E1B701FE300D68CBE /* AdobeCreativeSDKImageResources.bundle */,
 				896AB84C1B701F4800D68CBE /* libc++.dylib */,
 				896AB84A1B701F3800D68CBE /* MobileCoreServices.framework */,
 				896AB8481B701F2A00D68CBE /* StoreKit.framework */,
@@ -382,10 +384,8 @@
 				896AB8401B701EFE00D68CBE /* Foundation.framework */,
 				896AB83E1B701EF000D68CBE /* libz.1.2.5.dylib */,
 				896AB83C1B701EE300D68CBE /* libsqlite3.dylib */,
-				896AB83A1B701ED400D68CBE /* AdobeCreativeSDKFoundation.framework */,
 				896AB8381B701EA000D68CBE /* CoreData.framework */,
 				896AB8361B701E9700D68CBE /* Accelerate.framework */,
-				896AB8341B701C3700D68CBE /* AdobeCreativeSDKImage.framework */,
 				89E6A3F01AF4BA82008D3184 /* AudioToolbox.framework */,
 				894029F01AB5D60A0035C35E /* AssetsLibrary.framework */,
 				890BCFCD1AB07A130055D96E /* Crashlytics.framework */,
@@ -792,7 +792,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				896AB8531B70260C00D68CBE /* AdobeCreativeSDKFoundationResources.bundle in Resources */,
 				89FA16661A47B53B00271FBB /* Main.storyboard in Resources */,
 				89CC2AD31A5E50C900D1B266 /* TimeLineReplyBaseCell.xib in Resources */,
 				89F931B31A56CF8E009CD6E9 /* TimeLineBaseCell.xib in Resources */,
@@ -809,10 +808,11 @@
 				82CDDD3D90BCCC5A7501E2EA /* Localizable.strings in Resources */,
 				89CC2AD51A5E520E00D1B266 /* TimeLineReplyImageCell.xib in Resources */,
 				89FB84181A6ABE21009D4573 /* NADView_readme.txt in Resources */,
+				8924CA3D1B7DD4D7006010BF /* AdobeCreativeSDKCoreResources.bundle in Resources */,
 				89A914A01A62B90400353993 /* StatusUpdateView.xib in Resources */,
 				89A9149A1A59BD8A00353993 /* LoadingCell.xib in Resources */,
 				8983A4691A655DEE00607BEC /* ProfileView.xib in Resources */,
-				896AB84F1B701FE300D68CBE /* AdobeCreativeSDKImageResources.bundle in Resources */,
+				8924CA3B1B7DD4CB006010BF /* AdobeCreativeSDKImageResources.bundle in Resources */,
 				89A914981A5950A400353993 /* TimeLineSpreadCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1137,7 +1137,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3bffe6a0-6806-4de2-975f-f03460aa8f7a";
+				PROVISIONING_PROFILE = "50d39c9a-d213-47f8-87eb-5d33a1ce32fd";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

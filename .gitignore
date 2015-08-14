@@ -27,3 +27,4 @@ DerivedData
 Pods/
 *.diff
 Podfile.lock
+AdobeCreative*

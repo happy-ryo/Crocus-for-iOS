@@ -41,7 +41,6 @@
             CRUser *user = [weakSelf parseUser:userDic];
             CRUser *oldUser = weakSelf.getUser;
             user.timerSec = oldUser.timerSec;
-            user.timerStart = oldUser.timerStart;
             [self saveUser:user];
             PFInstallation *installation = [PFInstallation currentInstallation];
             NSString *userName = [NSString stringWithFormat:@"c_%@", user.screenName];
@@ -179,12 +178,6 @@
         }
     }];
     [_updateProtected load];
-}
-
-- (void)startTimer:(BOOL)status {
-    CRUser *user = self.getUser;
-    user.timerStart = status;
-    [self saveUser:user];
 }
 
 - (void)timer:(NSString *)timerSec updateFinish:(UpdateFinished)pFunction {

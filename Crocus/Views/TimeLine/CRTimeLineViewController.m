@@ -57,14 +57,14 @@
     if (auth.authorized) {
         [self createTimeLineService];
         [self.timeLineService load];
-        self.repeats = [self getTimer:4];
+        self.repeats = [self refreshTimer:4];
         [self timerFire];
     } else {
         [auth authorizeWebView:^(BOOL result) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf createTimeLineService];
                 [weakSelf.timeLineService load];
-                weakSelf.repeats = [weakSelf getTimer:4];
+                weakSelf.repeats = [weakSelf refreshTimer:4];
                 [weakSelf timerFire];
             });
         }];
@@ -139,7 +139,7 @@
     }
 }
 
-- (NSTimer *)getTimer:(NSUInteger)timer {
+- (NSTimer *)refreshTimer:(NSUInteger)timer {
     if (timer > 60) {
         timer = 60;
     }
@@ -196,7 +196,7 @@
 
     [weakSelf.refreshControl endRefreshing];
     if (array.count == 0) {
-        weakSelf.repeats = [weakSelf getTimer:(NSUInteger) (weakSelf.repeats.timeInterval + 4)];
+        weakSelf.repeats = [weakSelf refreshTimer:(NSUInteger) (weakSelf.repeats.timeInterval + 1)];
         return;
     } else if (flag) {
         if (weakSelf.timeLineService.statusCount == 20) {
@@ -217,7 +217,7 @@
             [weakSelf.tableView reloadData];
         } else {
             if (weakSelf.repeats.timeInterval > 4) {
-                weakSelf.repeats = [weakSelf getTimer:4];
+                weakSelf.repeats = [weakSelf refreshTimer:4];
             }
             NSMutableArray *indexPaths = @[].mutableCopy;
             for (NSUInteger i = 0; array.count > i; i++) {
@@ -366,7 +366,7 @@
 - (void)startTimer {
     CROAuth *auth = [[CROAuth alloc] init];
     if (auth.authorized) {
-        self.repeats = [self getTimer:4];
+        self.repeats = [self refreshTimer:4];
         [self timerFire];
     }
 }

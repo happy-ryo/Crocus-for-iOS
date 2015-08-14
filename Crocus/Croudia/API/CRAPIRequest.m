@@ -23,6 +23,7 @@
 #define API_DOMAIN @"https://api.croudia.com/"
 
 @implementation CRAPIRequest {
+    UIAlertView *_alertView;
 }
 
 - (id)init {
@@ -111,14 +112,35 @@
                 return;
             }
         }
-    } else if (error.code == -1009) {
-    } else if (error.code == -1012) {
-        [self refreshToken];
+
+    } else if (error.code == -1001 || error.code == -1008) {
+//        [self showAlertView:@"タイムアウトです。\nなんと言われようとも。"];
         return;
-    } else if (error.code) {
-        [self refreshToken];
+    } else if (error != nil) {
+        __weak CRAPIRequest *weakSelf = self;
+        [_oAuth refreshToken:^(BOOL result) {
+            if (result) {
+                [_oAuth authorizeWebView:^(BOOL result) {
+                    if (result) {
+                        [weakSelf load];
+                    }
+                }];
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf load];
+                });
+            }
+        }];
         return;
     }
+}
+
+- (void)showAlertView:(NSString *)message {
+    if (_alertView.isVisible && [_alertView.message isEqualToString:message]) {
+        return;
+    }
+    _alertView = [[UIAlertView alloc] initWithTitle:@"Crocus" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [_alertView show];
 }
 
 - (void)refreshToken {
