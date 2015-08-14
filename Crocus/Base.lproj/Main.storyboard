@@ -133,7 +133,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWZ-JB-mQ1">
-                                                    <rect key="frame" x="8" y="11" width="101" height="21"/>
+                                                    <rect key="frame" x="18" y="11" width="101" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="101" id="8fI-Ak-pnZ"/>
                                                     </constraints>
@@ -154,7 +154,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="vWZ-JB-mQ1" secondAttribute="bottom" constant="3" id="LlD-uh-xjI"/>
                                                 <constraint firstItem="xpR-L0-aau" firstAttribute="trailing" secondItem="niC-0x-7in" secondAttribute="trailingMargin" id="dMx-lw-lwf"/>
                                                 <constraint firstItem="vWZ-JB-mQ1" firstAttribute="top" secondItem="niC-0x-7in" secondAttribute="topMargin" constant="3" id="g6k-Xk-KLX"/>
-                                                <constraint firstItem="vWZ-JB-mQ1" firstAttribute="leading" secondItem="niC-0x-7in" secondAttribute="leadingMargin" id="jEr-2u-fYk"/>
+                                                <constraint firstItem="vWZ-JB-mQ1" firstAttribute="leading" secondItem="niC-0x-7in" secondAttribute="leadingMargin" constant="10" id="jEr-2u-fYk"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="xpR-L0-aau" secondAttribute="bottom" constant="-2" id="wb0-Gj-Ica"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -166,7 +166,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer Sec" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIy-xw-q0T">
-                                                    <rect key="frame" x="8" y="11" width="81" height="21"/>
+                                                    <rect key="frame" x="18" y="11" width="81" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="81" id="4uy-jR-IRD"/>
                                                     </constraints>
@@ -190,7 +190,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="EMS-Iv-0lr" secondAttribute="bottom" constant="-3" id="SkP-wm-U5O"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="AIy-xw-q0T" secondAttribute="bottom" constant="3" id="sBz-nd-Uvt"/>
                                                 <constraint firstItem="EMS-Iv-0lr" firstAttribute="trailing" secondItem="79s-2c-vb6" secondAttribute="trailingMargin" id="uyH-YY-U51"/>
-                                                <constraint firstItem="AIy-xw-q0T" firstAttribute="leading" secondItem="79s-2c-vb6" secondAttribute="leadingMargin" id="vmQ-Kr-fHW"/>
+                                                <constraint firstItem="AIy-xw-q0T" firstAttribute="leading" secondItem="79s-2c-vb6" secondAttribute="leadingMargin" constant="10" id="vmQ-Kr-fHW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
