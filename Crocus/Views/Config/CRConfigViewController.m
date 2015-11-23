@@ -29,7 +29,7 @@
     [super viewWillAppear:animated];
     self.title = @"Config";
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"<" style:UIBarButtonItemStyleBordered target:self.navigationController action:@selector(popViewControllerAnimated:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"<" style:UIBarButtonItemStylePlain target:self.navigationController action:@selector(popViewControllerAnimated:)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
 
     [_protectSwitch removeTarget:self action:@selector(protect:) forControlEvents:UIControlEventValueChanged];

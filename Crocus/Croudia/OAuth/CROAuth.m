@@ -140,11 +140,14 @@
     [urlRequest setHTTPBody:params.serializeParams];
     [CRHTTPLoader loadRequest:urlRequest complete:^(NSData *data) {
         NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        self.oAuthParams.refreshToken = [response valueForKey:@"refresh_token"];
-        self.oAuthParams.accessToken = [response valueForKey:@"access_token"];
-        self.oAuthParams.expiresIn = [response valueForKey:@"expires_in"];
-        self.oAuthParams.tokenType = [response valueForKey:@"token_type"];
-        [self.oAuthParams save];
+        NSString *accessToken = [response valueForKey:@"access_token"];
+        if (![accessToken isEqualToString:@""] && accessToken != nil) {
+            self.oAuthParams.refreshToken = [response valueForKey:@"refresh_token"];
+            self.oAuthParams.accessToken = [response valueForKey:@"access_token"];
+            self.oAuthParams.expiresIn = [response valueForKey:@"expires_in"];
+            self.oAuthParams.tokenType = [response valueForKey:@"token_type"];
+            [self.oAuthParams save];
+        }
         pFunction(YES);
     }                    fail:^(NSError *error) {
         pFunction(NO);

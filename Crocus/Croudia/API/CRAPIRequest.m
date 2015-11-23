@@ -113,9 +113,7 @@
             }
         }
 
-    } else if (error.code == -1001 || error.code == -1008 || error.code == -1009) {
-        return;
-    } else if (error.code == -1012) {
+    } else if (error != nil) {
         __weak CRAPIRequest *weakSelf = self;
         [_oAuth refreshToken:^(BOOL result) {
             if (result) {
@@ -123,11 +121,9 @@
                     [weakSelf load];
                 });
             } else {
-                [_oAuth authorizeWebView:^(BOOL result) {
-                    if (result) {
-                        [weakSelf load];
-                    }
-                }];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf showAlertView:@"ネットワークの接続に問題があるかもしれません、ご確認下さい。"];
+                });
             }
         }];
         return;
@@ -152,23 +148,6 @@
         [_oAuth refreshToken:^(BOOL result) {
             if (result) {
                 [weakSelf load];
-            } else {
-                _oAuth = [[CROAuth alloc] init];
-                CRVerifyCredentials *verifyCredentials = [[CRVerifyCredentials alloc] initWithGetFinished:^(NSDictionary *userDictionary, NSError *verifyError) {
-                    if (userDictionary != nil) {
-                        [weakSelf load];
-                        return;
-                    }
-                    [_oAuth authorizeWebView:^(BOOL authResult) {
-                        if (authResult) {
-                            [weakSelf load];
-                        } else {
-                            NSError *throwError = [[NSError alloc] initWithDomain:@"Croient" code:401 userInfo:@{@"info" : @"auth error."}];
-                            [self parseResponse:nil error:throwError];
-                        }
-                    }];
-                }];
-                [verifyCredentials load];
             }
         }];
     }];

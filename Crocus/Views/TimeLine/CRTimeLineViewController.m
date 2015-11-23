@@ -99,7 +99,9 @@
 
 - (void)cleanReload {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:NO];
+    if(self.timeLineService.statusCount != 0) {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:NO];
+    }
     __weak CRTimeLineViewController *weakSelf = self;
     self.tableView.scrollEnabled = NO;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 2), dispatch_get_main_queue(), ^{
