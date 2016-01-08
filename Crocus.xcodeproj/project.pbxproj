@@ -1057,8 +1057,6 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
-					"-l\"Pods-Crocus-MBProgressHUD\"",
-					"-l\"Pods-Crocus-SDWebImage\"",
 					"-framework",
 					"\"CoreGraphics\"",
 					"-framework",
@@ -1096,8 +1094,6 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
-					"-l\"Pods-Crocus-MBProgressHUD\"",
-					"-l\"Pods-Crocus-SDWebImage\"",
 					"-framework",
 					"\"CoreGraphics\"",
 					"-framework",
